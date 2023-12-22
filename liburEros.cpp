@@ -18,10 +18,11 @@ int main(){
     Scalar highOren=Scalar(15,255,255);    
 
     namedWindow("Tugas Deteksi Bola",WINDOW_AUTOSIZE);
+    namedWindow("bw",WINDOW_AUTOSIZE);
 
     Mat gambar=imread("/home/hatfan/test2/bolaBanyak.png",1);
     waitKey(1);
-    imshow("bola oren",gambar);
+    //imshow("bola oren",gambar);
 
     for(;;){
         cap.read(frame);
@@ -31,6 +32,9 @@ int main(){
 
         Mat mask;
         inRange(hsv,lowOren,highOren,mask);
+
+        resize(mask, mask, Size(900, (900.0 / mask.cols) * mask.rows));
+        imshow("bw", mask);
 
         vector<vector<Point>> contours;
         findContours(mask, contours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
@@ -46,7 +50,7 @@ int main(){
                 circle(frame, center, static_cast<int>(radius), Scalar(0, 255, 0), 2);
             }
         }
-         resize(frame, frame, Size(900, (900.0 / frame.cols) * frame.rows));
+        resize(frame, frame, Size(900, (900.0 / frame.cols) * frame.rows));
         imshow("Tugas Deteksi Bola", frame);
 
         if(waitKey(1)==27)break;
