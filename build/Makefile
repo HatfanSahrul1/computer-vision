@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-liburEros.o: liburEros.cpp.o
+bolaWebCam.o: bolaWebCam.cpp.o
 
-.PHONY : liburEros.o
+.PHONY : bolaWebCam.o
 
 # target to build an object file
-liburEros.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/liburEros.cpp.o
-.PHONY : liburEros.cpp.o
+bolaWebCam.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bolaWebCam.cpp.o
+.PHONY : bolaWebCam.cpp.o
 
-liburEros.i: liburEros.cpp.i
+bolaWebCam.i: bolaWebCam.cpp.i
 
-.PHONY : liburEros.i
+.PHONY : bolaWebCam.i
 
 # target to preprocess a source file
-liburEros.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/liburEros.cpp.i
-.PHONY : liburEros.cpp.i
+bolaWebCam.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bolaWebCam.cpp.i
+.PHONY : bolaWebCam.cpp.i
 
-liburEros.s: liburEros.cpp.s
+bolaWebCam.s: bolaWebCam.cpp.s
 
-.PHONY : liburEros.s
+.PHONY : bolaWebCam.s
 
 # target to generate assembly for a file
-liburEros.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/liburEros.cpp.s
-.PHONY : liburEros.cpp.s
+bolaWebCam.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bolaWebCam.cpp.s
+.PHONY : bolaWebCam.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... liburEros.o"
-	@echo "... liburEros.i"
-	@echo "... liburEros.s"
+	@echo "... bolaWebCam.o"
+	@echo "... bolaWebCam.i"
+	@echo "... bolaWebCam.s"
 .PHONY : help
 
 

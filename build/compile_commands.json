@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/hatfan/test2/build",
-  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -std=gnu++17 -o CMakeFiles/main.dir/liburEros.cpp.o -c /home/hatfan/test2/liburEros.cpp",
-  "file": "/home/hatfan/test2/liburEros.cpp"
+  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -std=gnu++17 -o CMakeFiles/main.dir/bolaWebCam.cpp.o -c /home/hatfan/test2/bolaWebCam.cpp",
+  "file": "/home/hatfan/test2/bolaWebCam.cpp"
 }
 ]

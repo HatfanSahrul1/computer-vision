@@ -55,10 +55,10 @@ int main(int, char**) {
         cv::imshow("Deteksi Bola", frame);
 
         //musik
-        if (circles.size() >= 1) {
+        /*if (circles.size() >= 1) {
            if(!isNot) system("canberra-gtk-play -f /home/hatfan/test2/mix.wav");
             cv::waitKey(1);
-        }
+        }*/
 
         //"esc" untuk keluar atau cancel (ctrl+c) dari terminal
         if (cv::waitKey(1) == 27) 
