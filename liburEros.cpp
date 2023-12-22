@@ -36,18 +36,21 @@ int main(){
         resize(mask, mask, Size(900, (900.0 / mask.cols) * mask.rows));
         imshow("bw", mask);
 
+        Mat kernel = getStructuringElement(MORPH_ELLIPSE, Size(5, 5));
+        morphologyEx(mask, mask, MORPH_OPEN, kernel);
+        morphologyEx(mask, mask, MORPH_CLOSE, kernel);
+
         vector<vector<Point>> contours;
         findContours(mask, contours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
 
-        for (const auto &contour : contours) {
+        for (const auto& contour : contours) {
             double area = contourArea(contour);
 
+            // Adjust the area threshold based on your specific case
             if (area > 100) {
-                Point2f center;
-                float radius;
-                minEnclosingCircle(contour, center, radius);
-
-                circle(frame, center, static_cast<int>(radius), Scalar(0, 255, 0), 2);
+                // Draw a bounding box around the detected orange ball
+                Rect boundingBox = boundingRect(contour);
+                rectangle(frame, boundingBox, Scalar(0, 255, 0), 2);
             }
         }
         resize(frame, frame, Size(900, (900.0 / frame.cols) * frame.rows));
