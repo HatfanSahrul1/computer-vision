@@ -33,6 +33,8 @@ int main(){
         Mat mask;
         inRange(hsv,lowOren,highOren,mask);
 
+        GaussianBlur(mask, mask, Size(5, 5), 0);
+
         resize(mask, mask, Size(900, (900.0 / mask.cols) * mask.rows));
         imshow("bw", mask);
         
