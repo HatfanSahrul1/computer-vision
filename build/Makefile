@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-belajarhsv.o: belajarhsv.cpp.o
+liburEros.o: liburEros.cpp.o
 
-.PHONY : belajarhsv.o
+.PHONY : liburEros.o
 
 # target to build an object file
-belajarhsv.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/belajarhsv.cpp.o
-.PHONY : belajarhsv.cpp.o
+liburEros.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/liburEros.cpp.o
+.PHONY : liburEros.cpp.o
 
-belajarhsv.i: belajarhsv.cpp.i
+liburEros.i: liburEros.cpp.i
 
-.PHONY : belajarhsv.i
+.PHONY : liburEros.i
 
 # target to preprocess a source file
-belajarhsv.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/belajarhsv.cpp.i
-.PHONY : belajarhsv.cpp.i
+liburEros.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/liburEros.cpp.i
+.PHONY : liburEros.cpp.i
 
-belajarhsv.s: belajarhsv.cpp.s
+liburEros.s: liburEros.cpp.s
 
-.PHONY : belajarhsv.s
+.PHONY : liburEros.s
 
 # target to generate assembly for a file
-belajarhsv.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/belajarhsv.cpp.s
-.PHONY : belajarhsv.cpp.s
+liburEros.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/liburEros.cpp.s
+.PHONY : liburEros.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... belajarhsv.o"
-	@echo "... belajarhsv.i"
-	@echo "... belajarhsv.s"
+	@echo "... liburEros.o"
+	@echo "... liburEros.i"
+	@echo "... liburEros.s"
 .PHONY : help
 
 
