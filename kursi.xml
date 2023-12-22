@@ -1,0 +1,18 @@
+<annotation>
+    <folder>images</folder>
+    <filename>key1.jpg</filename>
+    <size>
+        <width>640</width>
+        <height>480</height>
+        <depth>3</depth>
+    </size>
+    <object>
+        <name>key</name>
+        <bndbox>
+            <xmin>100</xmin>
+            <ymin>150</ymin>
+            <xmax>200</xmax>
+            <ymax>250</ymax>
+        </bndbox>
+    </object>
+</annotation>
