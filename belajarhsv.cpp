@@ -14,6 +14,7 @@ int main() {
     namedWindow("hsv",WINDOW_AUTOSIZE);
     namedWindow("bw",WINDOW_AUTOSIZE);
 
+//for rdfsdfs
     Mat hsv;
     cvtColor(image,hsv,COLOR_BGR2HSV);
 
