@@ -5,7 +5,7 @@ using namespace cv;
 using namespace std;
 
 int main(){
-    VideoCapture cap;
+    VideoCapture cap(0);
     Mat frame;
 
     string videoStreamAddress="https://10.252.131.184:8080/videofeed?something.mjpeg";
@@ -22,7 +22,7 @@ int main(){
 
     Mat gambar=imread("/home/hatfan/test2/bolaBanyak.png",1);
     waitKey(1);
-    //imshow("bola oren",gambar);
+    imshow("bola oren",gambar);
 
     for(;;){
         cap.read(frame);
