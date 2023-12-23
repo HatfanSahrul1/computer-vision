@@ -1,6 +1,6 @@
 /**
  * @file HoughCircle_Demo.cpp
- * @brief Demo code for Hough Transform
+ * @brief Demo code for Hough Transform using camera input
  * @author OpenCV team
  */
 
@@ -49,33 +49,21 @@ namespace
     }
 }
 
-
-int main(int argc, char** argv)
+int main()
 {
+    VideoCapture cap(0);  // Open default camera
     Mat src, src_gray;
 
-    // Read the image
-    String imageName("/home/hatfan/test2/bolaoren.jpg"); // by default
-    if (argc > 1)
-    {
-       imageName = argv[1];
-    }
-    src = imread( samples::findFile( imageName ), IMREAD_COLOR );
-
-    if( src.empty() )
-    {
-        std::cerr << "Invalid input image\n";
-        std::cout << "Usage : " << argv[0] << " <path_to_input_image>\n";;
+    if (!cap.isOpened()) {
+        cerr << "Error opening camera." << endl;
         return -1;
     }
 
-    // Convert it to gray
-    cvtColor( src, src_gray, COLOR_BGR2GRAY );
+    // Set camera frame width and height if needed
+    // cap.set(CAP_PROP_FRAME_WIDTH, 640);
+    // cap.set(CAP_PROP_FRAME_HEIGHT, 480);
 
-    // Reduce the noise so we avoid false circle detection
-    GaussianBlur( src_gray, src_gray, Size(9, 9), 2, 2 );
-
-    //declare and initialize both parameters that are subjects to change
+    // declare and initialize both parameters that are subjects to change
     int cannyThreshold = cannyThresholdInitialValue;
     int accumulatorThreshold = accumulatorThresholdInitialValue;
 
@@ -90,12 +78,20 @@ int main(int argc, char** argv)
     char key = 0;
     while(key != 'q' && key != 'Q')
     {
+        cap.read(src);  // Capture frame from camera
+
+        // Convert it to gray
+        cvtColor(src, src_gray, COLOR_BGR2GRAY);
+
+        // Reduce the noise so we avoid false circle detection
+        GaussianBlur(src_gray, src_gray, Size(9, 9), 2, 2);
+
         // those parameters cannot be =0
         // so we must check here
         cannyThreshold = std::max(cannyThreshold, 1);
         accumulatorThreshold = std::max(accumulatorThreshold, 1);
 
-        //runs the detection, and update the display
+        // runs the detection, and update the display
         HoughDetection(src_gray, src, cannyThreshold, accumulatorThreshold);
 
         // get user key
