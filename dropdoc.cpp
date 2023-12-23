@@ -1,97 +1,106 @@
 /**
- * @file CannyDetector_Demo.cpp
- * @brief Sample code showing how to detect edges using the Canny Detector
+ * @file HoughCircle_Demo.cpp
+ * @brief Demo code for Hough Transform
  * @author OpenCV team
  */
 
-#include "opencv2/imgproc.hpp"
+#include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
+#include "opencv2/imgproc.hpp"
 #include <iostream>
 
+using namespace std;
 using namespace cv;
 
-//![variables]
-Mat src, src_gray;
-Mat dst, detected_edges;
-
-int lowThreshold = 0;
-const int max_lowThreshold = 100;
-const int ratio = 3;
-const int kernel_size = 3;
-const char* window_name = "Edge Map";
-//![variables]
-
-/**
- * @function CannyThreshold
- * @brief Trackbar callback - Canny thresholds input with a ratio 1:3
- */
-static void CannyThreshold(int, void*)
+namespace
 {
-    //![reduce_noise]
-    /// Reduce noise with a kernel 3x3
-    blur( src_gray, detected_edges, Size(3,3) );
-    //![reduce_noise]
+    // windows and trackbars name
+    const std::string windowName = "Hough Circle Detection Demo";
+    const std::string cannyThresholdTrackbarName = "Canny threshold";
+    const std::string accumulatorThresholdTrackbarName = "Accumulator Threshold";
 
-    //![canny]
-    /// Canny detector
-    Canny( detected_edges, detected_edges, lowThreshold, lowThreshold*ratio, kernel_size );
-    //![canny]
+    // initial and max values of the parameters of interests.
+    const int cannyThresholdInitialValue = 100;
+    const int accumulatorThresholdInitialValue = 50;
+    const int maxAccumulatorThreshold = 200;
+    const int maxCannyThreshold = 255;
 
-    /// Using Canny's output as a mask, we display our result
-    //![fill]
-    dst = Scalar::all(0);
-    //![fill]
+    void HoughDetection(const Mat& src_gray, const Mat& src_display, int cannyThreshold, int accumulatorThreshold)
+    {
+        // will hold the results of the detection
+        std::vector<Vec3f> circles;
+        // runs the actual detection
+        HoughCircles( src_gray, circles, HOUGH_GRADIENT, 1, src_gray.rows/8, cannyThreshold, accumulatorThreshold, 0, 0 );
 
-    //![copyto]
-    src.copyTo( dst, detected_edges);
-    //![copyto]
+        // clone the colour, input image for displaying purposes
+        Mat display = src_display.clone();
+        for( size_t i = 0; i < circles.size(); i++ )
+        {
+            Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
+            int radius = cvRound(circles[i][2]);
+            // circle center
+            circle( display, center, 3, Scalar(0,255,0), -1, 8, 0 );
+            // circle outline
+            circle( display, center, radius, Scalar(0,0,255), 3, 8, 0 );
+        }
 
-    //![display]
-    imshow( window_name, dst );
-    //![display]
+        // shows the results
+        imshow( windowName, display);
+    }
 }
 
 
-/**
- * @function main
- */
-int main( int argc, char** argv )
+int main(int argc, char** argv)
 {
-  //![load]
-  CommandLineParser parser( argc, argv, "{@input | /home/hatfan/test2/stuff.jpg | input image}" );
-  src = imread( samples::findFile( parser.get<String>( "@input" ) ), IMREAD_COLOR ); // Load an image
+    Mat src, src_gray;
 
-  if( src.empty() )
-  {
-    std::cout << "Could not open or find the image!\n" << std::endl;
-    std::cout << "Usage: " << argv[0] << " <Input image>" << std::endl;
-    return -1;
-  }
-  //![load]
+    // Read the image
+    String imageName("/home/hatfan/test2/bolaoren.jpg"); // by default
+    if (argc > 1)
+    {
+       imageName = argv[1];
+    }
+    src = imread( samples::findFile( imageName ), IMREAD_COLOR );
 
-  //![create_mat]
-  /// Create a matrix of the same type and size as src (for dst)
-  dst.create( src.size(), src.type() );
-  //![create_mat]
+    if( src.empty() )
+    {
+        std::cerr << "Invalid input image\n";
+        std::cout << "Usage : " << argv[0] << " <path_to_input_image>\n";;
+        return -1;
+    }
 
-  //![convert_to_gray]
-  cvtColor( src, src_gray, COLOR_BGR2GRAY );
-  //![convert_to_gray]
+    // Convert it to gray
+    cvtColor( src, src_gray, COLOR_BGR2GRAY );
 
-  //![create_window]
-  namedWindow( window_name, WINDOW_AUTOSIZE );
-  //![create_window]
+    // Reduce the noise so we avoid false circle detection
+    GaussianBlur( src_gray, src_gray, Size(9, 9), 2, 2 );
 
-  //![create_trackbar]
-  /// Create a Trackbar for user to enter threshold
-  createTrackbar( "Min Threshold:", window_name, &lowThreshold, max_lowThreshold, CannyThreshold );
-  //![create_trackbar]
+    //declare and initialize both parameters that are subjects to change
+    int cannyThreshold = cannyThresholdInitialValue;
+    int accumulatorThreshold = accumulatorThresholdInitialValue;
 
-  /// Show the image
-  CannyThreshold(0, 0);
+    // create the main window, and attach the trackbars
+    namedWindow( windowName, WINDOW_AUTOSIZE );
+    createTrackbar(cannyThresholdTrackbarName, windowName, &cannyThreshold,maxCannyThreshold);
+    createTrackbar(accumulatorThresholdTrackbarName, windowName, &accumulatorThreshold, maxAccumulatorThreshold);
 
-  /// Wait until user exit program by pressing a key
-  waitKey(0);
+    // infinite loop to display
+    // and refresh the content of the output image
+    // until the user presses q or Q
+    char key = 0;
+    while(key != 'q' && key != 'Q')
+    {
+        // those parameters cannot be =0
+        // so we must check here
+        cannyThreshold = std::max(cannyThreshold, 1);
+        accumulatorThreshold = std::max(accumulatorThreshold, 1);
 
-  return 0;
+        //runs the detection, and update the display
+        HoughDetection(src_gray, src, cannyThreshold, accumulatorThreshold);
+
+        // get user key
+        key = (char)waitKey(10);
+    }
+
+    return 0;
 }
