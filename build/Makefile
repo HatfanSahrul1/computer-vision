@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-bolaWebCam.o: bolaWebCam.cpp.o
+dropdoc.o: dropdoc.cpp.o
 
-.PHONY : bolaWebCam.o
+.PHONY : dropdoc.o
 
 # target to build an object file
-bolaWebCam.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bolaWebCam.cpp.o
-.PHONY : bolaWebCam.cpp.o
+dropdoc.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/dropdoc.cpp.o
+.PHONY : dropdoc.cpp.o
 
-bolaWebCam.i: bolaWebCam.cpp.i
+dropdoc.i: dropdoc.cpp.i
 
-.PHONY : bolaWebCam.i
+.PHONY : dropdoc.i
 
 # target to preprocess a source file
-bolaWebCam.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bolaWebCam.cpp.i
-.PHONY : bolaWebCam.cpp.i
+dropdoc.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/dropdoc.cpp.i
+.PHONY : dropdoc.cpp.i
 
-bolaWebCam.s: bolaWebCam.cpp.s
+dropdoc.s: dropdoc.cpp.s
 
-.PHONY : bolaWebCam.s
+.PHONY : dropdoc.s
 
 # target to generate assembly for a file
-bolaWebCam.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/bolaWebCam.cpp.s
-.PHONY : bolaWebCam.cpp.s
+dropdoc.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/dropdoc.cpp.s
+.PHONY : dropdoc.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... bolaWebCam.o"
-	@echo "... bolaWebCam.i"
-	@echo "... bolaWebCam.s"
+	@echo "... dropdoc.o"
+	@echo "... dropdoc.i"
+	@echo "... dropdoc.s"
 .PHONY : help
 
 

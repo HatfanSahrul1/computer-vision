@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/main.dir/bolaWebCam.cpp.o"
+  "CMakeFiles/main.dir/dropdoc.cpp.o"
   "main"
   "main.pdb"
 )
