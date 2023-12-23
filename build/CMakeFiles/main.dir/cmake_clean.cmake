@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/main.dir/dropdoc.cpp.o"
+  "CMakeFiles/main.dir/liburEros.cpp.o"
   "main"
   "main.pdb"
 )

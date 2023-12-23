@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-dropdoc.o: dropdoc.cpp.o
+liburEros.o: liburEros.cpp.o
 
-.PHONY : dropdoc.o
+.PHONY : liburEros.o
 
 # target to build an object file
-dropdoc.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/dropdoc.cpp.o
-.PHONY : dropdoc.cpp.o
+liburEros.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/liburEros.cpp.o
+.PHONY : liburEros.cpp.o
 
-dropdoc.i: dropdoc.cpp.i
+liburEros.i: liburEros.cpp.i
 
-.PHONY : dropdoc.i
+.PHONY : liburEros.i
 
 # target to preprocess a source file
-dropdoc.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/dropdoc.cpp.i
-.PHONY : dropdoc.cpp.i
+liburEros.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/liburEros.cpp.i
+.PHONY : liburEros.cpp.i
 
-dropdoc.s: dropdoc.cpp.s
+liburEros.s: liburEros.cpp.s
 
-.PHONY : dropdoc.s
+.PHONY : liburEros.s
 
 # target to generate assembly for a file
-dropdoc.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/dropdoc.cpp.s
-.PHONY : dropdoc.cpp.s
+liburEros.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/liburEros.cpp.s
+.PHONY : liburEros.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... dropdoc.o"
-	@echo "... dropdoc.i"
-	@echo "... dropdoc.s"
+	@echo "... liburEros.o"
+	@echo "... liburEros.i"
+	@echo "... liburEros.s"
 .PHONY : help
 
 
