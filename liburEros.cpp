@@ -34,7 +34,7 @@ int main() {
         GaussianBlur(Mask, Mask, Size(9, 9), 2, 2);
 
         vector<Vec3f> circles;
-        HoughCircles(Mask, circles, HOUGH_GRADIENT, 1,Mask.rows / 8, 100, 30, 0, 0);
+        HoughCircles(Mask, circles, HOUGH_GRADIENT, 1,Mask.rows / 8, 100, 30, 50, 200);
 
         for (size_t i = 0; i < circles.size(); i++) {
             Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
