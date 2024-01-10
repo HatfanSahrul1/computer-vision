@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hatfan/test2/b.cpp" "/home/hatfan/test2/build/CMakeFiles/main.dir/b.cpp.o"
+  "/home/hatfan/test2/liburEros.cpp" "/home/hatfan/test2/build/CMakeFiles/main.dir/liburEros.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

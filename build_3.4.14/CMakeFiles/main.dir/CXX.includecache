@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/eros/test2/b.cpp
+/home/eros/test2/liburEros.cpp
 opencv2/opencv.hpp
 -
 iostream

@@ -8,22 +8,27 @@ void onTrackbar(int, void*);
 
 int lowH=0,lowS=100,lowV=100;//lowV 130 lymayan stabil
 int highH=20,highS=255,highV=255;
+int a=8,b=100;
+
 
 int main() {
     VideoCapture cap(0);
-
-    if (!cap.isOpened()) {
+    const string videoStreamAddress = "https://10.252.133.72:8080/videofeed?something.mjpeg";
+    if (!cap.open(videoStreamAddress)) {
         cout << "Error opening the camera." << endl;
         return -1;
     }
         namedWindow("Detect",WINDOW_AUTOSIZE);
+        namedWindow("set",WINDOW_AUTOSIZE);
 
-        createTrackbar("lowH","Detect",&lowH,255,onTrackbar);
-        createTrackbar("highH","Detect",&highH,255,onTrackbar);
-        createTrackbar("lowS","Detect",&lowS,255,onTrackbar);
-        createTrackbar("highS","Detect",&highS,255,onTrackbar);
-        createTrackbar("lowV","Detect",&lowV,255,onTrackbar);
-        createTrackbar("highV","Detect",&highV,255,onTrackbar);
+        createTrackbar("lowH","set",&lowH,255,onTrackbar);
+        createTrackbar("highH","set",&highH,255,onTrackbar);
+        createTrackbar("lowS","set",&lowS,255,onTrackbar);
+        createTrackbar("highS","set",&highS,255,onTrackbar);
+        createTrackbar("lowV","set",&lowV,255,onTrackbar);
+        createTrackbar("highV","set",&highV,255,onTrackbar);
+        createTrackbar("hA","set",&a,20,onTrackbar);
+        createTrackbar("hB","set",&b,300,onTrackbar);
 
        
 
