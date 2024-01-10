@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/hatfan/test2/liburEros.cpp
+/home/hatfan/test2/learn.cpp
+opencv2/opencv.hpp
+-
+iostream
+-
+opencv2/opencv.hpp
+-
+iostream
+-
 opencv2/opencv.hpp
 -
 iostream

@@ -4,6 +4,11 @@
 using namespace cv;
 using namespace std;
 
+void onTrackbar(int, void*);
+
+int lowH=0,lowS=100,lowV=100;//lowV 130 lymayan stabil
+int highH=20,highS=255,highV=255;
+
 int main() {
     VideoCapture cap(0);
 
@@ -11,6 +16,16 @@ int main() {
         cout << "Error opening the camera." << endl;
         return -1;
     }
+        namedWindow("Detect",WINDOW_AUTOSIZE);
+
+        createTrackbar("lowH","Detect",&lowH,255,onTrackbar);
+        createTrackbar("highH","Detect",&highH,255,onTrackbar);
+        createTrackbar("lowS","Detect",&lowS,255,onTrackbar);
+        createTrackbar("highS","Detect",&highS,255,onTrackbar);
+        createTrackbar("lowV","Detect",&lowV,255,onTrackbar);
+        createTrackbar("highV","Detect",&highV,255,onTrackbar);
+
+       
 
     while (true) {
         Mat frame;
@@ -21,12 +36,13 @@ int main() {
             break;
         }
 
-        // Convert the frame to HSV color space
+        
+        
         Mat hsv;
         cvtColor(frame, hsv, COLOR_BGR2HSV);
 
-        Scalar lowOrange = Scalar(0, 100, 100);
-        Scalar upOrange = Scalar(20, 255, 255);
+        Scalar lowOrange = Scalar(lowH, lowS, lowV);
+        Scalar upOrange = Scalar(highH,highS,highV);
 
         Mat Mask;
         inRange(hsv, lowOrange, upOrange, Mask);
@@ -34,7 +50,7 @@ int main() {
         GaussianBlur(Mask, Mask, Size(9, 9), 2, 2);
 
         vector<Vec3f> circles;
-        HoughCircles(Mask, circles, HOUGH_GRADIENT, 1,Mask.rows / 8, 100, 30, 50, 200);
+        HoughCircles(Mask, circles, HOUGH_GRADIENT, 1,Mask.rows / 8, 100, 30, 0, 0);
 
         for (size_t i = 0; i < circles.size(); i++) {
             Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
@@ -42,7 +58,7 @@ int main() {
             circle(frame, center, radius, Scalar(0, 255, 0), 2);
         }
         
-        imshow("Orange Ball Detection", frame);
+        imshow("Detect", frame);
         imshow("hw", Mask);
 
         if (waitKey(1) == 27) {
@@ -51,4 +67,8 @@ int main() {
     }
 
     return 0;
+}
+
+void onTrackbar(int, void*){
+
 }

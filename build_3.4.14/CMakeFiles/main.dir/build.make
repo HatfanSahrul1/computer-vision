@@ -57,27 +57,27 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/liburEros.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/liburEros.cpp.o: ../liburEros.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eros/test2/build_3.4.14/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/liburEros.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/liburEros.cpp.o -c /home/eros/test2/liburEros.cpp
+CMakeFiles/main.dir/b.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/b.cpp.o: ../b.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eros/test2/build_3.4.14/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/b.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/b.cpp.o -c /home/eros/test2/b.cpp
 
-CMakeFiles/main.dir/liburEros.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/liburEros.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eros/test2/liburEros.cpp > CMakeFiles/main.dir/liburEros.cpp.i
+CMakeFiles/main.dir/b.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/b.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eros/test2/b.cpp > CMakeFiles/main.dir/b.cpp.i
 
-CMakeFiles/main.dir/liburEros.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/liburEros.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eros/test2/liburEros.cpp -o CMakeFiles/main.dir/liburEros.cpp.s
+CMakeFiles/main.dir/b.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/b.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eros/test2/b.cpp -o CMakeFiles/main.dir/b.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/liburEros.cpp.o"
+"CMakeFiles/main.dir/b.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/liburEros.cpp.o
+main: CMakeFiles/main.dir/b.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: /usr/local/lib/libopencv_stitching.so.3.4.14
 main: /usr/local/lib/libopencv_superres.so.3.4.14
