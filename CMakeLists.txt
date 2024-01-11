@@ -14,7 +14,7 @@ include_directories(${PROJECT_SOURCE_DIR})
 
 
 
-add_executable(main liburEros.cpp)
+add_executable(main segment.cpp)
 target_link_libraries(main
 ${OpenCV_LIBS}
 )

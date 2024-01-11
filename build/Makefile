@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-liburEros.o: liburEros.cpp.o
+segment.o: segment.cpp.o
 
-.PHONY : liburEros.o
+.PHONY : segment.o
 
 # target to build an object file
-liburEros.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/liburEros.cpp.o
-.PHONY : liburEros.cpp.o
+segment.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/segment.cpp.o
+.PHONY : segment.cpp.o
 
-liburEros.i: liburEros.cpp.i
+segment.i: segment.cpp.i
 
-.PHONY : liburEros.i
+.PHONY : segment.i
 
 # target to preprocess a source file
-liburEros.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/liburEros.cpp.i
-.PHONY : liburEros.cpp.i
+segment.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/segment.cpp.i
+.PHONY : segment.cpp.i
 
-liburEros.s: liburEros.cpp.s
+segment.s: segment.cpp.s
 
-.PHONY : liburEros.s
+.PHONY : segment.s
 
 # target to generate assembly for a file
-liburEros.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/liburEros.cpp.s
-.PHONY : liburEros.cpp.s
+segment.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/segment.cpp.s
+.PHONY : segment.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... liburEros.o"
-	@echo "... liburEros.i"
-	@echo "... liburEros.s"
+	@echo "... segment.o"
+	@echo "... segment.i"
+	@echo "... segment.s"
 .PHONY : help
 
 

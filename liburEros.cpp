@@ -13,8 +13,13 @@ int a=8,b=100;
 
 int main() {
     VideoCapture cap(0);
-    const string videoStreamAddress = "https://10.252.133.72:8080/videofeed?something.mjpeg";
+    /*const string videoStreamAddress = "https://10.252.133.72:8080/videofeed?something.mjpeg";
     if (!cap.open(videoStreamAddress)) {
+        cout << "Error opening the camera." << endl;
+        return -1;
+    }*/
+
+    if (!cap.isOpened()) {
         cout << "Error opening the camera." << endl;
         return -1;
     }
