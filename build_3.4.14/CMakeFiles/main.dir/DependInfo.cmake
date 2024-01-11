@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/eros/test2/liburEros.cpp" "/home/eros/test2/build_3.4.14/CMakeFiles/main.dir/liburEros.cpp.o"
+  "/home/eros/test2/segment.cpp" "/home/eros/test2/build_3.4.14/CMakeFiles/main.dir/segment.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

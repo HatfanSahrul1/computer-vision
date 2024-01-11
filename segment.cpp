@@ -5,35 +5,61 @@
 using namespace cv;
 using namespace std;
 
-//Mat img, res, element;
-
 int main(int argc, char** argv)
 {
-    /*namedWindow( "Meanshift", 0 );
-    img = imread("/home/hatfan/test2/stuff.jpg");
-    GaussianBlur(img, img, Size(5,5), 2, 2);
-    pyrMeanShiftFiltering( img, res, 20, 45, 3);
-    imwrite("/home/hatfan/test2/meanshift.png", res);
-    imshow( "Meanshift", res );
-    waitKey();*/
-    VideoCapture cap;
+    VideoCapture cap(0);
 
     Mat frame;
+    const string videoStreamAddress = "https://10.252.133.72:8080/videofeed?something.mjpeg";
+    cap.open(videoStreamAddress);
+    /*if (!cap.isOpened()) {
+        cout << "Error opening the camera." << endl;
+        return -1;
+    }*/
 
-    namedWindow("test",WINDOW_AUTOSIZE);
+    namedWindow("Original", WINDOW_AUTOSIZE);
+    namedWindow("Green and White Only", WINDOW_AUTOSIZE);
 
-    while(true){
-        cap>>frame;
+    while (true) {
+        cap >> frame;
 
-        GaussianBlur(frame,frame,Size(5,5),2,2);
+        if (frame.empty()) {
+            break;
+        }
 
-        Mat res;
-        pyrMeanShiftFiltering(frame,res,20,45,3);
+        // Apply Gaussian Blur to reduce noise
+        GaussianBlur(frame, frame, Size(5, 5), 2, 2);
 
-        imshow("test",frame);
-        imshow("res",res);
+        // Convert the frame from BGR to HSV color space
+        Mat hsv;
+        cvtColor(frame, hsv, COLOR_BGR2HSV);
 
-        waitKey();
+        // Define the ranges for green and white in HSV
+        Scalar lowerGreen = Scalar(40, 40, 40);  // Example values, you may need to adjust
+        Scalar upperGreen = Scalar(80, 255, 255);
+
+        Scalar lowerWhite = Scalar(0, 0, 200);
+        Scalar upperWhite = Scalar(255, 30, 255);
+
+        // Create binary masks for green and white
+        Mat greenMask, whiteMask;
+        inRange(hsv, lowerGreen, upperGreen, greenMask);
+        inRange(hsv, lowerWhite, upperWhite, whiteMask);
+
+        // Combine the masks
+        Mat combinedMask = greenMask | whiteMask;
+
+        // Apply the combined mask to the original frame
+        Mat result;
+        bitwise_and(frame, frame, result, combinedMask);
+
+        imshow("Original", frame);
+        imshow("Green and White Only", result);
+
+        char key = waitKey(30);
+        if (key == 27) // Press 'Esc' to exit the loop
+            break;
     }
+
     return 0;
 }
