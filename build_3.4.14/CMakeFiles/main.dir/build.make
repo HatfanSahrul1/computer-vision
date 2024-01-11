@@ -57,27 +57,27 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/segment.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/segment.cpp.o: ../segment.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eros/test2/build_3.4.14/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/segment.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/segment.cpp.o -c /home/eros/test2/segment.cpp
+CMakeFiles/main.dir/tryingMat.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/tryingMat.cpp.o: ../tryingMat.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eros/test2/build_3.4.14/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/tryingMat.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/tryingMat.cpp.o -c /home/eros/test2/tryingMat.cpp
 
-CMakeFiles/main.dir/segment.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/segment.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eros/test2/segment.cpp > CMakeFiles/main.dir/segment.cpp.i
+CMakeFiles/main.dir/tryingMat.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/tryingMat.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eros/test2/tryingMat.cpp > CMakeFiles/main.dir/tryingMat.cpp.i
 
-CMakeFiles/main.dir/segment.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/segment.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eros/test2/segment.cpp -o CMakeFiles/main.dir/segment.cpp.s
+CMakeFiles/main.dir/tryingMat.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/tryingMat.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eros/test2/tryingMat.cpp -o CMakeFiles/main.dir/tryingMat.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/segment.cpp.o"
+"CMakeFiles/main.dir/tryingMat.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/segment.cpp.o
+main: CMakeFiles/main.dir/tryingMat.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: /usr/local/lib/libopencv_stitching.so.3.4.14
 main: /usr/local/lib/libopencv_superres.so.3.4.14

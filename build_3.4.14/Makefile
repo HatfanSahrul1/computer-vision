@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-segment.o: segment.cpp.o
+tryingMat.o: tryingMat.cpp.o
 
-.PHONY : segment.o
+.PHONY : tryingMat.o
 
 # target to build an object file
-segment.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/segment.cpp.o
-.PHONY : segment.cpp.o
+tryingMat.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tryingMat.cpp.o
+.PHONY : tryingMat.cpp.o
 
-segment.i: segment.cpp.i
+tryingMat.i: tryingMat.cpp.i
 
-.PHONY : segment.i
+.PHONY : tryingMat.i
 
 # target to preprocess a source file
-segment.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/segment.cpp.i
-.PHONY : segment.cpp.i
+tryingMat.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tryingMat.cpp.i
+.PHONY : tryingMat.cpp.i
 
-segment.s: segment.cpp.s
+tryingMat.s: tryingMat.cpp.s
 
-.PHONY : segment.s
+.PHONY : tryingMat.s
 
 # target to generate assembly for a file
-segment.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/segment.cpp.s
-.PHONY : segment.cpp.s
+tryingMat.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/tryingMat.cpp.s
+.PHONY : tryingMat.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... segment.o"
-	@echo "... segment.i"
-	@echo "... segment.s"
+	@echo "... tryingMat.o"
+	@echo "... tryingMat.i"
+	@echo "... tryingMat.s"
 .PHONY : help
 
 

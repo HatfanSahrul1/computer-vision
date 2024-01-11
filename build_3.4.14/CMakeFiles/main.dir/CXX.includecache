@@ -6,11 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/eros/test2/segment.cpp
+/home/eros/test2/tryingMat.cpp
 opencv2/opencv.hpp
-/home/eros/test2/opencv2/opencv.hpp
-opencv2/core/core.hpp
-/home/eros/test2/opencv2/core/core.hpp
-opencv2/imgproc/imgproc.hpp
-/home/eros/test2/opencv2/imgproc/imgproc.hpp
+-
+iostream
+-
 
