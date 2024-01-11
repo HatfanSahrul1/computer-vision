@@ -41,13 +41,17 @@ int main(int argc, char** argv)
         Scalar lowerWhite = Scalar(0, 0, 200);
         Scalar upperWhite = Scalar(255, 30, 255);
 
+        Scalar lowerOren = Scalar(0, 100, 100);
+        Scalar upperOren = Scalar(20, 255, 255);
+
         // Create binary masks for green and white
-        Mat greenMask, whiteMask;
+        Mat greenMask, whiteMask, orenMask;
         inRange(hsv, lowerGreen, upperGreen, greenMask);
         inRange(hsv, lowerWhite, upperWhite, whiteMask);
+        inRange(hsv, lowerOren,upperOren,orenMask);
 
         // Combine the masks
-        Mat combinedMask = greenMask | whiteMask;
+        Mat combinedMask = greenMask | whiteMask | orenMask;
 
         // Apply the combined mask to the original frame
         Mat result;
