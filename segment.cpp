@@ -18,6 +18,9 @@ int WH_H=255,WH_S=30,WH_V=255;
 int OL_H=0,OL_S=100,OL_V=100;
 int OH_H=20,OH_S=255,OH_V=255;
 
+//raidus
+int a=10,b=50;
+
 int main(int argc, char** argv)
 {
     VideoCapture cap(0);
@@ -31,7 +34,10 @@ int main(int argc, char** argv)
     }*/
 
     namedWindow("Original", WINDOW_AUTOSIZE);
-    namedWindow("filter", WINDOW_AUTOSIZE);
+    //namedWindow("filter", WINDOW_AUTOSIZE);
+
+    //namedWindow("setRad",WINDOW_FREERATIO);
+    
     /*namedWindow("white", WINDOW_AUTOSIZE);
     namedWindow("green", WINDOW_AUTOSIZE);
     namedWindow("orange", WINDOW_AUTOSIZE);*/
@@ -60,6 +66,10 @@ int main(int argc, char** argv)
     createTrackbar("oLow_V","orange",&OL_V,255,onTrackbar);
     createTrackbar("oHigh_V","orange",&OH_V,255,onTrackbar);
     */
+
+    //createTrackbar("a","setRad",&a,100,onTrackbar);
+    //createTrackbar("b","setRad",&b,200,onTrackbar);
+
     while (true) {
         cap >> frame;
 
@@ -85,15 +95,15 @@ int main(int argc, char** argv)
         inRange(hsv, lowerWhite, upperWhite, whiteMask);
         inRange(hsv, lowerOren,upperOren,orenMask);
 
-        std::vector<cv::Vec3f> circles;
-        cv::HoughCircles(orenMask, circles, cv::HOUGH_GRADIENT, 1, orenMask.rows / 8, 100, 30, 10, 50);
+        /*std::vector<cv::Vec3f> circles;
+        cv::HoughCircles(orenMask, circles, cv::HOUGH_GRADIENT, 1, orenMask.rows / 8, 100, 30, a, b);
 
         // lingkaran hijau pada bola
         for (const auto& circle : circles) {
             cv::Point center(cvRound(circle[0]), cvRound(circle[1]));
             int radius = cvRound(circle[2]);
             cv::circle(frame, center, radius, cv::Scalar(0, 255, 0), 2);
-        }
+        }*/
 
         Mat combinedMask =greenMask | whiteMask | orenMask;
 
@@ -103,13 +113,18 @@ int main(int argc, char** argv)
         result.setTo(oren, result);
 
         bitwise_or(frame,result,result,whiteMask);
+        cv::Vec3b putih(255, 255, 255);
+        result.setTo(putih, whiteMask);
 
+        bitwise_or(frame,result,result,whiteMask);
+        cv::Vec3b hijau(0, 255, 0);
+        result.setTo(hijau, greenMask);
         
-        // Set the purple color in the regions corresponding to the combined mask
+        
         
 
         imshow("Original", frame);
-        imshow("filter", result);
+        //imshow("filter", result);
         
 
         char key = waitKey(30);
