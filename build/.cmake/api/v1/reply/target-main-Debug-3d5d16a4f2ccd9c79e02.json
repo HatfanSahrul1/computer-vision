@@ -207,7 +207,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "segment.cpp",
+			"path" : "line.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

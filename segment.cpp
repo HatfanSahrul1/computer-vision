@@ -124,7 +124,7 @@ int main(int argc, char** argv)
         
 
         imshow("Original", frame);
-        //imshow("filter", result);
+        imshow("filter", result);
         
 
         char key = waitKey(30);
