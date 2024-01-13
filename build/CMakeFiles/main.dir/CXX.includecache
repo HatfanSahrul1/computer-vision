@@ -9,7 +9,7 @@
 /home/hatfan/test2/balance.cpp
 opencv2/opencv.hpp
 -
-numeric
+vector
 -
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
