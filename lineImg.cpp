@@ -22,9 +22,11 @@ int main(int argc, char** argv)
         printf(" Program Arguments: [image_name -- default %s] \n", default_file);
         return -1;
     }
+    Mat hsl;
+    bilateralFilter(src,hsl,9,18,4);
     // Edge detection
-    Canny(src, dst, 90, 250, 3);
-GaussianBlur(src,src,Size(15,15),2,2);
+    Canny(hsl, dst, 50, 200, 3);
+    //GaussianBlur(src,src,Size(15,15),2,2);
     // Copy edges to the images that will display the results in BGR
     cvtColor(dst, cdst, COLOR_GRAY2BGR);
     cdstP = cdst.clone();
@@ -45,6 +47,7 @@ GaussianBlur(src,src,Size(15,15),2,2);
         line( cdst, pt1, pt2, Scalar(0,0,255), 3, LINE_AA);
     }
     // Probabilistic Line Transform
+    Mat ct;
     vector<Vec4i> linesP; // will hold the results of the detection
     HoughLinesP(dst, linesP, 1, CV_PI/180, 50, 50, 10 ); // runs the actual detection
     // Draw the lines
@@ -52,12 +55,14 @@ GaussianBlur(src,src,Size(15,15),2,2);
     {
         Vec4i l = linesP[i];
         line( cdstP, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0,0,255), 3, LINE_AA);
+        line( ct, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0,0,255), 3, LINE_AA);
     }
     // Show results
-    imshow("Source", src);
+    imshow("Source", hsl);
     imshow("s",dst);
     imshow("Detected Lines (in red) - Standard Hough Line Transform", cdst);
     imshow("Detected Lines (in red) - Probabilistic Line Transform", cdstP);
+    imshow("d",ct);
     // Wait and Exit
     waitKey();
     return 0;

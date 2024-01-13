@@ -11,8 +11,8 @@ int GL_H=40,GL_S=40,GL_V=40;
 int GH_H=80,GH_S=255,GH_V=255;
 
 //white
-int WL_H=159,WL_S=174,WL_V=141;
-int WH_H=225,WH_S=235,WH_V=230;
+int WL_H=0,WL_S=0,WL_V=200;
+int WH_H=225,WH_S=30,WH_V=255;
 
 //orange
 int OL_H=0,OL_S=100,OL_V=100;
@@ -25,7 +25,7 @@ int main(int argc, char** argv)
 {
     VideoCapture cap(0);
 
-    Mat frame;
+    Mat frm;
     const string videoStreamAddress = "https://10.252.133.72:8080/videofeed?something.mjpeg";
     cap.open(videoStreamAddress);
     /*if (!cap.isOpened()) {
@@ -71,12 +71,15 @@ int main(int argc, char** argv)
     //createTrackbar("b","setRad",&b,200,onTrackbar);
 
     while (true) {
-        cap >> frame;
+        cap >> frm;
 
-        if (frame.empty()) {
+        if (frm.empty()) {
             break;
         }
-        GaussianBlur(frame, frame, Size(5, 5), 2, 2);
+        //GaussianBlur(frame, frame, Size(5, 5), 2, 2);
+        
+        Mat frame;
+        bilateralFilter(frm,frame,15,95,45);
 
         Mat hsv;
         cvtColor(frame, hsv, COLOR_BGR2HSV);

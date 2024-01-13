@@ -14,7 +14,7 @@ include_directories(${PROJECT_SOURCE_DIR})
 
 
 
-add_executable(main balance.cpp)
+add_executable(main lineImg.cpp)
 target_link_libraries(main
 ${OpenCV_LIBS}
 )
