@@ -55,14 +55,16 @@ int main(int argc, char** argv)
     {
         Vec4i l = linesP[i];
         line( cdstP, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0,0,255), 3, LINE_AA);
-        line( ct, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0,0,255), 3, LINE_AA);
+        //line( ct, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0,0,255), 3, LINE_AA);
     }
     // Show results
     imshow("Source", hsl);
     imshow("s",dst);
     imshow("Detected Lines (in red) - Standard Hough Line Transform", cdst);
     imshow("Detected Lines (in red) - Probabilistic Line Transform", cdstP);
-    imshow("d",ct);
+    // namedWindow("d",WINDOW_NORMAL);
+    // imshow("d",ct);
+    //imshow("d",ct);
     // Wait and Exit
     waitKey();
     return 0;
