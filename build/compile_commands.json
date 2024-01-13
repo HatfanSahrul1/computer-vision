@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/hatfan/test2/build",
-  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -std=gnu++17 -o CMakeFiles/main.dir/l.cpp.o -c /home/hatfan/test2/l.cpp",
-  "file": "/home/hatfan/test2/l.cpp"
+  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -std=gnu++17 -o CMakeFiles/main.dir/balance.cpp.o -c /home/hatfan/test2/balance.cpp",
+  "file": "/home/hatfan/test2/balance.cpp"
 }
 ]

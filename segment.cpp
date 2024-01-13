@@ -11,8 +11,8 @@ int GL_H=40,GL_S=40,GL_V=40;
 int GH_H=80,GH_S=255,GH_V=255;
 
 //white
-int WL_H=0,WL_S=0,WL_V=200;
-int WH_H=255,WH_S=30,WH_V=255;
+int WL_H=159,WL_S=174,WL_V=141;
+int WH_H=225,WH_S=235,WH_V=230;
 
 //orange
 int OL_H=0,OL_S=100,OL_V=100;

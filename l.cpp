@@ -1,23 +1,54 @@
-#include <opencv2/opencv.hpp>
+#include "opencv2/opencv.hpp"
 
-using namespace std;
 using namespace cv;
+using namespace std;
 
-int main(){
+// Structure to store the coordinates of landmarks
+struct Landmark {
+    int x, y;
+};
 
-    cv::Mat gambar=imread("/home/hatfan/test2/lpng.jpeg");
+// Vector to store multiple landmarks
+vector<Landmark> landmarks;
 
-std::vector<cv::Point2f> inputs;
+// Callback function for mouse events
+void onMouse(int event, int x, int y, int flags, void* userdata) {
+    if (event == EVENT_LBUTTONDOWN) {
+        // Record the position of the clicked point
+        Landmark newLandmark = {x, y};
+        landmarks.push_back(newLandmark);
 
-inputs.push_back(cv::Point(74,114)); // manually defined landmark
-inputs.push_back(cv::Point(130,114)); // manually defined landmark 
-
-std::vector<cv::KeyPoint> kp;
-for( size_t i = 0; i < inputs.size(); i++ ) {
-kp.push_back(cv::KeyPoint(inputs[i], 1.f));
+        // Display the landmark on the image
+        circle(*(Mat*)userdata, Point(x, y), 5, Scalar(0, 255, 0), -1);
+        imshow("Image with Landmarks", *(Mat*)userdata);
+    }
 }
 
-cv::Mat descriptors;
-cv::SiftFeatureDetector detector;
-detector.compute(gambar, kp, descriptors); // descriptors are the sift descriptors on manually defined landmarks::imshow("s",gambar);
+int main() {
+    // Read an image from file
+    Mat image = imread("/home/hatfan/test2/lpng.jpeg");
+
+    if (image.empty()) {
+        cerr << "Error loading the image!" << endl;
+        return -1;
+    }
+
+    // Create a window
+    namedWindow("Image with Landmarks", WINDOW_AUTOSIZE);
+
+    // Set the callback function for mouse events
+    setMouseCallback("Image with Landmarks", onMouse, &image);
+
+    // Display the image
+    imshow("Image with Landmarks", image);
+
+    // Wait for the user to mark landmarks (press any key to exit)
+    waitKey(0);
+
+    // Print the coordinates of the marked landmarks
+    for (const auto& landmark : landmarks) {
+        cout << "Landmark: (" << landmark.x << ", " << landmark.y << ")" << endl;
+    }
+
+    return 0;
 }

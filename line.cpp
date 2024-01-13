@@ -25,9 +25,10 @@ int main(int argc, char** argv)
     // Edge detection
     while(true){
         cap>>src;
-        GaussianBlur(src, src, Size(5, 5), 2, 2);
+    
+        //GaussianBlur(src, src, Size(5, 5), 2, 2);
 
-        Canny(src, dst, 50, 200, 3);
+        Canny(src, dst, 90, 200, 3);
         // Copy edges to the images that will display the results in BGR
         cvtColor(dst, cdst, COLOR_GRAY2BGR);
         cdstP = cdst.clone();

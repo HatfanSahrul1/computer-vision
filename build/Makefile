@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-l.o: l.cpp.o
+balance.o: balance.cpp.o
 
-.PHONY : l.o
+.PHONY : balance.o
 
 # target to build an object file
-l.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/l.cpp.o
-.PHONY : l.cpp.o
+balance.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/balance.cpp.o
+.PHONY : balance.cpp.o
 
-l.i: l.cpp.i
+balance.i: balance.cpp.i
 
-.PHONY : l.i
+.PHONY : balance.i
 
 # target to preprocess a source file
-l.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/l.cpp.i
-.PHONY : l.cpp.i
+balance.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/balance.cpp.i
+.PHONY : balance.cpp.i
 
-l.s: l.cpp.s
+balance.s: balance.cpp.s
 
-.PHONY : l.s
+.PHONY : balance.s
 
 # target to generate assembly for a file
-l.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/l.cpp.s
-.PHONY : l.cpp.s
+balance.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/balance.cpp.s
+.PHONY : balance.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... l.o"
-	@echo "... l.i"
-	@echo "... l.s"
+	@echo "... balance.o"
+	@echo "... balance.i"
+	@echo "... balance.s"
 .PHONY : help
 
 

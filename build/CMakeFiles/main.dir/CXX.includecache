@@ -6,8 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/home/hatfan/test2/l.cpp
+/home/hatfan/test2/balance.cpp
 opencv2/opencv.hpp
+-
+numeric
 -
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
