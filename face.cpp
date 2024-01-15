@@ -3,7 +3,7 @@
 int main() {
     // Load the pre-trained Haar Cascade face detection model
     cv::CascadeClassifier faceCascade;
-    if (!faceCascade.load("haarcascade_frontalface_default.xml")) {
+    if (!faceCascade.load("/home/hatfan/Downloads/opencv/data/haarcascades/haarcascade_frontalface_default.xml")) {
         std::cerr << "Error loading face cascade. Exiting..." << std::endl;
         return -1;
     }
