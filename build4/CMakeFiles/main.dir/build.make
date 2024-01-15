@@ -57,27 +57,27 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/calib.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/calib.cpp.o: ../calib.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eros/test2/build4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/calib.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/calib.cpp.o -c /home/eros/test2/calib.cpp
+CMakeFiles/main.dir/face.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/face.cpp.o: ../face.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eros/test2/build4/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/face.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/face.cpp.o -c /home/eros/test2/face.cpp
 
-CMakeFiles/main.dir/calib.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/calib.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eros/test2/calib.cpp > CMakeFiles/main.dir/calib.cpp.i
+CMakeFiles/main.dir/face.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/face.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eros/test2/face.cpp > CMakeFiles/main.dir/face.cpp.i
 
-CMakeFiles/main.dir/calib.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/calib.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eros/test2/calib.cpp -o CMakeFiles/main.dir/calib.cpp.s
+CMakeFiles/main.dir/face.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/face.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eros/test2/face.cpp -o CMakeFiles/main.dir/face.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/calib.cpp.o"
+"CMakeFiles/main.dir/face.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/calib.cpp.o
+main: CMakeFiles/main.dir/face.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: /usr/local/lib/libopencv_stitching.so.3.4.14
 main: /usr/local/lib/libopencv_superres.so.3.4.14

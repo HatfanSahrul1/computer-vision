@@ -15,7 +15,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${PROJECT_SOURCE_DIR})
 
 
-add_executable(main calib.cpp)
+add_executable(main face.cpp)
 target_link_libraries(main
 ${OpenCV_LIBS}
 Threads::Threads  # Link with Threads library

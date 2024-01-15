@@ -6,10 +6,8 @@
 
 #IncludeRegexTransform: 
 
-/home/hatfan/test2/calib.cpp
+/home/hatfan/test2/face.cpp
 opencv2/opencv.hpp
--
-iostream
 -
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp

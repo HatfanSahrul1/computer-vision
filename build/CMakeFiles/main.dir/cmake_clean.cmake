@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/main.dir/calib.cpp.o"
+  "CMakeFiles/main.dir/face.cpp.o"
   "main"
   "main.pdb"
 )

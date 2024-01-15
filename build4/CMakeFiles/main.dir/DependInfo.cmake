@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/eros/test2/calib.cpp" "/home/eros/test2/build4/CMakeFiles/main.dir/calib.cpp.o"
+  "/home/eros/test2/face.cpp" "/home/eros/test2/build4/CMakeFiles/main.dir/face.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
