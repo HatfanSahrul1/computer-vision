@@ -1,58 +1,37 @@
 #include <iostream>
 #include <thread>
+#include <vector>
 
-using namespace std;
+int shared_variable = 0;
 
-int t;
-
-void asd(){
-    cout<<"void"<<endl;
-}
-
-void poin(){
-    // int f=*t;
-    // int d=&f.str();
-    // cout<<d<<endl;
-}
-
-class obj{
-    public :
-        void dr(int x){
-            for(int i=0;i<x;i++){
-                t++;
-                //cout<<"asdf"<<endl;
-                //cout<<t<<" ini di fungsi dr"<<endl;
-            }
-        }
-
-        static void tr(){
-            cout<<"static"<<endl;
-        } 
-};
-class thread_obj {
-public:
-    void operator()(int x)
-    {
-        for (int i = 0; i < x; i++){
-            t--;
-            //cout << "Thread using function object as callable\n";
-            //cout<<t<<" ini di calss thread_obj"<<endl;
-        }
-
+// Fungsi yang dijalankan oleh thread pertama
+void thread_function_1() {
+    for (int i = 0; i < 1000000; ++i) {
+        shared_variable++;
     }
-};
+}
 
-int main(){
-    obj b;
-    //t=24;
-    thread cb(&obj::dr,&b,1000000);
-    thread cb2(thread_obj(),1000000);
+// Fungsi yang dijalankan oleh thread kedua
+void thread_function_2() {
+    for (int i = 0; i < 1000000; ++i) {
+        shared_variable--;
+    }
+}
 
-    cb.join();
+int main() {
+    std::vector<std::thread> threads;
 
-    cb2.join();
+    // Membuat dua thread yang menjalankan fungsi thread_function_1 dan thread_function_2
+    threads.emplace_back(thread_function_1);
+    threads.emplace_back(thread_function_2);
 
-    //poin();
-    cout<<t<<endl;
+    // Menunggu sampai kedua thread selesai
+    for (auto& thread : threads) {
+        thread.join();
+    }
+
+    // Program mencoba mencetak nilai akhir dari shared_variable tanpa sinkronisasi
+    std::cout << "Nilai akhir dari shared_variable: " << shared_variable << std::endl;
+
     return 0;
 }
