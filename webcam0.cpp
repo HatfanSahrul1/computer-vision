@@ -8,7 +8,7 @@ int main(int, char**) {
     cv::VideoCapture vcap;
     cv::Mat frame;
 
-    const std::string videoStreamAddress = "https://192.168.1.16:8080/videofeed?something.mjpeg";
+    const std::string videoStreamAddress = "https://10.252.133.72:8080/videofeed?something.mjpeg";
 
     // Open the video stream and make sure it's opened
     if (!vcap.open(videoStreamAddress)) {

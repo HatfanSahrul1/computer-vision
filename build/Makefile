@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-lineImg.o: lineImg.cpp.o
+calib.o: calib.cpp.o
 
-.PHONY : lineImg.o
+.PHONY : calib.o
 
 # target to build an object file
-lineImg.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lineImg.cpp.o
-.PHONY : lineImg.cpp.o
+calib.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/calib.cpp.o
+.PHONY : calib.cpp.o
 
-lineImg.i: lineImg.cpp.i
+calib.i: calib.cpp.i
 
-.PHONY : lineImg.i
+.PHONY : calib.i
 
 # target to preprocess a source file
-lineImg.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lineImg.cpp.i
-.PHONY : lineImg.cpp.i
+calib.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/calib.cpp.i
+.PHONY : calib.cpp.i
 
-lineImg.s: lineImg.cpp.s
+calib.s: calib.cpp.s
 
-.PHONY : lineImg.s
+.PHONY : calib.s
 
 # target to generate assembly for a file
-lineImg.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lineImg.cpp.s
-.PHONY : lineImg.cpp.s
+calib.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/calib.cpp.s
+.PHONY : calib.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... lineImg.o"
-	@echo "... lineImg.i"
-	@echo "... lineImg.s"
+	@echo "... calib.o"
+	@echo "... calib.i"
+	@echo "... calib.s"
 .PHONY : help
 
 

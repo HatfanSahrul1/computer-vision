@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/hatfan/test2/build",
-  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -std=gnu++17 -o CMakeFiles/main.dir/lineImg.cpp.o -c /home/hatfan/test2/lineImg.cpp",
-  "file": "/home/hatfan/test2/lineImg.cpp"
+  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/main.dir/calib.cpp.o -c /home/hatfan/test2/calib.cpp",
+  "file": "/home/hatfan/test2/calib.cpp"
 }
 ]

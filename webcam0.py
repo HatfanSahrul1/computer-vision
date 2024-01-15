@@ -1,6 +1,6 @@
 import cv2
 
-video_stream_address = "https://192.168.1.5:8080/videofeed?something.mjpeg"
+video_stream_address = "https://10.252.133.72:8080/videofeed?something.mjpeg"
 
 # Open the video stream and make sure it's opened
 vcap = cv2.VideoCapture(video_stream_address)

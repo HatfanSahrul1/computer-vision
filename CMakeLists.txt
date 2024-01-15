@@ -6,16 +6,18 @@ find_package(OpenCV REQUIRED)
 
 set(CMAKE_CXX_STANDARD 17)
 
+# Add support for threads
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${PROJECT_SOURCE_DIR})
 
 
-
-
-add_executable(main lineImg.cpp)
+add_executable(main calib.cpp)
 target_link_libraries(main
 ${OpenCV_LIBS}
+Threads::Threads  # Link with Threads library
 )
 

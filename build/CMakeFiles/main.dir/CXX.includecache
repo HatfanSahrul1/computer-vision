@@ -6,15 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/hatfan/test2/lineImg.cpp
+/home/hatfan/test2/calib.cpp
 opencv2/opencv.hpp
 -
-opencv2/imgcodecs.hpp
-/home/hatfan/test2/opencv2/imgcodecs.hpp
-opencv2/highgui.hpp
-/home/hatfan/test2/opencv2/highgui.hpp
-opencv2/imgproc.hpp
-/home/hatfan/test2/opencv2/imgproc.hpp
+iostream
+-
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp
