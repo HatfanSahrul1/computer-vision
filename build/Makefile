@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-face.o: face.cpp.o
+maskingDoc.o: maskingDoc.cpp.o
 
-.PHONY : face.o
+.PHONY : maskingDoc.o
 
 # target to build an object file
-face.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/face.cpp.o
-.PHONY : face.cpp.o
+maskingDoc.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/maskingDoc.cpp.o
+.PHONY : maskingDoc.cpp.o
 
-face.i: face.cpp.i
+maskingDoc.i: maskingDoc.cpp.i
 
-.PHONY : face.i
+.PHONY : maskingDoc.i
 
 # target to preprocess a source file
-face.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/face.cpp.i
-.PHONY : face.cpp.i
+maskingDoc.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/maskingDoc.cpp.i
+.PHONY : maskingDoc.cpp.i
 
-face.s: face.cpp.s
+maskingDoc.s: maskingDoc.cpp.s
 
-.PHONY : face.s
+.PHONY : maskingDoc.s
 
 # target to generate assembly for a file
-face.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/face.cpp.s
-.PHONY : face.cpp.s
+maskingDoc.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/maskingDoc.cpp.s
+.PHONY : maskingDoc.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... face.o"
-	@echo "... face.i"
-	@echo "... face.s"
+	@echo "... maskingDoc.o"
+	@echo "... maskingDoc.i"
+	@echo "... maskingDoc.s"
 .PHONY : help
 
 

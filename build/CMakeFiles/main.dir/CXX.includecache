@@ -6,8 +6,16 @@
 
 #IncludeRegexTransform: 
 
-/home/hatfan/test2/face.cpp
+/home/hatfan/test2/maskingDoc.cpp
 opencv2/opencv.hpp
+-
+opencv2/imgcodecs.hpp
+-
+opencv2/highgui.hpp
+-
+opencv2/imgproc.hpp
+-
+iostream
 -
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp

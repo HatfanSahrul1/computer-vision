@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/main.dir/face.cpp.o"
+  "CMakeFiles/main.dir/maskingDoc.cpp.o"
   "main"
   "main.pdb"
 )
