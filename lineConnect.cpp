@@ -63,15 +63,15 @@ int main(){
     // Canny(lab,clab,15,30,7);
 
     vector<Mat> chl;
-    split(img,chl);
+    
 
-    Mat ch=chl[0];
-
+    //Mat ch=chl[0];
+    
     Mat yuv,cyuv;
-    cvtColor(ch,yuv,COLOR_BGR2YUV);
+    cvtColor(img,yuv,COLOR_BGR2YUV);
     //Canny(yuv,cyuv,15,30,7);
 
-
+    split(yuv,chl);
 
     // for(;;){
     //     inRange(hsv,Scalar(hsv_hl,hsv_sl,hsv_vl),Scalar(hsv_hh,hsv_sh,hsv_vh),chsv);
@@ -85,7 +85,10 @@ int main(){
     // //imshow("lab",clab);
     // imshow("yuv",cyuv);
     // }
-    imshow("y",yuv);
+    imshow("yuv",yuv);
+    imshow("y",chl[0]);
+    imshow("u",chl[1]);
+    imshow("v",chl[2]);
    
 
     waitKey(0);
