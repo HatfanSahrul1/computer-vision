@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-maskingDoc.o: maskingDoc.cpp.o
+lineConnect.o: lineConnect.cpp.o
 
-.PHONY : maskingDoc.o
+.PHONY : lineConnect.o
 
 # target to build an object file
-maskingDoc.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/maskingDoc.cpp.o
-.PHONY : maskingDoc.cpp.o
+lineConnect.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lineConnect.cpp.o
+.PHONY : lineConnect.cpp.o
 
-maskingDoc.i: maskingDoc.cpp.i
+lineConnect.i: lineConnect.cpp.i
 
-.PHONY : maskingDoc.i
+.PHONY : lineConnect.i
 
 # target to preprocess a source file
-maskingDoc.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/maskingDoc.cpp.i
-.PHONY : maskingDoc.cpp.i
+lineConnect.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lineConnect.cpp.i
+.PHONY : lineConnect.cpp.i
 
-maskingDoc.s: maskingDoc.cpp.s
+lineConnect.s: lineConnect.cpp.s
 
-.PHONY : maskingDoc.s
+.PHONY : lineConnect.s
 
 # target to generate assembly for a file
-maskingDoc.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/maskingDoc.cpp.s
-.PHONY : maskingDoc.cpp.s
+lineConnect.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lineConnect.cpp.s
+.PHONY : lineConnect.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... maskingDoc.o"
-	@echo "... maskingDoc.i"
-	@echo "... maskingDoc.s"
+	@echo "... lineConnect.o"
+	@echo "... lineConnect.i"
+	@echo "... lineConnect.s"
 .PHONY : help
 
 
