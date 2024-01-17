@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/hatfan/test2/build",
-  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/main.dir/segment.cpp.o -c /home/hatfan/test2/segment.cpp",
-  "file": "/home/hatfan/test2/segment.cpp"
+  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/main.dir/line.cpp.o -c /home/hatfan/test2/line.cpp",
+  "file": "/home/hatfan/test2/line.cpp"
 }
 ]

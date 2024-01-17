@@ -1,0 +1,1 @@
+/usr/bin/clang++  -g   CMakeFiles/ss.dir/ss.cpp.o  -o ss 

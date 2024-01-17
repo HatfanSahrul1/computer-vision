@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hatfan/test2/line.cpp" "/home/hatfan/test2/build/CMakeFiles/main.dir/line.cpp.o"
+  "/home/hatfan/test2/ss.cpp" "/home/hatfan/test2/build/CMakeFiles/ss.dir/ss.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/local/include/opencv4"
   "."
   "../"
-  "/usr/local/include/opencv4"
   )
 
 # Targets to which this target links.
