@@ -6,11 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/hatfan/test2/lineConnect.cpp
+/home/hatfan/test2/segment.cpp
 opencv2/opencv.hpp
--
-iostream
--
+/home/hatfan/test2/opencv2/opencv.hpp
+opencv2/core/core.hpp
+/home/hatfan/test2/opencv2/core/core.hpp
+opencv2/imgproc/imgproc.hpp
+/home/hatfan/test2/opencv2/imgproc/imgproc.hpp
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp
@@ -83,6 +85,10 @@ opencv2/core/check.hpp
 /usr/local/include/opencv4/opencv2/core/check.hpp
 opencv2/core/base.hpp
 -
+
+/usr/local/include/opencv4/opencv2/core/core.hpp
+opencv2/core.hpp
+/usr/local/include/opencv4/opencv2/core/opencv2/core.hpp
 
 /usr/local/include/opencv4/opencv2/core/cuda.hpp
 opencv2/core.hpp
@@ -839,6 +845,10 @@ opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/opencv2/core.hpp
 ./imgproc/segmentation.hpp
 /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
+
+/usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp
+opencv2/imgproc.hpp
+/usr/local/include/opencv4/opencv2/imgproc/opencv2/imgproc.hpp
 
 /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
 opencv2/imgproc.hpp

@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-lineConnect.o: lineConnect.cpp.o
+segment.o: segment.cpp.o
 
-.PHONY : lineConnect.o
+.PHONY : segment.o
 
 # target to build an object file
-lineConnect.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lineConnect.cpp.o
-.PHONY : lineConnect.cpp.o
+segment.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/segment.cpp.o
+.PHONY : segment.cpp.o
 
-lineConnect.i: lineConnect.cpp.i
+segment.i: segment.cpp.i
 
-.PHONY : lineConnect.i
+.PHONY : segment.i
 
 # target to preprocess a source file
-lineConnect.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lineConnect.cpp.i
-.PHONY : lineConnect.cpp.i
+segment.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/segment.cpp.i
+.PHONY : segment.cpp.i
 
-lineConnect.s: lineConnect.cpp.s
+segment.s: segment.cpp.s
 
-.PHONY : lineConnect.s
+.PHONY : segment.s
 
 # target to generate assembly for a file
-lineConnect.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/lineConnect.cpp.s
-.PHONY : lineConnect.cpp.s
+segment.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/segment.cpp.s
+.PHONY : segment.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... lineConnect.o"
-	@echo "... lineConnect.i"
-	@echo "... lineConnect.s"
+	@echo "... segment.o"
+	@echo "... segment.i"
+	@echo "... segment.s"
 .PHONY : help
 
 

@@ -38,17 +38,17 @@ int main(int argc, char** argv)
 
     //namedWindow("setRad",WINDOW_FREERATIO);
     
-    /*namedWindow("white", WINDOW_AUTOSIZE);
-    namedWindow("green", WINDOW_AUTOSIZE);
-    namedWindow("orange", WINDOW_AUTOSIZE);*/
+    namedWindow("white", WINDOW_AUTOSIZE);
+    //namedWindow("green", WINDOW_AUTOSIZE);
+    //namedWindow("orange", WINDOW_AUTOSIZE);*/
 
-    /*//green
-    createTrackbar("gLow_H","green",&GL_H,255,onTrackbar);
-    createTrackbar("gHigh_H","green",&GH_H,255,onTrackbar);
-    createTrackbar("gLow_S","green",&GL_S,255,onTrackbar);
-    createTrackbar("gHigh_S","green",&GH_S,255,onTrackbar);
-    createTrackbar("gLow_V","green",&GL_V,255,onTrackbar);
-    createTrackbar("gHigh_V","green",&GH_V,255,onTrackbar);
+    // //green
+    // createTrackbar("gLow_H","green",&GL_H,255,onTrackbar);
+    // createTrackbar("gHigh_H","green",&GH_H,255,onTrackbar);
+    // createTrackbar("gLow_S","green",&GL_S,255,onTrackbar);
+    // createTrackbar("gHigh_S","green",&GH_S,255,onTrackbar);
+    // createTrackbar("gLow_V","green",&GL_V,255,onTrackbar);
+    // createTrackbar("gHigh_V","green",&GH_V,255,onTrackbar);
 
     //white
     createTrackbar("wLow_H","white",&WL_H,255,onTrackbar);
@@ -58,14 +58,14 @@ int main(int argc, char** argv)
     createTrackbar("wLow_V","white",&WL_V,255,onTrackbar);
     createTrackbar("wHigh_V","white",&WH_V,255,onTrackbar);
 
-    //orange
-    createTrackbar("oLow_H","orange",&OL_H,255,onTrackbar);
-    createTrackbar("oHigh_H","orange",&OH_H,255,onTrackbar);
-    createTrackbar("oLow_S","orange",&OL_S,255,onTrackbar);
-    createTrackbar("oHigh_S","orange",&OH_S,255,onTrackbar);
-    createTrackbar("oLow_V","orange",&OL_V,255,onTrackbar);
-    createTrackbar("oHigh_V","orange",&OH_V,255,onTrackbar);
-    */
+    // //orange
+    // createTrackbar("oLow_H","orange",&OL_H,255,onTrackbar);
+    // createTrackbar("oHigh_H","orange",&OH_H,255,onTrackbar);
+    // createTrackbar("oLow_S","orange",&OL_S,255,onTrackbar);
+    // createTrackbar("oHigh_S","orange",&OH_S,255,onTrackbar);
+    // createTrackbar("oLow_V","orange",&OL_V,255,onTrackbar);
+    // createTrackbar("oHigh_V","orange",&OH_V,255,onTrackbar);
+    
 
     //createTrackbar("a","setRad",&a,100,onTrackbar);
     //createTrackbar("b","setRad",&b,200,onTrackbar);
@@ -119,15 +119,14 @@ int main(int argc, char** argv)
         cv::Vec3b putih(255, 255, 255);
         result.setTo(putih, whiteMask);
 
-        bitwise_or(frame,result,result,whiteMask);
+        bitwise_or(frame,result,result,greenMask);
         cv::Vec3b hijau(0, 255, 0);
         result.setTo(hijau, greenMask);
-        
-        
         
 
         imshow("Original", frame);
         imshow("filter", result);
+        imshow("wht",whiteMask);
         
 
         char key = waitKey(30);
