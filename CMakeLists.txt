@@ -16,7 +16,7 @@ include_directories(${PROJECT_SOURCE_DIR})
 
 
 
-add_executable(main line.cpp)
+add_executable(main yolov8.cpp inference.cpp)
 target_link_libraries(main
 ${OpenCV_LIBS}
 Threads::Threads  # Link with Threads library

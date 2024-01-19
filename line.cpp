@@ -41,7 +41,7 @@ int main(int argc, char** argv)
     GaussianBlur(src,bil,Size(5,5),9,18,BORDER_DEFAULT);
     Mat hsv, mask;//khusus putih
     cvtColor(bil,hsv,COLOR_BGR2HSV);
-    inRange(hsv,Scalar(20,0,200),Scalar(225,150,255),mask);
+    inRange(hsv,Scalar(20,0,200),Scalar(225,30,255),mask);
 
     // Check if image is loaded fine
     //src=Mat::ones(720,720,CV_8UC3);

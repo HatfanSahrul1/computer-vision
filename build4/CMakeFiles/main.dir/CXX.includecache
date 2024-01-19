@@ -6,7 +6,35 @@
 
 #IncludeRegexTransform: 
 
-/home/eros/test2/face.cpp
+/home/eros/test2/inference.cpp
+inference.h
+/home/eros/test2/inference.h
+
+/home/eros/test2/inference.h
+fstream
+-
+vector
+-
+string
+-
+random
+-
+opencv2/imgproc.hpp
+-
 opencv2/opencv.hpp
 -
+opencv2/dnn.hpp
+-
+
+/home/eros/test2/yolov8.cpp
+iostream
+-
+vector
+-
+getopt.h
+-
+opencv2/opencv.hpp
+-
+inference.h
+/home/eros/test2/inference.h
 
