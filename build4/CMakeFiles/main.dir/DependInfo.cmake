@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/eros/test2/inference.cpp" "/home/eros/test2/build4/CMakeFiles/main.dir/inference.cpp.o"
   "/home/eros/test2/yolov8.cpp" "/home/eros/test2/build4/CMakeFiles/main.dir/yolov8.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

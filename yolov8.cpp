@@ -2,16 +2,31 @@
 #include <vector>
 #include <getopt.h>
 
+#include <string.h>
+#include <time.h>
+
 #include <opencv2/opencv.hpp>
+#include<opencv2/highgui/highgui.hpp>
+#include<opencv2/imgproc/imgproc.hpp>
 
 #include "inference.h"
 
 using namespace std;
 using namespace cv;
 
+double fps;
+
 int main(int argc, char **argv)
 {
-    VideoCapture cap(0);
+    VideoCapture cap;
+    const string videoStreamAddress = "https://10.252.133.72:8080/videofeed?something.mjpeg";
+    cap.open(videoStreamAddress);
+
+    // if(!cap.isOpened()){
+    //     cap.open(2);
+    // }else{
+    //     cap.open(0);
+    // }
     std::string projectBasePath = "/home/hatfan/test2"; // Set your ultralytics base path
 
     bool runOnGPU = false;
@@ -32,15 +47,32 @@ int main(int argc, char **argv)
     imageNames.push_back(projectBasePath + "/ultralytics/assets/bus.jpg");
     imageNames.push_back(projectBasePath + "/ultralytics/assets/zidane.jpg");
 
+    int num_frames=1;
+    clock_t start,end;
+
+    double ms,fpsLive;
+
     while(true)
-    {
+    {   
+       start=clock(); 
+
+        fps=cap.get(CAP_PROP_FPS);
+        // string str=to_string(fps);
+        // cout<<fps<<endl;
+
+        
+
+        //InitFont(FONT_HERSHEY_SIMPLEX, 1.0, 1.0, 0.0, 1, 8);
+
         cv::Mat frame;//= cv::imread(cap);
         cap>>frame;
         // Inference starts here...
         std::vector<Detection> output = inf.runInference(frame);
 
+        // cv::putText(frame, str, Point(20, 20), FONT_HERSHEY_DUPLEX,1, Scalar(255, 0, 0),2, 0);
+
         int detections = output.size();
-        std::cout << "Number of detections:" << detections << std::endl;
+        std::cout << "Number of detections:" << detections;
 
         for (int i = 0; i < detections; ++i)
         {
@@ -61,12 +93,17 @@ int main(int argc, char **argv)
             cv::putText(frame, classString, cv::Point(box.x + 5, box.y - 10), cv::FONT_HERSHEY_DUPLEX, 1, cv::Scalar(0, 0, 0), 2, 0);
         }
         // Inference ends here...
-
+        end=clock();
         // This is only for preview purposes
         float scale = 0.8;
         cv::resize(frame, frame, cv::Size(frame.cols*scale, frame.rows*scale));
+
+        double sc=(double(end)-double(start))/double(CLOCKS_PER_SEC);
+        fpsLive=double(num_frames)/double(sc);
+        cout<<"\t"<<fpsLive<<endl;
+
         cv::imshow("Inference", frame);
 
-        cv::waitKey(30);
+        if(waitKey(30)==27)break;
     }
 }
