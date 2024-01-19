@@ -123,6 +123,33 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+inference.o: inference.cpp.o
+
+.PHONY : inference.o
+
+# target to build an object file
+inference.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.o
+.PHONY : inference.cpp.o
+
+inference.i: inference.cpp.i
+
+.PHONY : inference.i
+
+# target to preprocess a source file
+inference.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.i
+.PHONY : inference.cpp.i
+
+inference.s: inference.cpp.s
+
+.PHONY : inference.s
+
+# target to generate assembly for a file
+inference.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.s
+.PHONY : inference.cpp.s
+
 yolov8.o: yolov8.cpp.o
 
 .PHONY : yolov8.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
+	@echo "... inference.o"
+	@echo "... inference.i"
+	@echo "... inference.s"
 	@echo "... yolov8.o"
 	@echo "... yolov8.i"
 	@echo "... yolov8.s"

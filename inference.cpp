@@ -163,8 +163,8 @@ void Inference::loadOnnxNetwork()
     if (cudaEnabled)
     {
         std::cout << "\nRunning on CUDA" << std::endl;
-        net.setPreferableBackend(cv::dnn::DNN_BACKEND_CUDA);
-        net.setPreferableTarget(cv::dnn::DNN_TARGET_CUDA);
+       // net.setPreferableBackend(cv::dnn::DNN_BACKEND_CUDA);
+        // net.setPreferableTarget(cv::dnn::DNN_TARGET_CUDA);
     }
     else
     {

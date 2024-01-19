@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/main.dir/inference.cpp.o"
   "CMakeFiles/main.dir/yolov8.cpp.o"
   "main"
   "main.pdb"

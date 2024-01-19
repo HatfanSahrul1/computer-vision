@@ -6,13 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/eros/test2/yolov8.cpp
-iostream
+/home/eros/test2/inference.cpp
+inference.h
+/home/eros/test2/inference.h
+
+/home/eros/test2/inference.h
+fstream
 -
 vector
 -
-getopt.h
+string
+-
+random
+-
+opencv2/imgproc.hpp
 -
 opencv2/opencv.hpp
+-
+opencv2/dnn.hpp
 -
 
