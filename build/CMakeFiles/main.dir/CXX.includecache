@@ -6,15 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/home/hatfan/test2/belajarROI.cpp
+/home/hatfan/test2/inference.h
+fstream
+-
+vector
+-
+string
+-
+random
+-
+opencv2/imgproc.hpp
+-
 opencv2/opencv.hpp
 -
-opencv2/imgproc/imgproc.hpp
+opencv2/dnn.hpp
+-
+
+/home/hatfan/test2/yolov8.cpp
+iostream
+-
+vector
+-
+getopt.h
+-
+string.h
+-
+time.h
+-
+opencv2/opencv.hpp
 -
 opencv2/highgui/highgui.hpp
 -
-iostream
+opencv2/imgproc/imgproc.hpp
 -
+inference.h
+/home/hatfan/test2/inference.h
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp

@@ -18,7 +18,7 @@ double fps;
 
 int main(int argc, char **argv)
 {
-    VideoCapture cap(2);
+    VideoCapture cap(0);
     const string videoStreamAddress = "https://10.252.133.72:8080/videofeed?something.mjpeg";
     // cap.open(videoStreamAddress);
 
@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 
     // Vector<string> classes{}
     // Note that in this example the classes are hard-coded and 'classes.txt' is a place holder.
-    Inference inf(projectBasePath + "/best_1.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
+    Inference inf(projectBasePath + "/masked.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
 
     std::vector<std::string> imageNames;
     imageNames.push_back(projectBasePath + "/ultralytics/assets/bus.jpg");
@@ -67,7 +67,21 @@ int main(int argc, char **argv)
         cv::Mat frame;//= cv::imread(cap);
         cap>>frame;
         // Inference starts here...
-        std::vector<Detection> output = inf.runInference(frame);
+        
+
+        Mat hls, mask;
+        cvtColor(frame, hls, COLOR_BGR2HLS);
+        mask=Mat::zeros(640, 480, CV_8UC3);
+
+        Mat element = getStructuringElement(MORPH_RECT, Size(3,3));//, Point(morph_size, morph_size));
+        morphologyEx(hls, hls, MORPH_CLOSE, element, Point(-1, -1), 2);
+
+        inRange(hls, Scalar(0, 150, 0), Scalar(180, 255, 255), mask);
+
+        cv::cvtColor(mask, mask, cv::COLOR_GRAY2BGR);
+
+
+        std::vector<Detection> output = inf.runInference(mask);
 
         // cv::putText(frame, str, Point(20, 20), FONT_HERSHEY_DUPLEX,1, Scalar(255, 0, 0),2, 0);
 
@@ -103,6 +117,7 @@ int main(int argc, char **argv)
         cout<<"\t"<<fpsLive<<endl;
 
         cv::imshow("Inference", frame);
+        cv::imshow("mask", mask);
 
         if(waitKey(30)==27)break;
     }

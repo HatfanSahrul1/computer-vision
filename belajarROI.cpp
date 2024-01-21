@@ -9,6 +9,13 @@ using namespace cv;
 Point 
 
 int main(){
+    
+    waitKey(0);
+    return 0;
+}
+
+
+void roiPart1(){
     Mat img=imread("/home/hatfan/test2/test.jpg",1);
     Mat roi;
 
@@ -22,6 +29,4 @@ int main(){
 
     imshow("img2",roi);
 
-    waitKey(0);
-    return 0;
 }

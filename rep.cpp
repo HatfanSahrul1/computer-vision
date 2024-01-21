@@ -32,7 +32,7 @@ int main() {
     // p1.join();    
     namedWindow("morphSize",WINDOW_AUTOSIZE);
     createTrackbar("morphSize","morphSize",&morph_size,15,0);
-    int i =2084;
+    int i =0;
     while (i <3460) {
         isEditing=true;
         int a;
