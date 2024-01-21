@@ -123,59 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-inference.o: inference.cpp.o
+rep.o: rep.cpp.o
 
-.PHONY : inference.o
-
-# target to build an object file
-inference.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.o
-.PHONY : inference.cpp.o
-
-inference.i: inference.cpp.i
-
-.PHONY : inference.i
-
-# target to preprocess a source file
-inference.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.i
-.PHONY : inference.cpp.i
-
-inference.s: inference.cpp.s
-
-.PHONY : inference.s
-
-# target to generate assembly for a file
-inference.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.s
-.PHONY : inference.cpp.s
-
-yolov8.o: yolov8.cpp.o
-
-.PHONY : yolov8.o
+.PHONY : rep.o
 
 # target to build an object file
-yolov8.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8.cpp.o
-.PHONY : yolov8.cpp.o
+rep.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rep.cpp.o
+.PHONY : rep.cpp.o
 
-yolov8.i: yolov8.cpp.i
+rep.i: rep.cpp.i
 
-.PHONY : yolov8.i
+.PHONY : rep.i
 
 # target to preprocess a source file
-yolov8.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8.cpp.i
-.PHONY : yolov8.cpp.i
+rep.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rep.cpp.i
+.PHONY : rep.cpp.i
 
-yolov8.s: yolov8.cpp.s
+rep.s: rep.cpp.s
 
-.PHONY : yolov8.s
+.PHONY : rep.s
 
 # target to generate assembly for a file
-yolov8.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8.cpp.s
-.PHONY : yolov8.cpp.s
+rep.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rep.cpp.s
+.PHONY : rep.cpp.s
 
 # Help Target
 help:
@@ -186,12 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... inference.o"
-	@echo "... inference.i"
-	@echo "... inference.s"
-	@echo "... yolov8.o"
-	@echo "... yolov8.i"
-	@echo "... yolov8.s"
+	@echo "... rep.o"
+	@echo "... rep.i"
+	@echo "... rep.s"
 .PHONY : help
 
 
