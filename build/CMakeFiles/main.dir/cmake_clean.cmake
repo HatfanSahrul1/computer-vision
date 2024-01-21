@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/main.dir/rep.cpp.o"
+  "CMakeFiles/main.dir/belajarROI.cpp.o"
   "main"
   "main.pdb"
 )
