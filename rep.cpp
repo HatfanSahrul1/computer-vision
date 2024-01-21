@@ -31,7 +31,7 @@ int main() {
 
     // p1.join();    
     namedWindow("morphSize",WINDOW_AUTOSIZE);
-    createTrackbar("morphSize","morphSize",&morph_size,15,onTrackbar);
+    createTrackbar("morphSize","morphSize",&morph_size,15,0);
     int i =2084;
     while (i <3460) {
         isEditing=true;
@@ -73,20 +73,20 @@ int main() {
         // for (const Rect& box : boundingBoxes) {
         //     rectangle(mask, box, Scalar(0, 255, 0), 2);  // Green rectangle
         // }
-        // a = waitKey(30);
+        a = waitKey(30);
 
-        // if (a == 32) {
-        //     // Save the processed image
-        //     writeName << path << "/mask/frame_" << i << ".jpg";
-        //     cv::imwrite(writeName.str(), mask);
-        //      cv::destroyWindow(name.str());
-        //     i++;
-        //     //cout << "Image saved: " << writeName.str() << endl;
-        // } else if (a == 27) {
-        //     cout << "kurang pas: " << name.str() << endl;
-        //     cv::destroyWindow(name.str());
-        //     i++;
-        // }
+        if (a == 32) {
+            // Save the processed image
+            writeName << path << "/mask/frame_" << i << ".jpg";
+            cv::imwrite(writeName.str(), mask);
+             cv::destroyWindow(name.str());
+            i++;
+            //cout << "Image saved: " << writeName.str() << endl;
+        } else if (a == 27) {
+            cout << "kurang pas: " << name.str() << endl;
+            cv::destroyWindow(name.str());
+            i++;
+        }
 
         // Clear stringstream variables for the next iteration
         filename.str("");
