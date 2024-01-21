@@ -1,59 +1,103 @@
 #include <opencv2/opencv.hpp>
-#include <string.h>
+#include <opencv2/opencv_modules.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
+//#include <opencv2/core/xml.hpp>
 
+// #include <thread>
+
+#include <iostream>
 
 using namespace std;
 using namespace cv;
 
+bool isEditing=false;
+int morph_size = 1;
+
 void onTrackbar(int, void*){}
+
+void morphsizing(){
+    
+}
 
 int main() {
 
-    int h=0,l=200,s=0;
-    int H=180,L=255,S=255;
-    // namedWindow("s",WINDOW_AUTOSIZE);
+    // thread p1(morphsizing);
+    int h = 0, l = 200, s = 0;
+    int H = 180, L = 255, S = 255;
+    
+    string path = "/home/hatfan/dataset_garis1/dataset_garis/images/";///home/hatfan/dataset_garis1/dataset_garis/images/train
+    stringstream filename, writeName, name, ann;
 
-    // createTrackbar("h","s",&h,255,onTrackbar);
-    // createTrackbar("H","s",&H,255,onTrackbar);
-    // createTrackbar("l","s",&l,255,onTrackbar);
-    // createTrackbar("L","s",&L,255,onTrackbar);
-    // createTrackbar("s","s",&s,255,onTrackbar);
-    // createTrackbar("S","s",&S,255,onTrackbar);
-
-    string path="/home/hatfan/dataset";
-    stringstream filename,writeName,name;
-    for(int i=0;i<1460;i++){
+    // p1.join();    
+    namedWindow("morphSize",WINDOW_AUTOSIZE);
+    createTrackbar("morphSize","morphSize",&morph_size,15,onTrackbar);
+    int i =2084;
+    while (i <3460) {
+        isEditing=true;
         int a;
-        filename<<path<<"/garis/frame_"<<i<<".jpg";
-        name<<"frame_"<<i<<".jpg";
+        filename << path << "/train/frame_" << i << ".jpg";
+        ann<< path << "/train/frame_" << i << ".xml";
+        name << "frame_" << i << ".jpg";  
 
-        cv::Mat img_gray=cv::imread(filename.str(),1);
-        if(img_gray.empty()){
-            cout<<name.str()<<"not found"<<endl;
+        cv::Mat img_gray = cv::imread(filename.str(), 1);
+
+        if (img_gray.empty()) {
+            cout << name.str() << " not found" << endl;
+            filename.str("");
+            name.str("");
+            writeName.str("");
+            ann.str("");
+            i++;
             continue;
         }
-        Mat hls,mask;
-        cvtColor(img_gray,hls,COLOR_BGR2HLS);
 
-        int morph_size = 10; 
-    
-        Mat element = getStructuringElement(MORPH_RECT, Size(2 * morph_size + 1, 2 * morph_size + 1), Point(morph_size, morph_size));  
-        morphologyEx(hls, hls, MORPH_CLOSE, element, Point(-1, -1), 2); 
+        // FileStorage fs(ann.str(), FileStorage::READ);
+        // vector<Rect> boundingBoxes;
+        // fs[ann.str()] >> boundingBoxes;
+        // fs.release();
 
-        inRange(hls,Scalar(0,150,0),Scalar(180,255,255),mask);
-        cv::imshow(name.str(),mask);
+        
 
-        writeName<<path<<"/mask/frame_"<<i<<".jpg";
+        Mat hls, mask;
+        cvtColor(img_gray, hls, COLOR_BGR2HLS);
 
-        a = waitKey(0); 
-        if(a == 32){
-            cv::imwrite(writeName.str(),mask);
-            cv::destroyAllWindows();
-        }else if(a == 27){
-            cout<<name.str()<<endl;
-            cv::destroyAllWindows();
-        }
+
+            Mat element = getStructuringElement(MORPH_RECT, Size(2 * morph_size + 1, 2 * morph_size + 1));//, Point(morph_size, morph_size));
+            morphologyEx(hls, hls, MORPH_CLOSE, element, Point(-1, -1), 2);
+
+            inRange(hls, Scalar(0, 150, 0), Scalar(180, 255, 255), mask);
+            cv::imshow(name.str(), mask);
+ 
+
+        // for (const Rect& box : boundingBoxes) {
+        //     rectangle(mask, box, Scalar(0, 255, 0), 2);  // Green rectangle
+        // }
+        // a = waitKey(30);
+
+        // if (a == 32) {
+        //     // Save the processed image
+        //     writeName << path << "/mask/frame_" << i << ".jpg";
+        //     cv::imwrite(writeName.str(), mask);
+        //      cv::destroyWindow(name.str());
+        //     i++;
+        //     //cout << "Image saved: " << writeName.str() << endl;
+        // } else if (a == 27) {
+        //     cout << "kurang pas: " << name.str() << endl;
+        //     cv::destroyWindow(name.str());
+        //     i++;
+        // }
+
+        // Clear stringstream variables for the next iteration
+        filename.str("");
+        name.str("");
+        writeName.str("");
+        ann.str("");
+        i++;
+        
+       
     }
+    
 
- return 0;
+    return 0;
 }

@@ -9,7 +9,13 @@
 /home/hatfan/test2/rep.cpp
 opencv2/opencv.hpp
 -
-string.h
+opencv2/opencv_modules.hpp
+-
+opencv2/highgui.hpp
+-
+opencv2/imgproc.hpp
+-
+iostream
 -
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp

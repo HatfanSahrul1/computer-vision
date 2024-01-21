@@ -9,6 +9,7 @@
 using namespace std;
 using namespace cv;
 
+
 int main(int argc, char **argv)
 {
     std::string projectBasePath = "/home/hatfan/test2"; // Set your ultralytics base path
@@ -24,15 +25,18 @@ int main(int argc, char **argv)
     //
 
     // Note that in this example the classes are hard-coded and 'classes.txt' is a place holder.
-    Inference inf(projectBasePath + "/best.onnx", cv::Size(640, 640), "classes.txt", runOnGPU);
+    Inference inf(projectBasePath + "/complex0.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
 
     std::vector<std::string> imageNames;
-    imageNames.push_back(projectBasePath + "/try.jpg");
+    imageNames.push_back(projectBasePath + "/lpng2_1.jpeg");
     //imageNames.push_back(projectBasePath + "/ultralytics/assets/zidane.jpg");
+
+    
 
     for (int i = 0; i < imageNames.size(); ++i)
     {
         cv::Mat frame = cv::imread(imageNames[i]);
+        cv::rotate(frame, frame, cv::ROTATE_90_COUNTERCLOCKWISE);
         Mat hsv, mask;
         
         // Inference starts here...
