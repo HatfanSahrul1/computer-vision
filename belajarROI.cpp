@@ -19,14 +19,18 @@ void GetMean(cv::Mat &roi, uint8_t *mean);
 Rect g_rectangle;
 bool g_bDrawingBox = false;
 RNG g_rng(0);  // Generate random number
+Mat srcImage, hls;
 
 int main(int argc, char** argv) {
-	Mat srcImage(600, 800, CV_8UC3);
+	VideoCapture cap(0);
+	
 	Mat tempImage;
-	srcImage = imread(IMAGE_PATH);
+	// srcImage = imread(IMAGE_PATH);
 	namedWindow(WINDOW_NAME);
 	setMouseCallback(WINDOW_NAME, on_MouseHandle, (void*) &srcImage);
 	while (1) {
+		cap>>srcImage;
+		cvtColor(srcImage,srcImage,COLOR_BGR2HLS);
 		srcImage.copyTo(tempImage);
 		if (g_bDrawingBox)
 			DrawRectangle(tempImage, g_rectangle);
@@ -95,7 +99,7 @@ void roiPart1(Mat& frame,Rect box){
 
 	GetColorBoundaries(roi,lower,upper);
 	Mat mask;
-	inRange(img, lower, upper,mask);
+	inRange(srcImage, lower, upper,mask);
 	imshow("g",mask);
 }
 
