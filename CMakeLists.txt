@@ -16,7 +16,7 @@ include_directories(${PROJECT_SOURCE_DIR})
 
 
 
-add_executable(main rep.cpp)
+add_executable(main belajarROI.cpp)
 target_link_libraries(main
 ${OpenCV_LIBS}
 Threads::Threads  # Link with Threads library

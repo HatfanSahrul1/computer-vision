@@ -57,27 +57,27 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/rep.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/rep.cpp.o: ../rep.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/rep.cpp.o"
-	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/rep.cpp.o -c /home/hatfan/test2/rep.cpp
+CMakeFiles/main.dir/belajarROI.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/belajarROI.cpp.o: ../belajarROI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/belajarROI.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/belajarROI.cpp.o -c /home/hatfan/test2/belajarROI.cpp
 
-CMakeFiles/main.dir/rep.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/rep.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hatfan/test2/rep.cpp > CMakeFiles/main.dir/rep.cpp.i
+CMakeFiles/main.dir/belajarROI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/belajarROI.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hatfan/test2/belajarROI.cpp > CMakeFiles/main.dir/belajarROI.cpp.i
 
-CMakeFiles/main.dir/rep.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/rep.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hatfan/test2/rep.cpp -o CMakeFiles/main.dir/rep.cpp.s
+CMakeFiles/main.dir/belajarROI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/belajarROI.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hatfan/test2/belajarROI.cpp -o CMakeFiles/main.dir/belajarROI.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/rep.cpp.o"
+"CMakeFiles/main.dir/belajarROI.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/rep.cpp.o
+main: CMakeFiles/main.dir/belajarROI.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: /usr/local/lib/libopencv_gapi.so.4.8.0
 main: /usr/local/lib/libopencv_highgui.so.4.8.0

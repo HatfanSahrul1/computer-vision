@@ -31,7 +31,8 @@ int main() {
 
     // p1.join();    
     namedWindow("morphSize",WINDOW_AUTOSIZE);
-    // createTrackbar("morphSize","morphSize",&morph_size,15,0);
+    createTrackbar("morphSize","morphSize",nullptr,15,0);
+    setTrackbarPos("morphSize","morphSize",morph_size);
     int i=0;
     while (i <1460) {
         filename.str("");
@@ -65,7 +66,7 @@ int main() {
             morphologyEx(hls, hls, MORPH_CLOSE, element, Point(-1, -1), 2);
 
             inRange(hls, Scalar(0, 150, 0), Scalar(180, 255, 255), mask);
-            // cv::imshow(name.str(), mask);
+            cv::imshow(name.str(), mask);
             writeName << path << "/mask/frame_" << i << ".jpg";
             imwrite(writeName.str(), mask);
  
@@ -73,32 +74,32 @@ int main() {
         // for (const Rect& box : boundingBoxes) {
         //     rectangle(mask, box, Scalar(0, 255, 0), 2);  // Green rectangle
         // }
-        // a = waitKey(30);
+        a = waitKey(30);
 
-        // if (a == 32) {
-        //     // Save the processed image
-        //     writeName << path << "/mask/frame_" << i << ".jpg";
-        //     cv::imwrite(writeName.str(), mask);
-        //      cv::destroyWindow(name.str());
-        //     i++;
-        //     //cout << "Image saved: " << writeName.str() << endl;
-        // } else if (a == 27) {
-        //     cout << "kurang pas: " << name.str() << endl;
-        //     cv::destroyWindow(name.str());
-        //     i++;
-        // }else if (a == 97) {
-        //     cv::destroyWindow(name.str());
-        //     i--;
-        // }
+        if (a == 32) {
+            // Save the processed image
+            writeName << path << "/mask/frame_" << i << ".jpg";
+            cv::imwrite(writeName.str(), mask);
+             cv::destroyWindow(name.str());
+            i++;
+            //cout << "Image saved: " << writeName.str() << endl;
+        } else if (a == 27) {
+            cout << "kurang pas: " << name.str() << endl;
+            cv::destroyWindow(name.str());
+            i++;
+        }else if (a == 97) {
+            cv::destroyWindow(name.str());
+            i--;
+        }
 
         // Clear stringstream variables for the next iteration
         filename.str("");
         name.str("");
         writeName.str("");
         ann.str("");
-        i++;
+        // i++;
 
-        // cv::destroyWindow(name.str());
+        cv::destroyWindow(name.str());
         
        
     }

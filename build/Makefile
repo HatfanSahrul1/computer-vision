@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-rep.o: rep.cpp.o
+belajarROI.o: belajarROI.cpp.o
 
-.PHONY : rep.o
+.PHONY : belajarROI.o
 
 # target to build an object file
-rep.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rep.cpp.o
-.PHONY : rep.cpp.o
+belajarROI.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/belajarROI.cpp.o
+.PHONY : belajarROI.cpp.o
 
-rep.i: rep.cpp.i
+belajarROI.i: belajarROI.cpp.i
 
-.PHONY : rep.i
+.PHONY : belajarROI.i
 
 # target to preprocess a source file
-rep.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rep.cpp.i
-.PHONY : rep.cpp.i
+belajarROI.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/belajarROI.cpp.i
+.PHONY : belajarROI.cpp.i
 
-rep.s: rep.cpp.s
+belajarROI.s: belajarROI.cpp.s
 
-.PHONY : rep.s
+.PHONY : belajarROI.s
 
 # target to generate assembly for a file
-rep.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/rep.cpp.s
-.PHONY : rep.cpp.s
+belajarROI.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/belajarROI.cpp.s
+.PHONY : belajarROI.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... rep.o"
-	@echo "... rep.i"
-	@echo "... rep.s"
+	@echo "... belajarROI.o"
+	@echo "... belajarROI.i"
+	@echo "... belajarROI.s"
 .PHONY : help
 
 
