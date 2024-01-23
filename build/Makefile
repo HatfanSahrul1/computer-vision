@@ -123,32 +123,59 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-belajarROI.o: belajarROI.cpp.o
+inference.o: inference.cpp.o
 
-.PHONY : belajarROI.o
+.PHONY : inference.o
 
 # target to build an object file
-belajarROI.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/belajarROI.cpp.o
-.PHONY : belajarROI.cpp.o
+inference.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.o
+.PHONY : inference.cpp.o
 
-belajarROI.i: belajarROI.cpp.i
+inference.i: inference.cpp.i
 
-.PHONY : belajarROI.i
+.PHONY : inference.i
 
 # target to preprocess a source file
-belajarROI.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/belajarROI.cpp.i
-.PHONY : belajarROI.cpp.i
+inference.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.i
+.PHONY : inference.cpp.i
 
-belajarROI.s: belajarROI.cpp.s
+inference.s: inference.cpp.s
 
-.PHONY : belajarROI.s
+.PHONY : inference.s
 
 # target to generate assembly for a file
-belajarROI.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/belajarROI.cpp.s
-.PHONY : belajarROI.cpp.s
+inference.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.s
+.PHONY : inference.cpp.s
+
+yolov8.o: yolov8.cpp.o
+
+.PHONY : yolov8.o
+
+# target to build an object file
+yolov8.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8.cpp.o
+.PHONY : yolov8.cpp.o
+
+yolov8.i: yolov8.cpp.i
+
+.PHONY : yolov8.i
+
+# target to preprocess a source file
+yolov8.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8.cpp.i
+.PHONY : yolov8.cpp.i
+
+yolov8.s: yolov8.cpp.s
+
+.PHONY : yolov8.s
+
+# target to generate assembly for a file
+yolov8.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8.cpp.s
+.PHONY : yolov8.cpp.s
 
 # Help Target
 help:
@@ -159,9 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... belajarROI.o"
-	@echo "... belajarROI.i"
-	@echo "... belajarROI.s"
+	@echo "... inference.o"
+	@echo "... inference.i"
+	@echo "... inference.s"
+	@echo "... yolov8.o"
+	@echo "... yolov8.i"
+	@echo "... yolov8.s"
 .PHONY : help
 
 
