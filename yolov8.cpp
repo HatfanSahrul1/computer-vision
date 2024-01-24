@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 
     // Vector<string> classes{}
     // Note that in this example the classes are hard-coded and 'classes.txt' is a place holder.
-    Inference inf(projectBasePath + "/models/XT-normal.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
+    Inference inf(projectBasePath + "/models/XTL-mask.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
 
     std::vector<std::string> imageNames;
     imageNames.push_back(projectBasePath + "/ultralytics/assets/bus.jpg");
@@ -75,6 +75,9 @@ int main(int argc, char **argv)
 
         Mat element = getStructuringElement(MORPH_RECT, Size(3,3));//, Point(morph_size, morph_size));
         morphologyEx(hls, hls, MORPH_CLOSE, element, Point(-1, -1), 2);
+
+        erode(hls, hls, getStructuringElement(MORPH_ELLIPSE, Size(3,3)));
+        dilate(hls, hls, getStructuringElement(MORPH_ELLIPSE, Size(3,3)));
 
         inRange(hls, Scalar(0, 150, 0), Scalar(180, 255, 255), mask);
 

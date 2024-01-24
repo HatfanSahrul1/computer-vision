@@ -57,18 +57,18 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/yolov8Normal.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/yolov8Normal.cpp.o: ../yolov8Normal.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/yolov8Normal.cpp.o"
-	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/yolov8Normal.cpp.o -c /home/hatfan/test2/yolov8Normal.cpp
+CMakeFiles/main.dir/yolov8.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/yolov8.cpp.o: ../yolov8.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/yolov8.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/yolov8.cpp.o -c /home/hatfan/test2/yolov8.cpp
 
-CMakeFiles/main.dir/yolov8Normal.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/yolov8Normal.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hatfan/test2/yolov8Normal.cpp > CMakeFiles/main.dir/yolov8Normal.cpp.i
+CMakeFiles/main.dir/yolov8.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/yolov8.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hatfan/test2/yolov8.cpp > CMakeFiles/main.dir/yolov8.cpp.i
 
-CMakeFiles/main.dir/yolov8Normal.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/yolov8Normal.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hatfan/test2/yolov8Normal.cpp -o CMakeFiles/main.dir/yolov8Normal.cpp.s
+CMakeFiles/main.dir/yolov8.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/yolov8.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hatfan/test2/yolov8.cpp -o CMakeFiles/main.dir/yolov8.cpp.s
 
 CMakeFiles/main.dir/inference.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/inference.cpp.o: ../inference.cpp
@@ -85,13 +85,13 @@ CMakeFiles/main.dir/inference.cpp.s: cmake_force
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/yolov8Normal.cpp.o" \
+"CMakeFiles/main.dir/yolov8.cpp.o" \
 "CMakeFiles/main.dir/inference.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/yolov8Normal.cpp.o
+main: CMakeFiles/main.dir/yolov8.cpp.o
 main: CMakeFiles/main.dir/inference.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: /usr/local/lib/libopencv_gapi.so.4.8.0

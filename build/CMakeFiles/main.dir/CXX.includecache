@@ -22,7 +22,7 @@ opencv2/opencv.hpp
 opencv2/dnn.hpp
 -
 
-/home/hatfan/test2/yolov8Normal.cpp
+/home/hatfan/test2/yolov8.cpp
 iostream
 -
 vector

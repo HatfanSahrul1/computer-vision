@@ -150,32 +150,32 @@ inference.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.s
 .PHONY : inference.cpp.s
 
-yolov8Normal.o: yolov8Normal.cpp.o
+yolov8.o: yolov8.cpp.o
 
-.PHONY : yolov8Normal.o
+.PHONY : yolov8.o
 
 # target to build an object file
-yolov8Normal.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8Normal.cpp.o
-.PHONY : yolov8Normal.cpp.o
+yolov8.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8.cpp.o
+.PHONY : yolov8.cpp.o
 
-yolov8Normal.i: yolov8Normal.cpp.i
+yolov8.i: yolov8.cpp.i
 
-.PHONY : yolov8Normal.i
+.PHONY : yolov8.i
 
 # target to preprocess a source file
-yolov8Normal.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8Normal.cpp.i
-.PHONY : yolov8Normal.cpp.i
+yolov8.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8.cpp.i
+.PHONY : yolov8.cpp.i
 
-yolov8Normal.s: yolov8Normal.cpp.s
+yolov8.s: yolov8.cpp.s
 
-.PHONY : yolov8Normal.s
+.PHONY : yolov8.s
 
 # target to generate assembly for a file
-yolov8Normal.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8Normal.cpp.s
-.PHONY : yolov8Normal.cpp.s
+yolov8.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8.cpp.s
+.PHONY : yolov8.cpp.s
 
 # Help Target
 help:
@@ -189,9 +189,9 @@ help:
 	@echo "... inference.o"
 	@echo "... inference.i"
 	@echo "... inference.s"
-	@echo "... yolov8Normal.o"
-	@echo "... yolov8Normal.i"
-	@echo "... yolov8Normal.s"
+	@echo "... yolov8.o"
+	@echo "... yolov8.i"
+	@echo "... yolov8.s"
 .PHONY : help
 
 
