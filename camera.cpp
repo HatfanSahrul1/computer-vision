@@ -1,7 +1,7 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <string.h>
-#define WORK_PATH "/home/hatfan/captureCam/t/"
+#define WORK_PATH "/home/hatfan/fokusL/"
 
 using namespace std;
 using namespace cv;
@@ -55,7 +55,7 @@ int main() {
 
         if(waitKey(30)=='x'){
             normal<<WORK_PATH<<"normal/cap_Normal_"<<c<<".jpg";
-            Tedge<<WORK_PATH<<"canny/cap_edge_"<<c<<".jpg";
+            Tedge<<WORK_PATH<<"canny/cap_canny_"<<c<<".jpg";
             Tmask<<WORK_PATH<<"mask/cap_mask_"<<c<<".jpg";
             imwrite(normal.str(), frame);
             imwrite(Tedge.str(),edge);
