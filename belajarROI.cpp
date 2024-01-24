@@ -22,7 +22,7 @@ RNG g_rng(0);  // Generate random number
 Mat srcImage, hls;
 
 int main(int argc, char** argv) {
-	VideoCapture cap(0);
+	VideoCapture cap(2);
 	
 	Mat tempImage;
 	// srcImage = imread(IMAGE_PATH);
@@ -150,7 +150,7 @@ void GetColorBoundaries(cv::Mat &roi, Scalar &lower, Scalar &upper) {
 
     lower[i] = min;
     upper[i] = max;
-
+    cout<<lower[i]<<"\t"<<upper[i]<<endl;
   }
 }
 

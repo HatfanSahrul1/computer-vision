@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/hatfan/test2/inference.cpp
+inference.h
+/home/hatfan/test2/inference.h
+
 /home/hatfan/test2/inference.h
 fstream
 -
