@@ -9,7 +9,7 @@ using namespace cv;
 int c=1355;
 int main() {
     // Open the default camera (camera index 0)
-    cv::VideoCapture cap(3);
+    cv::VideoCapture cap(2);
 
     cin>>c;
 
