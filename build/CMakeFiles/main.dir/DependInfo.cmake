@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hatfan/test2/inference.cpp" "/home/hatfan/test2/build/CMakeFiles/main.dir/inference.cpp.o"
-  "/home/hatfan/test2/yolov8.cpp" "/home/hatfan/test2/build/CMakeFiles/main.dir/yolov8.cpp.o"
+  "/home/hatfan/test2/camera.cpp" "/home/hatfan/test2/build/CMakeFiles/main.dir/camera.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

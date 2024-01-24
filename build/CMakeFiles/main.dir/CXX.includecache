@@ -6,41 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/hatfan/test2/inference.h
-fstream
--
-vector
--
-string
--
-random
--
-opencv2/imgproc.hpp
--
+/home/hatfan/test2/camera.cpp
 opencv2/opencv.hpp
 -
-opencv2/dnn.hpp
--
-
-/home/hatfan/test2/yolov8.cpp
 iostream
--
-vector
--
-getopt.h
 -
 string.h
 -
-time.h
--
-opencv2/opencv.hpp
--
-opencv2/highgui/highgui.hpp
--
-opencv2/imgproc/imgproc.hpp
--
-inference.h
-/home/hatfan/test2/inference.h
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp
@@ -860,10 +832,6 @@ opencv2/imgcodecs.hpp
 opencv2/videoio.hpp
 /usr/local/include/opencv4/opencv2/opencv2/videoio.hpp
 
-/usr/local/include/opencv4/opencv2/highgui/highgui.hpp
-opencv2/highgui.hpp
-/usr/local/include/opencv4/opencv2/highgui/opencv2/highgui.hpp
-
 /usr/local/include/opencv4/opencv2/imgcodecs.hpp
 opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/opencv2/core.hpp
@@ -873,10 +841,6 @@ opencv2/core.hpp
 /usr/local/include/opencv4/opencv2/opencv2/core.hpp
 ./imgproc/segmentation.hpp
 /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
-
-/usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp
-opencv2/imgproc.hpp
-/usr/local/include/opencv4/opencv2/imgproc/opencv2/imgproc.hpp
 
 /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
 opencv2/imgproc.hpp

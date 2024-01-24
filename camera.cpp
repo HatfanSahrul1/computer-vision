@@ -6,10 +6,12 @@
 using namespace std;
 using namespace cv;
 
-int c=0;
+int c=1355;
 int main() {
     // Open the default camera (camera index 0)
-    cv::VideoCapture cap(2);
+    cv::VideoCapture cap(3);
+
+    cin>>c;
 
     // Check if the camera opened successfully
     if (!cap.isOpened()) {
@@ -26,7 +28,7 @@ int main() {
 
         // Capture a frame from the camera
         cap >> frame;
-        GaussianBlur(frame,frame,Size(9,9),2,2);
+        GaussianBlur(frame,frame,Size(5,5),2,2);
         Mat hls, mask, edge;
         cvtColor(frame, hls, COLOR_BGR2HLS);
         mask=Mat::zeros(640, 480, CV_8UC3);
@@ -60,6 +62,7 @@ int main() {
             imwrite(normal.str(), frame);
             imwrite(Tedge.str(),edge);
             imwrite(Tmask.str(),mask);
+            cout<<normal.str()<<endl;
             normal.str("");
             Tedge.str("");
             Tmask.str("");
