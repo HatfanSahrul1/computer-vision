@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/hatfan/test2/inference.cpp
-inference.h
-/home/hatfan/test2/inference.h
-
 /home/hatfan/test2/inference.h
 fstream
 -
@@ -26,7 +22,7 @@ opencv2/opencv.hpp
 opencv2/dnn.hpp
 -
 
-/home/hatfan/test2/yolov8.cpp
+/home/hatfan/test2/yolov8Normal.cpp
 iostream
 -
 vector

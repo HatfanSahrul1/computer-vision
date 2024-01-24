@@ -113,9 +113,9 @@ CMakeFiles/main.dir/inference.cpp.o
  /usr/local/include/opencv4/opencv2/video/background_segm.hpp
  /usr/local/include/opencv4/opencv2/video/tracking.hpp
  /usr/local/include/opencv4/opencv2/videoio.hpp
-CMakeFiles/main.dir/yolov8.cpp.o
+CMakeFiles/main.dir/yolov8Normal.cpp.o
  /home/hatfan/test2/inference.h
- /home/hatfan/test2/yolov8.cpp
+ /home/hatfan/test2/yolov8Normal.cpp
  /usr/local/include/opencv4/opencv2/calib3d.hpp
  /usr/local/include/opencv4/opencv2/core.hpp
  /usr/local/include/opencv4/opencv2/core/affine.hpp

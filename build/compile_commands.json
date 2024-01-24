@@ -1,8 +1,8 @@
 [
 {
   "directory": "/home/hatfan/test2/build",
-  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/main.dir/yolov8.cpp.o -c /home/hatfan/test2/yolov8.cpp",
-  "file": "/home/hatfan/test2/yolov8.cpp"
+  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/main.dir/yolov8Normal.cpp.o -c /home/hatfan/test2/yolov8Normal.cpp",
+  "file": "/home/hatfan/test2/yolov8Normal.cpp"
 },
 {
   "directory": "/home/hatfan/test2/build",
