@@ -57,27 +57,27 @@ include CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/main.dir/flags.make
 
-CMakeFiles/main.dir/camera.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/camera.cpp.o: ../camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/camera.cpp.o"
-	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/camera.cpp.o -c /home/hatfan/test2/camera.cpp
+CMakeFiles/main.dir/readOnnx.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/readOnnx.cpp.o: ../readOnnx.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/readOnnx.cpp.o"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/readOnnx.cpp.o -c /home/hatfan/test2/readOnnx.cpp
 
-CMakeFiles/main.dir/camera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/camera.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hatfan/test2/camera.cpp > CMakeFiles/main.dir/camera.cpp.i
+CMakeFiles/main.dir/readOnnx.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/readOnnx.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hatfan/test2/readOnnx.cpp > CMakeFiles/main.dir/readOnnx.cpp.i
 
-CMakeFiles/main.dir/camera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/camera.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hatfan/test2/camera.cpp -o CMakeFiles/main.dir/camera.cpp.s
+CMakeFiles/main.dir/readOnnx.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/readOnnx.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hatfan/test2/readOnnx.cpp -o CMakeFiles/main.dir/readOnnx.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/camera.cpp.o"
+"CMakeFiles/main.dir/readOnnx.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-main: CMakeFiles/main.dir/camera.cpp.o
+main: CMakeFiles/main.dir/readOnnx.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: /usr/local/lib/libopencv_gapi.so.4.8.0
 main: /usr/local/lib/libopencv_highgui.so.4.8.0

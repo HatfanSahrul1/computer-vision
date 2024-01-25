@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/hatfan/test2/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/L.dir/all
+all: CMakeFiles/main.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/L.dir/clean
+clean: CMakeFiles/main.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/L.dir
+# Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
-CMakeFiles/L.dir/all:
-	$(MAKE) -f CMakeFiles/L.dir/build.make CMakeFiles/L.dir/depend
-	$(MAKE) -f CMakeFiles/L.dir/build.make CMakeFiles/L.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=1,2,3 "Built target L"
-.PHONY : CMakeFiles/L.dir/all
+CMakeFiles/main.dir/all:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=1,2 "Built target main"
+.PHONY : CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/L.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hatfan/test2/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/L.dir/all
+CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hatfan/test2/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hatfan/test2/build/CMakeFiles 0
-.PHONY : CMakeFiles/L.dir/rule
+.PHONY : CMakeFiles/main.dir/rule
 
 # Convenience name for target.
-L : CMakeFiles/L.dir/rule
+main: CMakeFiles/main.dir/rule
 
-.PHONY : L
+.PHONY : main
 
 # clean rule for target.
-CMakeFiles/L.dir/clean:
-	$(MAKE) -f CMakeFiles/L.dir/build.make CMakeFiles/L.dir/clean
-.PHONY : CMakeFiles/L.dir/clean
+CMakeFiles/main.dir/clean:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
+.PHONY : CMakeFiles/main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

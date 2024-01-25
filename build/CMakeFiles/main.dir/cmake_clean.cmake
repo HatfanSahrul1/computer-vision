@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/main.dir/camera.cpp.o"
+  "CMakeFiles/main.dir/readOnnx.cpp.o"
   "main"
   "main.pdb"
 )

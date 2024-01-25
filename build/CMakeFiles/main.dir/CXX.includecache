@@ -6,12 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/home/hatfan/test2/camera.cpp
+/home/hatfan/test2/readOnnx.cpp
 opencv2/opencv.hpp
 -
-iostream
--
-string.h
+opencv2/dnn/dnn.hpp
 -
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
