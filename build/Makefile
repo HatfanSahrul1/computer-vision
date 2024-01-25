@@ -111,44 +111,71 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named L
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+L : cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 L
+.PHONY : L
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+L/fast:
+	$(MAKE) -f CMakeFiles/L.dir/build.make CMakeFiles/L.dir/build
+.PHONY : L/fast
 
-camera.o: camera.cpp.o
+inference.o: inference.cpp.o
 
-.PHONY : camera.o
+.PHONY : inference.o
 
 # target to build an object file
-camera.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/camera.cpp.o
-.PHONY : camera.cpp.o
+inference.cpp.o:
+	$(MAKE) -f CMakeFiles/L.dir/build.make CMakeFiles/L.dir/inference.cpp.o
+.PHONY : inference.cpp.o
 
-camera.i: camera.cpp.i
+inference.i: inference.cpp.i
 
-.PHONY : camera.i
+.PHONY : inference.i
 
 # target to preprocess a source file
-camera.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/camera.cpp.i
-.PHONY : camera.cpp.i
+inference.cpp.i:
+	$(MAKE) -f CMakeFiles/L.dir/build.make CMakeFiles/L.dir/inference.cpp.i
+.PHONY : inference.cpp.i
 
-camera.s: camera.cpp.s
+inference.s: inference.cpp.s
 
-.PHONY : camera.s
+.PHONY : inference.s
 
 # target to generate assembly for a file
-camera.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/camera.cpp.s
-.PHONY : camera.cpp.s
+inference.cpp.s:
+	$(MAKE) -f CMakeFiles/L.dir/build.make CMakeFiles/L.dir/inference.cpp.s
+.PHONY : inference.cpp.s
+
+yolov8Normal.o: yolov8Normal.cpp.o
+
+.PHONY : yolov8Normal.o
+
+# target to build an object file
+yolov8Normal.cpp.o:
+	$(MAKE) -f CMakeFiles/L.dir/build.make CMakeFiles/L.dir/yolov8Normal.cpp.o
+.PHONY : yolov8Normal.cpp.o
+
+yolov8Normal.i: yolov8Normal.cpp.i
+
+.PHONY : yolov8Normal.i
+
+# target to preprocess a source file
+yolov8Normal.cpp.i:
+	$(MAKE) -f CMakeFiles/L.dir/build.make CMakeFiles/L.dir/yolov8Normal.cpp.i
+.PHONY : yolov8Normal.cpp.i
+
+yolov8Normal.s: yolov8Normal.cpp.s
+
+.PHONY : yolov8Normal.s
+
+# target to generate assembly for a file
+yolov8Normal.cpp.s:
+	$(MAKE) -f CMakeFiles/L.dir/build.make CMakeFiles/L.dir/yolov8Normal.cpp.s
+.PHONY : yolov8Normal.cpp.s
 
 # Help Target
 help:
@@ -158,10 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... main"
-	@echo "... camera.o"
-	@echo "... camera.i"
-	@echo "... camera.s"
+	@echo "... L"
+	@echo "... inference.o"
+	@echo "... inference.i"
+	@echo "... inference.s"
+	@echo "... yolov8Normal.o"
+	@echo "... yolov8Normal.i"
+	@echo "... yolov8Normal.s"
 .PHONY : help
 
 
