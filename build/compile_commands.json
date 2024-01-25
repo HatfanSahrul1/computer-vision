@@ -1,7 +1,7 @@
 [
 {
   "directory": "/home/hatfan/test2/build",
-  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/main.dir/camera.cpp.o -c /home/hatfan/test2/camera.cpp",
-  "file": "/home/hatfan/test2/camera.cpp"
+  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/main.dir/doAnn.cpp.o -c /home/hatfan/test2/doAnn.cpp",
+  "file": "/home/hatfan/test2/doAnn.cpp"
 }
 ]

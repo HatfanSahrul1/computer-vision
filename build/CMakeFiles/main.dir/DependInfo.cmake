@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/hatfan/test2/camera.cpp" "/home/hatfan/test2/build/CMakeFiles/main.dir/camera.cpp.o"
+  "/home/hatfan/test2/doAnn.cpp" "/home/hatfan/test2/build/CMakeFiles/main.dir/doAnn.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
