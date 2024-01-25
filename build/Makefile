@@ -123,32 +123,32 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-doAnn.o: doAnn.cpp.o
+camera.o: camera.cpp.o
 
-.PHONY : doAnn.o
+.PHONY : camera.o
 
 # target to build an object file
-doAnn.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/doAnn.cpp.o
-.PHONY : doAnn.cpp.o
+camera.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/camera.cpp.o
+.PHONY : camera.cpp.o
 
-doAnn.i: doAnn.cpp.i
+camera.i: camera.cpp.i
 
-.PHONY : doAnn.i
+.PHONY : camera.i
 
 # target to preprocess a source file
-doAnn.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/doAnn.cpp.i
-.PHONY : doAnn.cpp.i
+camera.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/camera.cpp.i
+.PHONY : camera.cpp.i
 
-doAnn.s: doAnn.cpp.s
+camera.s: camera.cpp.s
 
-.PHONY : doAnn.s
+.PHONY : camera.s
 
 # target to generate assembly for a file
-doAnn.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/doAnn.cpp.s
-.PHONY : doAnn.cpp.s
+camera.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/camera.cpp.s
+.PHONY : camera.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... main"
-	@echo "... doAnn.o"
-	@echo "... doAnn.i"
-	@echo "... doAnn.s"
+	@echo "... camera.o"
+	@echo "... camera.i"
+	@echo "... camera.s"
 .PHONY : help
 
 

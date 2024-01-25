@@ -1,7 +1,7 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <string.h>
-#define WORK_PATH "/home/hatfan/fokusL/"
+#define WORK_PATH "/home/hatfan/goal/"
 
 using namespace std;
 using namespace cv;
@@ -28,7 +28,7 @@ int main() {
 
         // Capture a frame from the camera
         cap >> frame;
-        GaussianBlur(frame,frame,Size(5,5),2,2);
+        GaussianBlur(frame,frame,Size(5,5),0);
         Mat hls, mask, edge;
         cvtColor(frame, hls, COLOR_BGR2HLS);
         mask=Mat::zeros(640, 480, CV_8UC3);
