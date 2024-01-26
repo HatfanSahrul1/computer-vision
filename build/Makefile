@@ -111,44 +111,71 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named goal
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+goal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 goal
+.PHONY : goal
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+goal/fast:
+	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/build
+.PHONY : goal/fast
 
-readOnnx.o: readOnnx.cpp.o
+inference.o: inference.cpp.o
 
-.PHONY : readOnnx.o
+.PHONY : inference.o
 
 # target to build an object file
-readOnnx.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/readOnnx.cpp.o
-.PHONY : readOnnx.cpp.o
+inference.cpp.o:
+	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/inference.cpp.o
+.PHONY : inference.cpp.o
 
-readOnnx.i: readOnnx.cpp.i
+inference.i: inference.cpp.i
 
-.PHONY : readOnnx.i
+.PHONY : inference.i
 
 # target to preprocess a source file
-readOnnx.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/readOnnx.cpp.i
-.PHONY : readOnnx.cpp.i
+inference.cpp.i:
+	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/inference.cpp.i
+.PHONY : inference.cpp.i
 
-readOnnx.s: readOnnx.cpp.s
+inference.s: inference.cpp.s
 
-.PHONY : readOnnx.s
+.PHONY : inference.s
 
 # target to generate assembly for a file
-readOnnx.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/readOnnx.cpp.s
-.PHONY : readOnnx.cpp.s
+inference.cpp.s:
+	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/inference.cpp.s
+.PHONY : inference.cpp.s
+
+yolov8Normal.o: yolov8Normal.cpp.o
+
+.PHONY : yolov8Normal.o
+
+# target to build an object file
+yolov8Normal.cpp.o:
+	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/yolov8Normal.cpp.o
+.PHONY : yolov8Normal.cpp.o
+
+yolov8Normal.i: yolov8Normal.cpp.i
+
+.PHONY : yolov8Normal.i
+
+# target to preprocess a source file
+yolov8Normal.cpp.i:
+	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/yolov8Normal.cpp.i
+.PHONY : yolov8Normal.cpp.i
+
+yolov8Normal.s: yolov8Normal.cpp.s
+
+.PHONY : yolov8Normal.s
+
+# target to generate assembly for a file
+yolov8Normal.cpp.s:
+	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/yolov8Normal.cpp.s
+.PHONY : yolov8Normal.cpp.s
 
 # Help Target
 help:
@@ -158,10 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... main"
-	@echo "... readOnnx.o"
-	@echo "... readOnnx.i"
-	@echo "... readOnnx.s"
+	@echo "... goal"
+	@echo "... inference.o"
+	@echo "... inference.i"
+	@echo "... inference.s"
+	@echo "... yolov8Normal.o"
+	@echo "... yolov8Normal.i"
+	@echo "... yolov8Normal.s"
 .PHONY : help
 
 

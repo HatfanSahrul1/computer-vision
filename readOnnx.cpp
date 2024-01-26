@@ -5,10 +5,10 @@
 
 int main() {
     // Load the ONNX model
-    cv::dnn::Net net = cv::dnn::readNetFromONNX(PROJECT_PATH + "/models/L-normal.onnx");
+    cv::dnn::Net net = cv::dnn::readNetFromONNX("/home/hatfan/test2/models/L-normal.onnx");
 
     // Read input image
-    cv::Mat inputImage = cv::imread(PROJECT_PATH + "/L.jpeg");
+    cv::Mat inputImage = cv::imread("/home/hatfan/test2/L.jpeg");
 
     if (inputImage.empty()) {
         std::cerr << "Error: Could not read the input image." << std::endl;
@@ -17,6 +17,9 @@ int main() {
 
     // Preprocess the input image
     cv::Mat blob = cv::dnn::blobFromImage(inputImage, 1.0, cv::Size(300, 300), cv::Scalar(127.5, 127.5, 127.5), true, false);
+
+    // Print input blob shape
+    std::cout << "Input Blob Shape: " << blob.size << std::endl;
 
     // Set input
     net.setInput(blob);

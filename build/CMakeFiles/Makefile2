@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/hatfan/test2/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/main.dir/all
+all: CMakeFiles/goal.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/main.dir/clean
+clean: CMakeFiles/goal.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/main.dir
+# Target rules for target CMakeFiles/goal.dir
 
 # All Build rule for target.
-CMakeFiles/main.dir/all:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=1,2 "Built target main"
-.PHONY : CMakeFiles/main.dir/all
+CMakeFiles/goal.dir/all:
+	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/depend
+	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=1,2,3 "Built target goal"
+.PHONY : CMakeFiles/goal.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hatfan/test2/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
+CMakeFiles/goal.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hatfan/test2/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/goal.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hatfan/test2/build/CMakeFiles 0
-.PHONY : CMakeFiles/main.dir/rule
+.PHONY : CMakeFiles/goal.dir/rule
 
 # Convenience name for target.
-main: CMakeFiles/main.dir/rule
+goal: CMakeFiles/goal.dir/rule
 
-.PHONY : main
+.PHONY : goal
 
 # clean rule for target.
-CMakeFiles/main.dir/clean:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
-.PHONY : CMakeFiles/main.dir/clean
+CMakeFiles/goal.dir/clean:
+	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/clean
+.PHONY : CMakeFiles/goal.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

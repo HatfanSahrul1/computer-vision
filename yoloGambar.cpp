@@ -37,15 +37,15 @@ int main(int argc, char **argv)
     {
         cv::Mat frame = cv::imread(imageNames[i]);
         // cv::rotate(frame, frame, cv::ROTATE_90_COUNTERCLOCKWISE);
-        Mat hsv, mask;
-        cvtColor(frame, hsv, COLOR_BGR2HLS);
-         Mat element = getStructuringElement(MORPH_RECT, Size(3,3)); //, Point(morph_size, morph_size));
-            morphologyEx(hsv, hsv, MORPH_CLOSE, element, Point(-1, -1), 2);
-        inRange(hsv, Scalar(0,150,0),Scalar(180,255,255),mask);
-        cvtColor(mask, mask, COLOR_GRAY2BGR);
+        // Mat hsv, mask;
+        // cvtColor(frame, hsv, COLOR_BGR2HLS);
+        //  Mat element = getStructuringElement(MORPH_RECT, Size(3,3)); //, Point(morph_size, morph_size));
+        //     morphologyEx(hsv, hsv, MORPH_CLOSE, element, Point(-1, -1), 2);
+        // inRange(hsv, Scalar(0,150,0),Scalar(180,255,255),mask);
+        // cvtColor(mask, mask, COLOR_GRAY2BGR);
         
         // Inference starts here...
-        std::vector<Detection> output = inf.runInference(mask);
+        std::vector<Detection> output = inf.runInference(frame);
 
         int detections = output.size();
         std::cout << "Number of detections:" << detections << std::endl;
