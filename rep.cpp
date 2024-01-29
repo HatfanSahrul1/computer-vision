@@ -34,6 +34,7 @@ int main() {
     createTrackbar("morphSize","morphSize",nullptr,15,0);
     setTrackbarPos("morphSize","morphSize",morph_size);
     int i=0;
+    
     while (i <1460) {
         filename.str("");
         name.str("");

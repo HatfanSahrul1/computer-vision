@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named goal
+# Target rules for targets named main
 
 # Build rule for target.
-goal: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 goal
-.PHONY : goal
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-goal/fast:
-	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/build
-.PHONY : goal/fast
+main/fast:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
 inference.o: inference.cpp.o
 
@@ -129,7 +129,7 @@ inference.o: inference.cpp.o
 
 # target to build an object file
 inference.cpp.o:
-	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/inference.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.o
 .PHONY : inference.cpp.o
 
 inference.i: inference.cpp.i
@@ -138,7 +138,7 @@ inference.i: inference.cpp.i
 
 # target to preprocess a source file
 inference.cpp.i:
-	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/inference.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.i
 .PHONY : inference.cpp.i
 
 inference.s: inference.cpp.s
@@ -147,7 +147,7 @@ inference.s: inference.cpp.s
 
 # target to generate assembly for a file
 inference.cpp.s:
-	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/inference.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.s
 .PHONY : inference.cpp.s
 
 yolov8Normal.o: yolov8Normal.cpp.o
@@ -156,7 +156,7 @@ yolov8Normal.o: yolov8Normal.cpp.o
 
 # target to build an object file
 yolov8Normal.cpp.o:
-	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/yolov8Normal.cpp.o
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8Normal.cpp.o
 .PHONY : yolov8Normal.cpp.o
 
 yolov8Normal.i: yolov8Normal.cpp.i
@@ -165,7 +165,7 @@ yolov8Normal.i: yolov8Normal.cpp.i
 
 # target to preprocess a source file
 yolov8Normal.cpp.i:
-	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/yolov8Normal.cpp.i
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8Normal.cpp.i
 .PHONY : yolov8Normal.cpp.i
 
 yolov8Normal.s: yolov8Normal.cpp.s
@@ -174,7 +174,7 @@ yolov8Normal.s: yolov8Normal.cpp.s
 
 # target to generate assembly for a file
 yolov8Normal.cpp.s:
-	$(MAKE) -f CMakeFiles/goal.dir/build.make CMakeFiles/goal.dir/yolov8Normal.cpp.s
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8Normal.cpp.s
 .PHONY : yolov8Normal.cpp.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... goal"
+	@echo "... main"
 	@echo "... inference.o"
 	@echo "... inference.i"
 	@echo "... inference.s"

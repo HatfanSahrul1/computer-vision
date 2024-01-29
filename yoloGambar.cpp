@@ -25,10 +25,10 @@ int main(int argc, char **argv)
     //
 
     // Note that in this example the classes are hard-coded and 'classes.txt' is a place holder.
-    Inference inf(projectBasePath + "/masked.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
+    Inference inf(projectBasePath + "/models/Goal-normal.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
 
     std::vector<std::string> imageNames;
-    imageNames.push_back(projectBasePath + "/l2.jpg");
+    imageNames.push_back(projectBasePath + "/gawang.jpeg");
     //imageNames.push_back(projectBasePath + "/ultralytics/assets/zidane.jpg");
 
     
@@ -58,22 +58,22 @@ int main(int argc, char **argv)
             cv::Scalar color = detection.color;
 
             // Detection box
-            cv::rectangle(mask, box, color, 2);
+            cv::rectangle(frame, box, color, 2);
 
             // Detection box text
             std::string classString = detection.className + ' ' + std::to_string(detection.confidence).substr(0, 4);
             cv::Size textSize = cv::getTextSize(classString, cv::FONT_HERSHEY_DUPLEX, 1, 2, 0);
             cv::Rect textBox(box.x, box.y - 40, textSize.width + 10, textSize.height + 20);
 
-            cv::rectangle(mask, textBox, color, cv::FILLED);
-            cv::putText(mask, classString, cv::Point(box.x + 5, box.y - 10), cv::FONT_HERSHEY_DUPLEX, 1, cv::Scalar(0, 0, 0), 2, 0);
+            cv::rectangle(frame, textBox, color, cv::FILLED);
+            cv::putText(frame, classString, cv::Point(box.x + 5, box.y - 10), cv::FONT_HERSHEY_DUPLEX, 1, cv::Scalar(0, 0, 0), 2, 0);
         }
         // Inference ends here...
 
         // This is only for preview purposes
         float scale = 0.8;
-        cv::resize(mask, mask, cv::Size(mask.cols*scale, mask.rows*scale));
-        cv::imshow("Inference", mask);
+        cv::resize(frame, frame, cv::Size(frame.cols*scale, frame.rows*scale));
+        cv::imshow("Inference", frame);
 
         cv::waitKey(-1);
     }

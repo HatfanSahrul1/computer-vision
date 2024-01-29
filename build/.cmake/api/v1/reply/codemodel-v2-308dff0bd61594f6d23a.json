@@ -37,9 +37,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "goal::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-goal-Debug-e6b999238c9b82cdd2ab.json",
-					"name" : "goal",
+					"id" : "main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main-Debug-0dd098f488fe502a8f07.json",
+					"name" : "main",
 					"projectIndex" : 0
 				}
 			]

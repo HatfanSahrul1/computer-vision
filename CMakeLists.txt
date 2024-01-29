@@ -14,8 +14,17 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${PROJECT_SOURCE_DIR})
 
-add_executable(goal yolov8Normal.cpp inference.cpp)
-target_link_libraries(goal
+
+add_executable(main yolov8Normal.cpp inference.cpp)
+target_link_libraries(main
 ${OpenCV_LIBS}
 Threads::Threads  # Link with Threads library
 )
+
+
+#add_executable(goal yoloGambar.cpp inference.cpp)
+#target_link_libraries(goal
+#${OpenCV_LIBS}
+#Threads::Threads  # Link with Threads library
+#)
+
