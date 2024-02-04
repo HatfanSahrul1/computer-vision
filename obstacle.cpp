@@ -1,27 +1,76 @@
-#include "opencv2/opencv.hpp"
-#include "opencv2/highgui/highgui.hpp"
-#include "opencv2/imgproc/imgproc.hpp"
-
-#include "iostream"
-
-using namespace std;
+#include <opencv2/opencv.hpp>
 using namespace cv;
+#define WINDOW_NAME "Drawing Rectangle"
 
-int main(int argc, char** aegv){
+void on_MouseHandle(int event, int x, int y, int flags, void* param);
+void DrawRectangle(Mat& img, Rect box);
+void roi(Mat& img, Rect box);
+
+Rect g_rectangle;
+bool g_bDrawingBox = false;
+RNG g_rng(0);  // Generate random number
+
+int main(int argc, char** argv) {
     VideoCapture cap(0);
-    Mat frame(480, 640, CV_8UC3);
 
-    while(true){
-        cap >>frame;
-        resize(frame,frame, Size(640,480));
-        line(frame, Point(319,0), Point(319, 479), Scalar(0, 255, 0), 1, LINE_4);
-        line(frame, Point(0,239), Point(659, 239), Scalar(0, 255, 0), 1, LINE_4);
-
-        line(frame, Point(159,0), Point(159, 239), Scalar(180, 180, 0), 1, LINE_4);
-        line(frame, Point(479,0), Point(479, 239), Scalar(180, 180, 0), 1, LINE_4);
-        
-        
-        imshow("i", frame);
-        if(waitKey(30)==27) break;
-    }
+	Mat srcImage(600, 800, CV_8UC3);
+	Mat tempImage;
+	// srcImage = Scalar::all(0);
+	namedWindow(WINDOW_NAME);
+	setMouseCallback(WINDOW_NAME, on_MouseHandle, (void*) &srcImage);
+	while (1) {
+        cap>>srcImage;
+		srcImage.copyTo(tempImage);
+		if (g_bDrawingBox)
+			DrawRectangle(tempImage, g_rectangle);
+		imshow(WINDOW_NAME, tempImage);
+		if (waitKey(10) == 27)  // stop drawing rectanglge if the key is 'ESC'
+			break;
+	}
+	return 0;
 }
+
+void on_MouseHandle(int event, int x, int y, int flags, void* param) {
+	Mat& image = *(cv::Mat*) param;
+	switch (event) {
+	case EVENT_MOUSEMOVE: {    // When mouse moves, get the current rectangle's width and height
+		if (g_bDrawingBox) {
+			g_rectangle.width = x - g_rectangle.x;
+			g_rectangle.height = y - g_rectangle.y;
+		}
+	}
+		break;
+	case EVENT_LBUTTONDOWN: {  // when the left mouse button is pressed down,
+		                       //get the starting corner's coordinates of the rectangle
+		g_bDrawingBox = true;
+		g_rectangle = Rect(x, y, 0, 0);
+	}
+		break;
+	case EVENT_LBUTTONUP: {   //when the left mouse button is released,
+		                      //draw the rectangle
+		g_bDrawingBox = false;
+		if (g_rectangle.width < 0) {
+			g_rectangle.x += g_rectangle.width;
+			g_rectangle.width *= -1;
+		}
+
+		if (g_rectangle.height < 0) {
+			g_rectangle.y += g_rectangle.height;
+			g_rectangle.height *= -1;
+		}
+		DrawRectangle(image, g_rectangle);
+	}
+		break;
+	}
+}
+void DrawRectangle(Mat& img, Rect box)
+{
+	//Draw a rectangle with random color
+	rectangle(img, box.tl(), box.br(), Scalar(g_rng.uniform(0, 255),
+					g_rng.uniform(0,255),g_rng.uniform(0,255)));
+    // roi(img,box);
+}
+
+// void roi(Mat& img, Rect box){
+//     rectangle(img, box.tl(),box.br(), Scalar(255,255,255));
+// }
