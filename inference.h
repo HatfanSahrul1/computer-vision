@@ -36,7 +36,7 @@ private:
     std::string classesPath{};
     bool cudaEnabled{};
 
-    std::vector<std::string> classes{"L","T","X","B","G","WB"};
+    std::vector<std::string> classes{"L","T","X","G","B","WB"};
 
     cv::Size2f modelShape{};
 

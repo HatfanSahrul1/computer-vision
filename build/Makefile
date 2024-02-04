@@ -163,59 +163,32 @@ camera.cpp.s:
 	$(MAKE) -f CMakeFiles/capture.dir/build.make CMakeFiles/capture.dir/camera.cpp.s
 .PHONY : camera.cpp.s
 
-inference.o: inference.cpp.o
+obstacle.o: obstacle.cpp.o
 
-.PHONY : inference.o
-
-# target to build an object file
-inference.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.o
-.PHONY : inference.cpp.o
-
-inference.i: inference.cpp.i
-
-.PHONY : inference.i
-
-# target to preprocess a source file
-inference.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.i
-.PHONY : inference.cpp.i
-
-inference.s: inference.cpp.s
-
-.PHONY : inference.s
-
-# target to generate assembly for a file
-inference.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/inference.cpp.s
-.PHONY : inference.cpp.s
-
-yolov8Normal.o: yolov8Normal.cpp.o
-
-.PHONY : yolov8Normal.o
+.PHONY : obstacle.o
 
 # target to build an object file
-yolov8Normal.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8Normal.cpp.o
-.PHONY : yolov8Normal.cpp.o
+obstacle.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/obstacle.cpp.o
+.PHONY : obstacle.cpp.o
 
-yolov8Normal.i: yolov8Normal.cpp.i
+obstacle.i: obstacle.cpp.i
 
-.PHONY : yolov8Normal.i
+.PHONY : obstacle.i
 
 # target to preprocess a source file
-yolov8Normal.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8Normal.cpp.i
-.PHONY : yolov8Normal.cpp.i
+obstacle.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/obstacle.cpp.i
+.PHONY : obstacle.cpp.i
 
-yolov8Normal.s: yolov8Normal.cpp.s
+obstacle.s: obstacle.cpp.s
 
-.PHONY : yolov8Normal.s
+.PHONY : obstacle.s
 
 # target to generate assembly for a file
-yolov8Normal.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/yolov8Normal.cpp.s
-.PHONY : yolov8Normal.cpp.s
+obstacle.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/obstacle.cpp.s
+.PHONY : obstacle.cpp.s
 
 # Help Target
 help:
@@ -230,12 +203,9 @@ help:
 	@echo "... camera.o"
 	@echo "... camera.i"
 	@echo "... camera.s"
-	@echo "... inference.o"
-	@echo "... inference.i"
-	@echo "... inference.s"
-	@echo "... yolov8Normal.o"
-	@echo "... yolov8Normal.i"
-	@echo "... yolov8Normal.s"
+	@echo "... obstacle.o"
+	@echo "... obstacle.i"
+	@echo "... obstacle.s"
 .PHONY : help
 
 

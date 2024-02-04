@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/main.dir/inference.cpp.o"
-  "CMakeFiles/main.dir/yolov8Normal.cpp.o"
+  "CMakeFiles/main.dir/obstacle.cpp.o"
   "main"
   "main.pdb"
 )
