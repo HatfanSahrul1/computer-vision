@@ -19,7 +19,7 @@ double fps;
 int main(int argc, char **argv)
 {
     VideoCapture cap(2);
-    const string videoStreamAddress = "https://10.252.133.72:8080/videofeed?something.mjpeg";
+    const string videoStreamAddress = "https://10.252.111.172:8080/videofeed?something.mjpeg";
     // cap.open(videoStreamAddress);
 
     // if(!cap.isOpened()){

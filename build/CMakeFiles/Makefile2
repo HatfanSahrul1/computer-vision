@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/hatfan/test2/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/capture.dir/all
 all: CMakeFiles/main.dir/all
 
 .PHONY : all
@@ -63,9 +64,37 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/capture.dir/clean
 clean: CMakeFiles/main.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/capture.dir
+
+# All Build rule for target.
+CMakeFiles/capture.dir/all:
+	$(MAKE) -f CMakeFiles/capture.dir/build.make CMakeFiles/capture.dir/depend
+	$(MAKE) -f CMakeFiles/capture.dir/build.make CMakeFiles/capture.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=1,2 "Built target capture"
+.PHONY : CMakeFiles/capture.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/capture.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hatfan/test2/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/capture.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hatfan/test2/build/CMakeFiles 0
+.PHONY : CMakeFiles/capture.dir/rule
+
+# Convenience name for target.
+capture: CMakeFiles/capture.dir/rule
+
+.PHONY : capture
+
+# clean rule for target.
+CMakeFiles/capture.dir/clean:
+	$(MAKE) -f CMakeFiles/capture.dir/build.make CMakeFiles/capture.dir/clean
+.PHONY : CMakeFiles/capture.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/main.dir
@@ -74,7 +103,7 @@ clean: CMakeFiles/main.dir/clean
 CMakeFiles/main.dir/all:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=1,2,3 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hatfan/test2/build/CMakeFiles --progress-num=3,4,5 "Built target main"
 .PHONY : CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.

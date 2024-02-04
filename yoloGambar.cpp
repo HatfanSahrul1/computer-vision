@@ -25,7 +25,7 @@ int main(int argc, char **argv)
     //
 
     // Note that in this example the classes are hard-coded and 'classes.txt' is a place holder.
-    Inference inf(projectBasePath + "/models/Goal-normal.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
+    Inference inf(projectBasePath + "/models/X-normal.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
 
     std::vector<std::string> imageNames;
     imageNames.push_back(projectBasePath + "/gawang.jpeg");

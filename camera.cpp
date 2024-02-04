@@ -1,12 +1,12 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <string.h>
-#define WORK_PATH "/home/hatfan/goal/"
+#define WORK_PATH "/home/hatfan/wb/"
 
 using namespace std;
 using namespace cv;
 
-int c=1355;
+int c=0;
 int main() {
     // Open the default camera (camera index 0)
     cv::VideoCapture cap(2);
@@ -53,7 +53,7 @@ int main() {
         // Display the frame
         cv::imshow("Camera Feed", frame);
         imshow("mask", mask);
-        imshow("canny", edge);
+    //  imshow("canny", edge);
 
         if(waitKey(30)=='x'){
             normal<<WORK_PATH<<"normal/cap_Normal_"<<c<<".jpg";

@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named capture
+
+# Build rule for target.
+capture: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 capture
+.PHONY : capture
+
+# fast build rule for target.
+capture/fast:
+	$(MAKE) -f CMakeFiles/capture.dir/build.make CMakeFiles/capture.dir/build
+.PHONY : capture/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -122,6 +135,33 @@ main: cmake_check_build_system
 main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+camera.o: camera.cpp.o
+
+.PHONY : camera.o
+
+# target to build an object file
+camera.cpp.o:
+	$(MAKE) -f CMakeFiles/capture.dir/build.make CMakeFiles/capture.dir/camera.cpp.o
+.PHONY : camera.cpp.o
+
+camera.i: camera.cpp.i
+
+.PHONY : camera.i
+
+# target to preprocess a source file
+camera.cpp.i:
+	$(MAKE) -f CMakeFiles/capture.dir/build.make CMakeFiles/capture.dir/camera.cpp.i
+.PHONY : camera.cpp.i
+
+camera.s: camera.cpp.s
+
+.PHONY : camera.s
+
+# target to generate assembly for a file
+camera.cpp.s:
+	$(MAKE) -f CMakeFiles/capture.dir/build.make CMakeFiles/capture.dir/camera.cpp.s
+.PHONY : camera.cpp.s
 
 inference.o: inference.cpp.o
 
@@ -185,7 +225,11 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... capture"
 	@echo "... main"
+	@echo "... camera.o"
+	@echo "... camera.i"
+	@echo "... camera.s"
 	@echo "... inference.o"
 	@echo "... inference.i"
 	@echo "... inference.s"

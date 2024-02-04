@@ -21,6 +21,12 @@ ${OpenCV_LIBS}
 Threads::Threads  # Link with Threads library
 )
 
+add_executable(capture camera.cpp)
+target_link_libraries(capture
+${OpenCV_LIBS}
+Threads::Threads  # Link with Threads library
+)
+
 
 #add_executable(goal yoloGambar.cpp inference.cpp)
 #target_link_libraries(goal
