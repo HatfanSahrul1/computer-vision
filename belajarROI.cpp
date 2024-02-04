@@ -22,7 +22,7 @@ RNG g_rng(0);  // Generate random number
 Mat srcImage, hls;
 
 int main(int argc, char** argv) {
-	VideoCapture cap(2);
+	VideoCapture cap(0);
 	
 	Mat tempImage;
 	// srcImage = imread(IMAGE_PATH);
