@@ -1,4 +1,5 @@
 /home/hatfan/test2/build/CMakeFiles/rebuild_cache.dir
 /home/hatfan/test2/build/CMakeFiles/edit_cache.dir
+/home/hatfan/test2/build/CMakeFiles/goal1.dir
 /home/hatfan/test2/build/CMakeFiles/capture.dir
 /home/hatfan/test2/build/CMakeFiles/main.dir

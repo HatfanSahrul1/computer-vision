@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named goal1
+
+# Build rule for target.
+goal1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 goal1
+.PHONY : goal1
+
+# fast build rule for target.
+goal1/fast:
+	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/build
+.PHONY : goal1/fast
+
+#=============================================================================
 # Target rules for targets named capture
 
 # Build rule for target.
@@ -163,6 +176,33 @@ camera.cpp.s:
 	$(MAKE) -f CMakeFiles/capture.dir/build.make CMakeFiles/capture.dir/camera.cpp.s
 .PHONY : camera.cpp.s
 
+inference.o: inference.cpp.o
+
+.PHONY : inference.o
+
+# target to build an object file
+inference.cpp.o:
+	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/inference.cpp.o
+.PHONY : inference.cpp.o
+
+inference.i: inference.cpp.i
+
+.PHONY : inference.i
+
+# target to preprocess a source file
+inference.cpp.i:
+	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/inference.cpp.i
+.PHONY : inference.cpp.i
+
+inference.s: inference.cpp.s
+
+.PHONY : inference.s
+
+# target to generate assembly for a file
+inference.cpp.s:
+	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/inference.cpp.s
+.PHONY : inference.cpp.s
+
 obstacle.o: obstacle.cpp.o
 
 .PHONY : obstacle.o
@@ -190,6 +230,33 @@ obstacle.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/obstacle.cpp.s
 .PHONY : obstacle.cpp.s
 
+yolov8Normal.o: yolov8Normal.cpp.o
+
+.PHONY : yolov8Normal.o
+
+# target to build an object file
+yolov8Normal.cpp.o:
+	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/yolov8Normal.cpp.o
+.PHONY : yolov8Normal.cpp.o
+
+yolov8Normal.i: yolov8Normal.cpp.i
+
+.PHONY : yolov8Normal.i
+
+# target to preprocess a source file
+yolov8Normal.cpp.i:
+	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/yolov8Normal.cpp.i
+.PHONY : yolov8Normal.cpp.i
+
+yolov8Normal.s: yolov8Normal.cpp.s
+
+.PHONY : yolov8Normal.s
+
+# target to generate assembly for a file
+yolov8Normal.cpp.s:
+	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/yolov8Normal.cpp.s
+.PHONY : yolov8Normal.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -198,14 +265,21 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... goal1"
 	@echo "... capture"
 	@echo "... main"
 	@echo "... camera.o"
 	@echo "... camera.i"
 	@echo "... camera.s"
+	@echo "... inference.o"
+	@echo "... inference.i"
+	@echo "... inference.s"
 	@echo "... obstacle.o"
 	@echo "... obstacle.i"
 	@echo "... obstacle.s"
+	@echo "... yolov8Normal.o"
+	@echo "... yolov8Normal.i"
+	@echo "... yolov8Normal.s"
 .PHONY : help
 
 

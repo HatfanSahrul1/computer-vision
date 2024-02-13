@@ -78,8 +78,10 @@ CMakeFiles/main.dir/obstacle.cpp.o: /usr/local/include/opencv4/opencv2/flann/sam
 CMakeFiles/main.dir/obstacle.cpp.o: /usr/local/include/opencv4/opencv2/flann/saving.h
 CMakeFiles/main.dir/obstacle.cpp.o: /usr/local/include/opencv4/opencv2/flann/timer.h
 CMakeFiles/main.dir/obstacle.cpp.o: /usr/local/include/opencv4/opencv2/highgui.hpp
+CMakeFiles/main.dir/obstacle.cpp.o: /usr/local/include/opencv4/opencv2/highgui/highgui.hpp
 CMakeFiles/main.dir/obstacle.cpp.o: /usr/local/include/opencv4/opencv2/imgcodecs.hpp
 CMakeFiles/main.dir/obstacle.cpp.o: /usr/local/include/opencv4/opencv2/imgproc.hpp
+CMakeFiles/main.dir/obstacle.cpp.o: /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp
 CMakeFiles/main.dir/obstacle.cpp.o: /usr/local/include/opencv4/opencv2/imgproc/segmentation.hpp
 CMakeFiles/main.dir/obstacle.cpp.o: /usr/local/include/opencv4/opencv2/ml.hpp
 CMakeFiles/main.dir/obstacle.cpp.o: /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp

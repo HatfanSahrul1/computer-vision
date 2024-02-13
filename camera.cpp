@@ -1,7 +1,7 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <string.h>
-#define WORK_PATH "/home/hatfan/wb/"
+#define WORK_PATH "/home/hatfan/gawangbaru/"
 
 using namespace std;
 using namespace cv;
