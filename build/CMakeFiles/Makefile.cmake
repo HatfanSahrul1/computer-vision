@@ -60,5 +60,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/et.dir/DependInfo.cmake"
   "CMakeFiles/capture.dir/DependInfo.cmake"
-  "CMakeFiles/main.dir/DependInfo.cmake"
+  "CMakeFiles/ransac2.dir/DependInfo.cmake"
   )

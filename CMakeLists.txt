@@ -16,8 +16,8 @@ include_directories(${PROJECT_SOURCE_DIR})
 # include_directories("/usr/include/opencv4/opencv2")
 
 
-add_executable(main ransac.cpp)
-target_link_libraries(main
+add_executable(ransac2 ransac.cpp)
+target_link_libraries(ransac2
 ${OpenCV_LIBS}
 Threads::Threads  # Link with Threads library
 )

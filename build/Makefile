@@ -137,17 +137,17 @@ capture/fast:
 .PHONY : capture/fast
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named ransac2
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
+ransac2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ransac2
+.PHONY : ransac2
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+ransac2/fast:
+	$(MAKE) -f CMakeFiles/ransac2.dir/build.make CMakeFiles/ransac2.dir/build
+.PHONY : ransac2/fast
 
 camera.o: camera.cpp.o
 
@@ -209,7 +209,7 @@ ransac.o: ransac.cpp.o
 
 # target to build an object file
 ransac.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ransac.cpp.o
+	$(MAKE) -f CMakeFiles/ransac2.dir/build.make CMakeFiles/ransac2.dir/ransac.cpp.o
 .PHONY : ransac.cpp.o
 
 ransac.i: ransac.cpp.i
@@ -218,7 +218,7 @@ ransac.i: ransac.cpp.i
 
 # target to preprocess a source file
 ransac.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ransac.cpp.i
+	$(MAKE) -f CMakeFiles/ransac2.dir/build.make CMakeFiles/ransac2.dir/ransac.cpp.i
 .PHONY : ransac.cpp.i
 
 ransac.s: ransac.cpp.s
@@ -227,7 +227,7 @@ ransac.s: ransac.cpp.s
 
 # target to generate assembly for a file
 ransac.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ransac.cpp.s
+	$(MAKE) -f CMakeFiles/ransac2.dir/build.make CMakeFiles/ransac2.dir/ransac.cpp.s
 .PHONY : ransac.cpp.s
 
 yolov8Normal.o: yolov8Normal.cpp.o
@@ -267,7 +267,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... et"
 	@echo "... capture"
-	@echo "... main"
+	@echo "... ransac2"
 	@echo "... camera.o"
 	@echo "... camera.i"
 	@echo "... camera.s"
