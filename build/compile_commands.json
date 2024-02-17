@@ -1,12 +1,12 @@
 [
 {
   "directory": "/home/hatfan/test2/build",
-  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/goal1.dir/yolov8Normal.cpp.o -c /home/hatfan/test2/yolov8Normal.cpp",
+  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/et.dir/yolov8Normal.cpp.o -c /home/hatfan/test2/yolov8Normal.cpp",
   "file": "/home/hatfan/test2/yolov8Normal.cpp"
 },
 {
   "directory": "/home/hatfan/test2/build",
-  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/goal1.dir/inference.cpp.o -c /home/hatfan/test2/inference.cpp",
+  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/et.dir/inference.cpp.o -c /home/hatfan/test2/inference.cpp",
   "file": "/home/hatfan/test2/inference.cpp"
 },
 {
@@ -16,7 +16,7 @@
 },
 {
   "directory": "/home/hatfan/test2/build",
-  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/main.dir/obstacle.cpp.o -c /home/hatfan/test2/obstacle.cpp",
-  "file": "/home/hatfan/test2/obstacle.cpp"
+  "command": "/usr/bin/clang++   -I/home/hatfan/test2/build -I/home/hatfan/test2 -isystem /usr/local/include/opencv4  -g   -pthread -std=gnu++17 -o CMakeFiles/main.dir/ransac.cpp.o -c /home/hatfan/test2/ransac.cpp",
+  "file": "/home/hatfan/test2/ransac.cpp"
 }
 ]

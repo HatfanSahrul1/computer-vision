@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/main.dir/obstacle.cpp.o"
+  "CMakeFiles/main.dir/ransac.cpp.o"
   "main"
   "main.pdb"
 )

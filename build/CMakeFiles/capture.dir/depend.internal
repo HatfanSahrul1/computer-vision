@@ -3,6 +3,7 @@
 
 CMakeFiles/capture.dir/camera.cpp.o
  /home/hatfan/test2/camera.cpp
+ /usr/include/opencv4/opencv2/cvconfig.h
  /usr/local/include/opencv4/opencv2/calib3d.hpp
  /usr/local/include/opencv4/opencv2/core.hpp
  /usr/local/include/opencv4/opencv2/core/affine.hpp

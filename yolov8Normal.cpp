@@ -27,7 +27,7 @@ int main(int argc, char **argv)
     // }else{
     //     cap.open(0);
     // }
-    std::string projectBasePath = "/home/hatfan/test2"; // Set your ultralytics base path
+    std::string projectBasePath = "/home/ramailham/Downloads"; // Set your ultralytics base path
 
     bool runOnGPU = false;
 
@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 
     // Vector<string> classes{}
     // Note that in this example the classes are hard-coded and 'classes.txt' is a place holder.
-    Inference inf(projectBasePath + "/models/Goal-normal.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
+    Inference inf(projectBasePath + "/best.onnx", cv::Size(640, 640), "classes.txt", runOnGPU);
 
     std::vector<std::string> imageNames;
     imageNames.push_back(projectBasePath + "/ultralytics/assets/bus.jpg");

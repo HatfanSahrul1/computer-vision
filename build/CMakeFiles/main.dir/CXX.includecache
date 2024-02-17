@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/hatfan/test2/obstacle.cpp
+/home/hatfan/test2/ransac.cpp
 opencv2/opencv.hpp
-/home/hatfan/test2/opencv2/opencv.hpp
+-
 opencv2/highgui/highgui.hpp
-/home/hatfan/test2/opencv2/highgui/highgui.hpp
+-
 opencv2/imgproc/imgproc.hpp
-/home/hatfan/test2/opencv2/imgproc/imgproc.hpp
+-
 iostream
 -
 vector

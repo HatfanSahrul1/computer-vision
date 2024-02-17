@@ -13,13 +13,21 @@ find_package(Threads REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${PROJECT_SOURCE_DIR})
+# include_directories("/usr/include/opencv4/opencv2")
 
 
-add_executable(main obstacle.cpp)
+add_executable(main ransac.cpp)
 target_link_libraries(main
 ${OpenCV_LIBS}
 Threads::Threads  # Link with Threads library
 )
+
+# add_executable(aruco aruco.cpp)
+# target_link_libraries(aruco
+# ${OpenCV_LIBS}
+# # target_include_directories(aruco PRIVATE ${OpenCV_INCLUDE_DIRS})
+# Threads::Threads  # Link with Threads library
+# )
 
 add_executable(capture camera.cpp)
 target_link_libraries(capture
@@ -28,8 +36,8 @@ Threads::Threads  # Link with Threads library
 )
 
 
-add_executable(goal1 yolov8Normal.cpp inference.cpp)
-target_link_libraries(goal1
+add_executable(et yolov8Normal.cpp inference.cpp)
+target_link_libraries(et
 ${OpenCV_LIBS}
 Threads::Threads  # Link with Threads library
 )

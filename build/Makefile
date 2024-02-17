@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/hatfan/test2/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named goal1
+# Target rules for targets named et
 
 # Build rule for target.
-goal1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 goal1
-.PHONY : goal1
+et: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 et
+.PHONY : et
 
 # fast build rule for target.
-goal1/fast:
-	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/build
-.PHONY : goal1/fast
+et/fast:
+	$(MAKE) -f CMakeFiles/et.dir/build.make CMakeFiles/et.dir/build
+.PHONY : et/fast
 
 #=============================================================================
 # Target rules for targets named capture
@@ -182,7 +182,7 @@ inference.o: inference.cpp.o
 
 # target to build an object file
 inference.cpp.o:
-	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/inference.cpp.o
+	$(MAKE) -f CMakeFiles/et.dir/build.make CMakeFiles/et.dir/inference.cpp.o
 .PHONY : inference.cpp.o
 
 inference.i: inference.cpp.i
@@ -191,7 +191,7 @@ inference.i: inference.cpp.i
 
 # target to preprocess a source file
 inference.cpp.i:
-	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/inference.cpp.i
+	$(MAKE) -f CMakeFiles/et.dir/build.make CMakeFiles/et.dir/inference.cpp.i
 .PHONY : inference.cpp.i
 
 inference.s: inference.cpp.s
@@ -200,35 +200,35 @@ inference.s: inference.cpp.s
 
 # target to generate assembly for a file
 inference.cpp.s:
-	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/inference.cpp.s
+	$(MAKE) -f CMakeFiles/et.dir/build.make CMakeFiles/et.dir/inference.cpp.s
 .PHONY : inference.cpp.s
 
-obstacle.o: obstacle.cpp.o
+ransac.o: ransac.cpp.o
 
-.PHONY : obstacle.o
+.PHONY : ransac.o
 
 # target to build an object file
-obstacle.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/obstacle.cpp.o
-.PHONY : obstacle.cpp.o
+ransac.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ransac.cpp.o
+.PHONY : ransac.cpp.o
 
-obstacle.i: obstacle.cpp.i
+ransac.i: ransac.cpp.i
 
-.PHONY : obstacle.i
+.PHONY : ransac.i
 
 # target to preprocess a source file
-obstacle.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/obstacle.cpp.i
-.PHONY : obstacle.cpp.i
+ransac.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ransac.cpp.i
+.PHONY : ransac.cpp.i
 
-obstacle.s: obstacle.cpp.s
+ransac.s: ransac.cpp.s
 
-.PHONY : obstacle.s
+.PHONY : ransac.s
 
 # target to generate assembly for a file
-obstacle.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/obstacle.cpp.s
-.PHONY : obstacle.cpp.s
+ransac.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/ransac.cpp.s
+.PHONY : ransac.cpp.s
 
 yolov8Normal.o: yolov8Normal.cpp.o
 
@@ -236,7 +236,7 @@ yolov8Normal.o: yolov8Normal.cpp.o
 
 # target to build an object file
 yolov8Normal.cpp.o:
-	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/yolov8Normal.cpp.o
+	$(MAKE) -f CMakeFiles/et.dir/build.make CMakeFiles/et.dir/yolov8Normal.cpp.o
 .PHONY : yolov8Normal.cpp.o
 
 yolov8Normal.i: yolov8Normal.cpp.i
@@ -245,7 +245,7 @@ yolov8Normal.i: yolov8Normal.cpp.i
 
 # target to preprocess a source file
 yolov8Normal.cpp.i:
-	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/yolov8Normal.cpp.i
+	$(MAKE) -f CMakeFiles/et.dir/build.make CMakeFiles/et.dir/yolov8Normal.cpp.i
 .PHONY : yolov8Normal.cpp.i
 
 yolov8Normal.s: yolov8Normal.cpp.s
@@ -254,7 +254,7 @@ yolov8Normal.s: yolov8Normal.cpp.s
 
 # target to generate assembly for a file
 yolov8Normal.cpp.s:
-	$(MAKE) -f CMakeFiles/goal1.dir/build.make CMakeFiles/goal1.dir/yolov8Normal.cpp.s
+	$(MAKE) -f CMakeFiles/et.dir/build.make CMakeFiles/et.dir/yolov8Normal.cpp.s
 .PHONY : yolov8Normal.cpp.s
 
 # Help Target
@@ -263,9 +263,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... goal1"
+	@echo "... rebuild_cache"
+	@echo "... et"
 	@echo "... capture"
 	@echo "... main"
 	@echo "... camera.o"
@@ -274,9 +274,9 @@ help:
 	@echo "... inference.o"
 	@echo "... inference.i"
 	@echo "... inference.s"
-	@echo "... obstacle.o"
-	@echo "... obstacle.i"
-	@echo "... obstacle.s"
+	@echo "... ransac.o"
+	@echo "... ransac.i"
+	@echo "... ransac.s"
 	@echo "... yolov8Normal.o"
 	@echo "... yolov8Normal.i"
 	@echo "... yolov8Normal.s"
