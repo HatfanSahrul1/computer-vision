@@ -1,5 +1,0 @@
-/home/hatfan/test2/build/CMakeFiles/edit_cache.dir
-/home/hatfan/test2/build/CMakeFiles/rebuild_cache.dir
-/home/hatfan/test2/build/CMakeFiles/et.dir
-/home/hatfan/test2/build/CMakeFiles/capture.dir
-/home/hatfan/test2/build/CMakeFiles/ransac2.dir

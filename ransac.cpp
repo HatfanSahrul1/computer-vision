@@ -88,8 +88,8 @@ int main() {
                 cv::line(frame, pt1, pt2, cv::Scalar(0, 0, 255), 2, cv::LINE_AA);
             }
         }
-        // cv::Mat combine(frame.size(), frame.type(), cv::Scalar(0, 0, 0));
-        // cv::bitwise_and(resultImage,edges, combine);
+        cv::Mat combine(frame.size(), frame.type(), cv::Scalar(0, 0, 0));
+        cv::bitwise_and(resultImage,edges, combine);
 
         cv::imshow("Vertical Line Detection with RANSAC", frame);
         cv::imshow("f",mask);

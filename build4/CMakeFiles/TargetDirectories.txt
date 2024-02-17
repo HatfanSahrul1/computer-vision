@@ -1,3 +1,0 @@
-/home/eros/test2/build4/CMakeFiles/rebuild_cache.dir
-/home/eros/test2/build4/CMakeFiles/edit_cache.dir
-/home/eros/test2/build4/CMakeFiles/main.dir
