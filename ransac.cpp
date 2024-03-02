@@ -3,7 +3,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <iostream>
 #include <vector>
-
+using namespace std;
 int main() {
     cv::VideoCapture cap(2);
     if (!cap.isOpened()) {
@@ -38,7 +38,7 @@ int main() {
         cv::erode(mask, mask, element);
         cv::dilate(mask, mask, element);
 
-        cv::Mat edges;
+        cv::Mat edges=cv::Mat::zeros(frame.size(),frame.type());
         cv::Canny(mask, edges, 50, 150);
 
         std::vector<cv::Vec2f> lines;
@@ -73,8 +73,8 @@ int main() {
                 std::cout << "Iteration " << iteration << ": " << inliers << " inliers" << std::endl;
             }
         }
-
-        cv::Mat resultImage(frame.size(), frame.type(), cv::Scalar(0, 0, 0));
+        int p=5;
+        cv::Mat resultImage=cv::Mat::zeros(frame.size(),frame.type());//(frame.size(), frame.type(), cv::Scalar(0,0,0));
         for (const auto& line : lines) {
             float rho = line[0];
             float theta = line[1];
@@ -86,13 +86,19 @@ int main() {
                 cv::Point pt1(cvRound(x0 + 1000 * (-b)), cvRound(y0 + 1000 * (a)));
                 cv::Point pt2(cvRound(x0 - 1000 * (-b)), cvRound(y0 - 1000 * (a)));
                 cv::line(frame, pt1, pt2, cv::Scalar(0, 0, 255), 2, cv::LINE_AA);
+                // cv::rectangle()
             }
         }
-        cv::Mat combine(frame.size(), frame.type(), cv::Scalar(0, 0, 0));
-        cv::bitwise_and(resultImage,edges, combine);
-
+        // cv::cvtColor(resultImage, resultImage, cv::COLOR_GRAY2BGR);
+        cv::cvtColor(edges, edges, cv::COLOR_GRAY2BGR);
+        cv::Mat combine=cv::Mat::zeros(frame.size(),frame.type());//(frame.size(), frame.type(), cv::Scalar(0, 0, 0));
+        // if(!mask.empty()&&!resultImage.empty())
+            cv::bitwise_and(resultImage, edges, combine);
+            cv::bitwise_or(frame, combine, frame);
         cv::imshow("Vertical Line Detection with RANSAC", frame);
-        cv::imshow("f",mask);
+        // cv::imshow("l", resultImage);
+        cv::imshow("f",edges);
+        // cv::imshow("s",mask);
 
         char key = cv::waitKey(30);
         if (key == 27)  // ESC key to exit

@@ -16,29 +16,30 @@ include_directories(${PROJECT_SOURCE_DIR})
 # include_directories("/usr/include/opencv4/opencv2")
 
 
-add_executable(ransac2 ransac.cpp)
-target_link_libraries(ransac2
+# add_executable(main ransac.cpp)
+# target_link_libraries(main
+# ${OpenCV_LIBS}
+# Threads::Threads  # Link with Threads library
+# )
+# target_include_directories(main PRIVATE ${OpenCV_INCLUDE_DIRS})
+
+add_executable(aruco aruco.cpp)
+target_link_libraries(aruco
 ${OpenCV_LIBS}
+# target_include_directories(aruco PRIVATE ${OpenCV_INCLUDE_DIRS})
 Threads::Threads  # Link with Threads library
 )
 
-# add_executable(aruco aruco.cpp)
-# target_link_libraries(aruco
+# add_executable(capture camera.cpp)
+# target_link_libraries(capture
 # ${OpenCV_LIBS}
-# # target_include_directories(aruco PRIVATE ${OpenCV_INCLUDE_DIRS})
 # Threads::Threads  # Link with Threads library
 # )
 
-add_executable(capture camera.cpp)
-target_link_libraries(capture
-${OpenCV_LIBS}
-Threads::Threads  # Link with Threads library
-)
 
-
-add_executable(et yolov8Normal.cpp inference.cpp)
-target_link_libraries(et
-${OpenCV_LIBS}
-Threads::Threads  # Link with Threads library
-)
+# add_executable(40detect yolov8Normal.cpp inference.cpp)
+# target_link_libraries(40detect
+# ${OpenCV_LIBS}
+# Threads::Threads  # Link with Threads library
+# )
 

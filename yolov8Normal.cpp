@@ -16,18 +16,47 @@ using namespace cv;
 
 double fps;
 
+struct TimeCounter {
+  public:
+    TimeCounter() : reset(true) {}
+  
+    float Count() {
+      if (reset) {
+        previous_time   = std::chrono::system_clock::now();
+        reset = false;
+      }
+
+      current_time = std::chrono::system_clock::now();
+      elapsed_time = current_time - previous_time;
+
+      return elapsed_time.count();
+    }
+
+    void Reset() { 
+      reset = true; 
+    }
+
+  private:
+    std::chrono::time_point<std::chrono::system_clock> current_time, previous_time;
+    std::chrono::duration<float> elapsed_time;
+
+    bool reset;
+};
+
 int main(int argc, char **argv)
 {
-    VideoCapture cap(2);
+    TimeCounter time;
+    VideoCapture cap(0);
     const string videoStreamAddress = "https://10.252.133.72:8080/videofeed?something.mjpeg";
     // cap.open(videoStreamAddress);
 
-    // if(!cap.isOpened()){
-    //     cap.open(2);
-    // }else{
+    if(!cap.isOpened()){
+        cap.open(0);
+    }
+    // else{
     //     cap.open(0);
     // }
-    std::string projectBasePath = "/home/ramailham/Downloads"; // Set your ultralytics base path
+    std::string projectBasePath = "/home/hatfan"; // Set your ultralytics base path
 
     bool runOnGPU = false;
 
@@ -39,28 +68,44 @@ int main(int argc, char **argv)
     // To run Inference with yolov8/yolov5 (ONNX)
     //
 
+    // Set white balance (if supported)
+    int whiteBalanceValue = 4000;  // Adjust this value accordingly
+    namedWindow("WBT",WINDOW_GUI_NORMAL);
+    createTrackbar("wb","WBT",&whiteBalanceValue,6200);
+    cap.set(cv::CAP_PROP_AUTO_WB, 0);  // Turn off auto white balance
+
+    // Get white balance (if supported)
+    double currentWhiteBalance = cap.get(cv::CAP_PROP_WB_TEMPERATURE);
+    std::cout << "Current White Balance: " << currentWhiteBalance << std::endl;
+
     // Vector<string> classes{}
     // Note that in this example the classes are hard-coded and 'classes.txt' is a place holder.
-    Inference inf(projectBasePath + "/best.onnx", cv::Size(640, 640), "classes.txt", runOnGPU);
+    Inference inf(projectBasePath + "/test2/models/40.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
 
     std::vector<std::string> imageNames;
     imageNames.push_back(projectBasePath + "/ultralytics/assets/bus.jpg");
     imageNames.push_back(projectBasePath + "/ultralytics/assets/zidane.jpg");
 
-    int num_frames=1;
+    int num_frames=0;
     clock_t start,end;
 
     double ms,fpsLive;
 
     while(true)
     {   
+        if(time.Count() >= 1){
+            fprintf(stderr, "FPS >> %d\n\n", num_frames);
+            num_frames = 0;
+            time.Reset();
+        }
+        num_frames++;
        start=clock(); 
 
         fps=cap.get(CAP_PROP_FPS);
         // string str=to_string(fps);
         // cout<<fps<<endl;
 
-        
+        cap.set(cv::CAP_PROP_WB_TEMPERATURE, whiteBalanceValue);
 
         //InitFont(FONT_HERSHEY_SIMPLEX, 1.0, 1.0, 0.0, 1, 8);
 
