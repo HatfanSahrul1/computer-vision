@@ -2,7 +2,13 @@
 #include <opencv2/aruco.hpp>
 
 int main() {
-    cv::VideoCapture cap(2);
+    // Known size of the ArUco marker (in centimeters)
+    float markerSize = .75; // Change this value according to the actual marker size
+
+    // Focal length of the camera (in pixels)
+    float focalLength = 1000.0; // Change this value according to your camera's focal length
+
+    cv::VideoCapture cap(2); // Use the default camera (you may need to adjust the camera index)
 
     if (!cap.isOpened()) {
         std::cerr << "Error: Failed to open camera!" << std::endl;
@@ -54,6 +60,13 @@ int main() {
 
                     cv::circle(frame, corner, 2, cv::Scalar(0, 0, 255), 2);
                 }
+
+                // Calculate distance
+                float apparentMarkerSize = markerCorners[i][1].x - markerCorners[i][0].x; // Apparent size of marker in pixels
+                float distance = (markerSize * focalLength) / apparentMarkerSize; // Distance calculation
+                std::ostringstream distanceText;
+                distanceText << "Distance: " << distance << " cm";
+                cv::putText(frame, distanceText.str(), cv::Point(10, 30), cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(255, 255, 255), 2);
             }
         }
 
