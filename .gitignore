@@ -2,4 +2,5 @@ build*/
 models/
 **.zip
 build/*
-CMakeLists.txt
+CMakeLists.txt*
+**CMake*
