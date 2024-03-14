@@ -23,8 +23,8 @@ include_directories(${PROJECT_SOURCE_DIR})
 # )
 # target_include_directories(main PRIVATE ${OpenCV_INCLUDE_DIRS})
 
-add_executable(aruco aruco.cpp)
-target_link_libraries(aruco
+add_executable(main aruco.cpp)
+target_link_libraries(main
 ${OpenCV_LIBS}
 # target_include_directories(aruco PRIVATE ${OpenCV_INCLUDE_DIRS})
 Threads::Threads  # Link with Threads library
