@@ -1,45 +1,42 @@
 #include <opencv2/opencv.hpp>
-#include <opencv2/aruco.hpp>
+#include <opencv4/opencv2/aruco.hpp>
 
-int main() {
-    // Define the 3D object points of the marker
-    float markerLength = 100.0f;  // Adjust the marker length as needed
-    cv::Mat objPoints(4, 3, CV_32FC1);
-    objPoints.ptr<cv::Vec3f>(0)[0] = cv::Vec3f(-markerLength / 2.f, markerLength / 2.f, 0);
-    objPoints.ptr<cv::Vec3f>(0)[1] = cv::Vec3f(markerLength / 2.f, markerLength / 2.f, 0);
-    objPoints.ptr<cv::Vec3f>(0)[2] = cv::Vec3f(markerLength / 2.f, -markerLength / 2.f, 0);
-    objPoints.ptr<cv::Vec3f>(0)[3] = cv::Vec3f(-markerLength / 2.f, -markerLength / 2.f, 0);
+int main(){
+     cv::VideoCapture inputVideo;
+    
+    // Try opening capture device with index 2
+    inputVideo.open(2);
+    if (!inputVideo.isOpened()) {
+        std::cout << "Failed to open capture device with index 2. Trying default device (index 0)..." << std::endl;
+        // Fall back to opening default capture device with index 0
+        inputVideo.open(0);
+    }
 
-    // Define the ArUco dictionary and detector parameters
+    // Check if capture device opened successfully
+    if (!inputVideo.isOpened()) {
+        std::cerr << "Error: Failed to open capture device!" << std::endl;
+        return -1;
+    }
+    
     cv::aruco::DetectorParameters detectorParams = cv::aruco::DetectorParameters();
     cv::aruco::Dictionary dictionary = cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250);
+    cv::aruco::ArucoDetector detector(dictionary, detectorParams);
 
-    // Convert the ArUco dictionary to an image
-    cv::Mat dictionaryImage;
-    cv::drawMarker(dictionary, 0, 200, dictionaryImage);
-
-    // Create an ArUco marker image using the converted image
-    int markerId = 23;  // Marker ID = 23
-    int sidePixels = 200;
-    cv::Mat markerImage;
-    dictionaryImage.copyTo(markerImage);  // Copy the converted image
-    cv::drawMarker(dictionary, markerId, sidePixels, markerImage);
-
-    // Save the marker image (optional)
-    cv::imwrite("marker23.png", markerImage);
-
-    // Detect the marker in an image
-    cv::Mat inputImage = cv::imread("/home/hatfan/test2/marker23.png");  // Replace with your image path
-    std::vector<int> markerIds;
-    std::vector<std::vector<cv::Point2f>> markerCorners;
-    cv::aruco::detectMarkers(inputImage, dictionary, markerCorners, markerIds, detectorParams);
-
-    // Draw the detected markers on the image
-    cv::aruco::drawDetectedMarkers(inputImage, markerCorners, markerIds);
-
-    // Display the image with markers
-    cv::imshow("Detected Markers", inputImage);
-    cv::waitKey(0);
+    while (inputVideo.grab()) {
+        cv::Mat image, imageCopy;
+        inputVideo.retrieve(image);
+        image.copyTo(imageCopy);
+        std::vector<int> ids;
+        std::vector<std::vector<cv::Point2f>> corners, rejected;
+        detector.detectMarkers(image, corners, ids, rejected);
+        // if at least one marker detected
+        if (ids.size() > 0)
+            cv::aruco::drawDetectedMarkers(imageCopy, corners, ids);
+        cv::imshow("out", imageCopy);
+        char key = (char) cv::waitKey(30);
+        if (key == 27)
+            break;
+    }
 
     return 0;
 }
