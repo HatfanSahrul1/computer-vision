@@ -9,6 +9,8 @@ set(CMAKE_CXX_STANDARD 17)
 # Add support for threads
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
+find_package(yaml-cpp REQUIRED)
+include_directories(${YAML_CPP_INCLUDE_DIR})
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -23,9 +25,10 @@ include_directories(${PROJECT_SOURCE_DIR})
 # )
 # target_include_directories(main PRIVATE ${OpenCV_INCLUDE_DIRS})
 
-add_executable(main aruco.cpp)
+add_executable(main aruco2.cpp)
 target_link_libraries(main
 ${OpenCV_LIBS}
+${YAML_CPP_LIBRARIES}
 # target_include_directories(aruco PRIVATE ${OpenCV_INCLUDE_DIRS})
 Threads::Threads  # Link with Threads library
 )
