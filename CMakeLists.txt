@@ -25,8 +25,8 @@ include_directories(${PROJECT_SOURCE_DIR})
 # )
 # target_include_directories(main PRIVATE ${OpenCV_INCLUDE_DIRS})
 
-add_executable(main aruco2.cpp)
-target_link_libraries(main
+add_executable(face face.cpp)
+target_link_libraries(face
 ${OpenCV_LIBS}
 ${YAML_CPP_LIBRARIES}
 # target_include_directories(aruco PRIVATE ${OpenCV_INCLUDE_DIRS})

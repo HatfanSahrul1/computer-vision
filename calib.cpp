@@ -18,7 +18,7 @@ int main() {
 
     // Inisialisasi vektor untuk menyimpan sudut sudut yang ditemukan
     std::vector<cv::Point2f> corners;
-    cv::Mat images = cv::imread("chess.jpeg");
+    cv::Mat images = cv::imread("pattern.png");
 
     for (const auto& imagePath : imagePaths) {
         cv::Mat image = cv::imread(imagePath);
@@ -62,6 +62,8 @@ int main() {
     // Tampilkan parameter instrinsik
     std::cout << "Camera Matrix:" << std::endl << cameraMatrix << std::endl;
     std::cout << "Distortion Coefficients:" << std::endl << distortionCoeffs << std::endl;
+    std::cout << "rvecs : " << std::endl << rvecs[0] << std::endl;
+    std::cout << "tvecs : " << std::endl << tvecs[0] << std::endl;
 
     return 0;
 }

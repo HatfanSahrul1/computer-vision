@@ -46,7 +46,7 @@ struct TimeCounter {
 int main(int argc, char **argv)
 {
     TimeCounter time;
-    VideoCapture cap(0);
+    VideoCapture cap(2);
     const string videoStreamAddress = "https://10.252.133.72:8080/videofeed?something.mjpeg";
     // cap.open(videoStreamAddress);
 
@@ -80,7 +80,7 @@ int main(int argc, char **argv)
 
     // Vector<string> classes{}
     // Note that in this example the classes are hard-coded and 'classes.txt' is a place holder.
-    Inference inf(projectBasePath + "/test2/models/40.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
+    Inference inf(projectBasePath + "/best.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
 
     std::vector<std::string> imageNames;
     imageNames.push_back(projectBasePath + "/ultralytics/assets/bus.jpg");
