@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
     objectTracker->init(frame, rect);
 
     while(camera.read(frame)) {
-        if (objectTracker->update(frame, rect)) {4
+        if (objectTracker->update(frame, rect)) {
             rectangle(frame, rect, color, 1);
         }
         imshow(WINDOW_NAME, frame);
