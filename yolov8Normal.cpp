@@ -8,6 +8,7 @@
 #include <opencv2/opencv.hpp>
 #include<opencv2/highgui/highgui.hpp>
 #include<opencv2/imgproc/imgproc.hpp>
+#include "yaml-cpp/yaml.h"
 
 #include "inference.h"
 
@@ -56,11 +57,13 @@ int main(int argc, char **argv)
     // else{
     //     cap.open(0);
     // }
-    std::string projectBasePath = "/home/hatfan"; // Set your ultralytics base path
+ // Set your ultralytics base path
 
     bool runOnGPU = false;
-
-    //
+    YAML::Node config = YAML::LoadFile("/home/hatfan/test2/yoloNormal.yaml");
+    int m_size = config["size"].as<int>();
+    std::string model_path = config["model"].as<std::string>();
+                                                     //
     // Pass in either:
     //
     // "yolov8s.onnx" or "yolov5s.onnx"
@@ -69,22 +72,22 @@ int main(int argc, char **argv)
     //
 
     // Set white balance (if supported)
-    int whiteBalanceValue = 4000;  // Adjust this value accordingly
+    int whiteBalanceValue = 4600;  // Adjust this value accordingly
     namedWindow("WBT",WINDOW_GUI_NORMAL);
     createTrackbar("wb","WBT",&whiteBalanceValue,6200);
     cap.set(cv::CAP_PROP_AUTO_WB, 0);  // Turn off auto white balance
 
     // Get white balance (if supported)
     double currentWhiteBalance = cap.get(cv::CAP_PROP_WB_TEMPERATURE);
-    std::cout << "Current White Balance: " << currentWhiteBalance << std::endl;
+    // std::cout << "Current White Balance: " << currentWhiteBalance << std::endl;
 
     // Vector<string> classes{}
     // Note that in this example the classes are hard-coded and 'classes.txt' is a place holder.
-    Inference inf(projectBasePath + "/best.onnx", cv::Size(640/2, 640/2), "classes.txt", runOnGPU);
+    Inference inf(model_path, cv::Size(m_size, m_size), "classes.txt", runOnGPU);
 
     std::vector<std::string> imageNames;
-    imageNames.push_back(projectBasePath + "/ultralytics/assets/bus.jpg");
-    imageNames.push_back(projectBasePath + "/ultralytics/assets/zidane.jpg");
+//    imageNames.push_back(projectBasePath + "/ultralytics/assets/bus.jpg");
+//    imageNames.push_back(projectBasePath + "/ultralytics/assets/zidane.jpg");
 
     int num_frames=0;
     clock_t start,end;
@@ -94,13 +97,13 @@ int main(int argc, char **argv)
     while(true)
     {   
         if(time.Count() >= 1){
-            fprintf(stderr, "FPS >> %d\n\n", num_frames);
+            // fprintf(stderr, "FPS >> %d\n\n", num_frames);
             num_frames = 0;
             time.Reset();
-        }
+	}
         num_frames++;
        start=clock(); 
-
+	
         fps=cap.get(CAP_PROP_FPS);
         // string str=to_string(fps);
         // cout<<fps<<endl;
@@ -131,7 +134,7 @@ int main(int argc, char **argv)
         // cv::putText(frame, str, Point(20, 20), FONT_HERSHEY_DUPLEX,1, Scalar(255, 0, 0),2, 0);
 
         int detections = output.size();
-        std::cout << "Number of detections:" << detections;
+        // std::cout << "Number of detections:" << detections;
 
         for (int i = 0; i < detections; ++i)
         {
@@ -159,11 +162,11 @@ int main(int argc, char **argv)
 
         double sc=(double(end)-double(start))/double(CLOCKS_PER_SEC);
         fpsLive=double(num_frames)/double(sc);
-        cout<<"\t"<<fpsLive<<endl;
+        // cout<<"\t"<<fpsLive<<endl;
 
         cv::imshow("Inference", frame);
         // cv::imshow("mask", mask);
     
-        if(waitKey(30)==27)break;
+        if(waitKey(1)==27)break;
     }
 }

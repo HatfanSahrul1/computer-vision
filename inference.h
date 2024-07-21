@@ -36,13 +36,13 @@ private:
     std::string classesPath{};
     bool cudaEnabled{};
 
-    std::vector<std::string> classes{"G"};
+    std::vector<std::string> classes{"l"};
 
     cv::Size2f modelShape{};
 
     float modelConfidenceThreshold {0.25};
-    float modelScoreThreshold      {0.45};
-    float modelNMSThreshold        {0.50};
+    float modelScoreThreshold      {0.25};
+    float modelNMSThreshold        {0.25};
 
     bool letterBoxForSquare = true;
 
