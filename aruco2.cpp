@@ -54,7 +54,7 @@ int main() {
 
         if (!markerIds.empty()) {
 
-             std::vector<cv::Vec3d> rvecs, tvecs;
+            std::vector<cv::Vec3d> rvecs, tvecs;
             cv::aruco::estimatePoseSingleMarkers(markerCorners, 0.05, cameraMatrix, distCoeffs, rvecs, tvecs);
 
             for (size_t i = 0; i < markerIds.size(); ++i) {
@@ -75,19 +75,20 @@ int main() {
                     // Mark the first corner with the value 1
                     if (j == 0) {
                         cv::putText(frame, "1", corner, cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0), 2);
-                        std::cout<<"1 "<<markerCorners[i][j];
+                        std::cout<<i<<" "<<j<<" 1 "<<markerCorners[i][j];
                     }else if (j == 1) {
                         cv::putText(frame, "2", corner, cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0), 2);
-                        std::cout<<" 2 "<<markerCorners[i][j];
+                        std::cout<<i<<" "<<j<<" 2 "<<markerCorners[i][j];
                     }else if (j == 2) {
                         cv::putText(frame, "3", corner, cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 255, 0), 2);
-                        std::cout<<" 3 "<<markerCorners[i][j];
+                        std::cout<<i<<" "<<j<<" 3 "<<markerCorners[i][j];
                     }
                     // Mark the last corner with the value 4
                     else if (j == numCorners - 1) {
                         cv::putText(frame, "4", corner, cv::FONT_HERSHEY_SIMPLEX, 0.5, cv::Scalar(0, 0, 255), 2);
-                        std::cout<<" 4 "<<markerCorners[i][j]<<" "<<markerIds[i]<<std::endl;
+                        std::cout<<i<<" "<<j<<" 4 "<<markerCorners[i][j]<<" "<<markerIds[i]<<i<<" "<<j<<std::endl;
                     }
+                    // cv::lines
 
                     cv::circle(frame, corner, 2, cv::Scalar(0, 0, 255), 2);
                 }
