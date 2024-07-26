@@ -75,6 +75,17 @@ void thinning(Mat& im)
     im *= 255;
 }
 
+void CleaningBorder(Mat &result){
+    for(int i=0;i<result.rows;i++){
+        for(int j=0;j<result.cols;j++){
+            result.at<uchar>(i, 0) = 0;
+            result.at<uchar>(0, j) = 0;
+            result.at<uchar>(i, result.cols-1) = 0;
+            result.at<uchar>(result.rows, j) = 0;
+        }
+    }
+}
+
 /**
  * This is the function that acts as the input/output system of this header file.
  */
@@ -88,9 +99,25 @@ Mat skeletonization(Mat inputImage)
     threshold(outputImage, outputImage, 0, 255, THRESH_BINARY+THRESH_OTSU);
 
     thinning(outputImage);
+    CleaningBorder(outputImage);
 
     return outputImage;
 }
+
+void Coloring(Mat &mat, Mat &output){
+    // output = Mat::zeros(mat.size(), CV_8UC3);
+    cvtColor(mat, output, COLOR_GRAY2BGR);
+    for(int i=0;i<mat.rows;i++){
+        for(int j=0;j<mat.cols;j++){
+            if(mat.at<char>(i, j)){
+                output.at<Vec3b>(i, j) = Vec3b(0, 255, 0);
+            }
+        }
+    }
+
+    // mat = temp;
+}
+
 
 
 
