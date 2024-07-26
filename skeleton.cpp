@@ -22,10 +22,11 @@ int main(int argc, char** argv)
     threshold(skel, skelBinary, 0, 255, THRESH_BINARY);
 
     vector<Vec4i> lines;
-    HoughLinesP(skelBinary, lines, 1, CV_PI / 180, 22, 2, 50);
+    HoughLinesP(skelBinary, lines, 1, CV_PI / 180, 20, 2, 50);
 
     // Draw the lines on the original image
-    Mat imWithLines = im.clone();
+    // Mat imWithLines = im.clone();
+    Mat imWithLines=Mat::zeros(im.size(), CV_8UC3);
     for (size_t i = 0; i < lines.size(); i++) {
         cout<<i<<endl;
         Vec4i l = lines[i];
