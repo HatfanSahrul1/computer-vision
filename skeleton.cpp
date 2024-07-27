@@ -27,6 +27,20 @@ int main(int argc, char** argv)
     // HoughlineRegular(skelBinary, imWithLines, atoi(argv[1]));
     // HoughlineProb(skelBinary, imWithLines, atoi(argv[1]), atoi(argv[2]), atoi(argv[3]));
     
+    std::vector<Point> junctionPoints = findJunctionPoints(skeleton);
+    Graph graph;
+    buildGraph(skel, junctionPoints, graph);
+
+    // Display results
+    for (const auto& node : graph)
+    {
+        cout << "Node " << node.first << " at " << node.second.point << " connects to: ";
+        for (int neighbor : node.second.neighbors)
+        {
+            cout << neighbor << " ";
+        }
+        cout << endl;
+    }
 
     imshow("Original Image", im);
     imshow("Skeleton Image", skel);

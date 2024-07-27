@@ -7,8 +7,8 @@
  *  Code for thinning a binary image using Zhang-Suen algorithm.
  */
 
-#ifndef SKELETONIZATION_HPP_INCLUDED
-#define SKELETONIZATION_HPP_INCLUDED
+#ifndef SKELETON_HPP_INCLUDED
+#define SKELETON_HPP_INCLUDED
 
 #include <iostream>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -158,6 +158,96 @@ void HoughlineRegular(Mat &input, Mat &output,int thresh){
         pt2.x = cvRound(x0 - 1000 * (-b));
         pt2.y = cvRound(y0 - 1000 * (a));
         line(output, pt1, pt2, Scalar(0, 0, 255), 1, LINE_AA);
+    }
+}
+
+// Fungsi untuk mendeteksi titik persimpangan
+std::vector<Point> findJunctionPoints(const Mat& skeleton)
+{
+    std::vector<Point> junctionPoints;
+
+    for (int i = 1; i < skeleton.rows - 1; ++i)
+    {
+        for (int j = 1; j < skeleton.cols - 1; ++j)
+        {
+            if (skeleton.at<uchar>(i, j) == 255)
+            {
+                int neighborCount = 0;
+                neighborCount += skeleton.at<uchar>(i-1, j-1) == 255;
+                neighborCount += skeleton.at<uchar>(i-1, j) == 255;
+                neighborCount += skeleton.at<uchar>(i-1, j+1) == 255;
+                neighborCount += skeleton.at<uchar>(i, j-1) == 255;
+                neighborCount += skeleton.at<uchar>(i, j+1) == 255;
+                neighborCount += skeleton.at<uchar>(i+1, j-1) == 255;
+                neighborCount += skeleton.at<uchar>(i+1, j) == 255;
+                neighborCount += skeleton.at<uchar>(i+1, j+1) == 255;
+
+                if (neighborCount > 2)
+                {
+                    junctionPoints.push_back(Point(j, i));
+                }
+            }
+        }
+    }
+
+    return junctionPoints;
+}
+
+// Node structure untuk graf
+struct Node {
+    Point point;
+    std::list<int> neighbors;
+};
+
+typedef std::unordered_map<int, Node> Graph;
+
+// Fungsi untuk menambahkan edge pada graf
+void addEdge(Graph& graph, int u, int v)
+{
+    graph[u].neighbors.push_back(v);
+    graph[v].neighbors.push_back(u);
+}
+
+// Fungsi untuk menemukan indeks node
+int findNodeIndex(const std::vector<Point>& nodes, const Point& point)
+{
+    for (int i = 0; i < nodes.size(); ++i)
+    {
+        if (nodes[i] == point)
+            return i;
+    }
+    return -1;
+}
+
+// Fungsi untuk membangun graf dari skeleton
+void buildGraph(const Mat& skeleton, const std::vector<Point>& junctionPoints, Graph& graph)
+{
+    for (int i = 0; i < junctionPoints.size(); ++i)
+    {
+        graph[i] = { junctionPoints[i], {} };
+    }
+
+    for (int i = 0; i < junctionPoints.size(); ++i)
+    {
+        Point p = junctionPoints[i];
+        std::vector<Point> directions = { Point(-1, -1), Point(-1, 0), Point(-1, 1),
+                                          Point(0, -1), Point(0, 1),
+                                          Point(1, -1), Point(1, 0), Point(1, 1) };
+
+        for (Point dir : directions)
+        {
+            Point current = p + dir;
+            while (skeleton.at<uchar>(current) == 255)
+            {
+                int nodeIndex = findNodeIndex(junctionPoints, current);
+                if (nodeIndex != -1)
+                {
+                    addEdge(graph, i, nodeIndex);
+                    break;
+                }
+                current += dir;
+            }
+        }
     }
 }
 
