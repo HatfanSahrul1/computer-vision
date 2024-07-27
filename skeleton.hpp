@@ -131,6 +131,19 @@ void HoughlineProb(Mat &input, Mat &output){
     }
 }
 
+void HoughlineProb(Mat &input, Mat &output, int thresh, int minLineLength, int maxLineGap){
+    vector<Vec4i> lines;
+    HoughLinesP(input, lines, 1, CV_PI / 180, thresh, minLineLength, maxLineGap);
+
+    // Draw the lines on the original image
+    
+    for (size_t i = 0; i < lines.size(); i++) {
+        cout<<i<<endl;
+        Vec4i l = lines[i];
+        line(output, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0, 0, 255), 2, LINE_AA);
+    }
+}
+
 void HoughlineRegular(Mat &input, Mat &output,int thresh){
     vector<Vec2f> lines;
     HoughLines(input, lines, 1, CV_PI / 180, thresh);
