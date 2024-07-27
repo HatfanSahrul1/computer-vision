@@ -20,20 +20,14 @@ int main(int argc, char** argv)
     Coloring(skel, colored);
     Mat skelBinary;
     threshold(skel, skelBinary, 0, 255, THRESH_BINARY);
+    Mat imWithLines = im.clone();
+    // Mat imWithLines=Mat::zeros(im.size(), CV_8UC3);
+    
+    // HoughlineRegular(skelBinary, imWithLines, atoi(argv[1]));
+    HoughlineProb(skelBinary, imWithLines);
+    cout<<argv[1]<<endl;
+    
 
-    vector<Vec4i> lines;
-    HoughLinesP(skelBinary, lines, 1, CV_PI / 180, 20, 2, 50);
-
-    // Draw the lines on the original image
-    // Mat imWithLines = im.clone();
-    Mat imWithLines=Mat::zeros(im.size(), CV_8UC3);
-    for (size_t i = 0; i < lines.size(); i++) {
-        cout<<i<<endl;
-        Vec4i l = lines[i];
-        line(imWithLines, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0, 0, 255), 2, LINE_AA);
-    }
-    // namedWindow("Original Image", WINDOW_NORMAL);
-    // namedWindow("Skeleton Image", WINDOW_NORMAL);
     imshow("Original Image", im);
     imshow("Skeleton Image", skel);
     imshow("colored Image", imWithLines);
