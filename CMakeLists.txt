@@ -25,13 +25,13 @@ include_directories(${PROJECT_SOURCE_DIR})
 # )
 # target_include_directories(main PRIVATE ${OpenCV_INCLUDE_DIRS})
 
-add_executable(gb yolov8Normal.cpp inference.cpp)
-target_link_libraries(gb
-${OpenCV_LIBS}
-${YAML_CPP_LIBRARIES}
-# target_include_directories(aruco PRIVATE ${OpenCV_INCLUDE_DIRS})
-Threads::Threads  # Link with Threads library
-)
+# add_executable(gb yolov8Normal.cpp inference.cpp)
+# target_link_libraries(gb
+# ${OpenCV_LIBS}
+# ${YAML_CPP_LIBRARIES}
+# # target_include_directories(aruco PRIVATE ${OpenCV_INCLUDE_DIRS})
+# Threads::Threads  # Link with Threads library
+# )
 
 # add_executable(capture camera.cpp)
 # target_link_libraries(capture
@@ -45,8 +45,8 @@ Threads::Threads  # Link with Threads library
 # ${OpenCV_LIBS}
 # Threads::Threads  # Link with Threads library
 # )
-add_executable(coba rodriguesCV.cpp)
-target_link_libraries(coba
+add_executable(skele skeleton.cpp skeleton.hpp)
+target_link_libraries(skele
 	${OpenCV_LIBS}
 	${YAML_CPP_LIBRATRIES}
 	Threads::Threads
