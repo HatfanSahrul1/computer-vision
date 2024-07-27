@@ -118,6 +118,36 @@ void Coloring(Mat &mat, Mat &output){
     // mat = temp;
 }
 
+void HoughlineProb(Mat &input, Mat &output){
+    vector<Vec4i> lines;
+    HoughLinesP(input, lines, 1, CV_PI / 180, 20, 2, 50);
+
+    // Draw the lines on the original image
+    
+    for (size_t i = 0; i < lines.size(); i++) {
+        cout<<i<<endl;
+        Vec4i l = lines[i];
+        line(output, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(0, 0, 255), 2, LINE_AA);
+    }
+}
+
+void HoughlineRegular(Mat &input, Mat &output,int thresh){
+    vector<Vec2f> lines;
+    HoughLines(input, lines, 1, CV_PI / 180, thresh);
+
+    for (size_t i = 0; i < lines.size(); i++) {
+        float rho = lines[i][0], theta = lines[i][1];
+        Point pt1, pt2;
+        double a = cos(theta), b = sin(theta);
+        double x0 = a * rho, y0 = b * rho;
+        pt1.x = cvRound(x0 + 1000 * (-b));
+        pt1.y = cvRound(y0 + 1000 * (a));
+        pt2.x = cvRound(x0 - 1000 * (-b));
+        pt2.y = cvRound(y0 - 1000 * (a));
+        line(output, pt1, pt2, Scalar(0, 0, 255), 1, LINE_AA);
+    }
+}
+
 
 
 
