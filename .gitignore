@@ -6,3 +6,4 @@ CMakeLists.txt*
 **CMake*
 CMakeLists.txt
 **/build**/
+*/build/

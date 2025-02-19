@@ -40,14 +40,15 @@ include_directories(${PROJECT_SOURCE_DIR})
 # )
 
 
-# add_executable(40detect yolov8Normal.cpp inference.cpp)
-# target_link_libraries(40detect
-# ${OpenCV_LIBS}
-# Threads::Threads  # Link with Threads library
-# )
-add_executable(skele skeleton.cpp skeleton.hpp)
-target_link_libraries(skele
-	${OpenCV_LIBS}
-	${YAML_CPP_LIBRATRIES}
-	Threads::Threads
+add_executable(yo yolov8Normal.cpp inference.cpp)
+target_link_libraries(yo
+${OpenCV_LIBS}
+${YAML_CPP_LIBRARIES}
+Threads::Threads  # Link with Threads library
 )
+# add_executable(skele skeleton.cpp skeleton.hpp)
+# target_link_libraries(skele
+# 	${OpenCV_LIBS}
+# 	${YAML_CPP_LIBRATRIES}
+# 	Threads::Threads
+# )

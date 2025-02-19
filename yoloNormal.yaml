@@ -1,2 +1,2 @@
-model: '/home/hatfan/test2/models/L-poligon.onnx'
+model: '/home/eros/models/labv11.onnx'
 size: 320

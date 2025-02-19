@@ -61,8 +61,8 @@ int main(int argc, char **argv)
 
     bool runOnGPU = false;
     YAML::Node config = YAML::LoadFile("/home/hatfan/test2/yoloNormal.yaml");
-    int m_size = config["size"].as<int>();
-    std::string model_path = config["model"].as<std::string>();
+    int m_size = 320;//config["size"].as<int>();
+    std::string model_path = "/home/emosver/apa/labv11.onnx"//config["model"].as<std::string>();
                                                      //
     // Pass in either:
     //
@@ -162,7 +162,7 @@ int main(int argc, char **argv)
 
         double sc=(double(end)-double(start))/double(CLOCKS_PER_SEC);
         fpsLive=double(num_frames)/double(sc);
-        // cout<<"\t"<<fpsLive<<endl;
+        cout<<"\t"<<fpsLive<<endl;
 
         cv::imshow("Inference", frame);
         // cv::imshow("mask", mask);
