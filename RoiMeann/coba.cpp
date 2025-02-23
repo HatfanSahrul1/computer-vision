@@ -55,6 +55,7 @@ int main(){
 
         cv::imshow("ori", image);
         cv::imshow("mask", mask);
+        
         if(cv::waitKey(1)==27) break;
     }
 

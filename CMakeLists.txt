@@ -40,8 +40,8 @@ include_directories(${PROJECT_SOURCE_DIR})
 # )
 
 
-add_executable(yo yolov8Normal.cpp inference.cpp)
-target_link_libraries(yo
+add_executable(lineC lineConnect.cpp)
+target_link_libraries(lineC
 ${OpenCV_LIBS}
 ${YAML_CPP_LIBRARIES}
 Threads::Threads  # Link with Threads library

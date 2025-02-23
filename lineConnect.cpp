@@ -22,7 +22,7 @@ void onTrackbar(int,void*){
 
 int main(){
     
-    Mat img=imread("/home/hatfan/test2/bolatest.jpg",IMREAD_COLOR);
+    Mat img=imread("/home/eros/cv/bolatest.jpg",IMREAD_COLOR);
 
     namedWindow("hsv",WINDOW_AUTOSIZE);
     namedWindow("hsl",WINDOW_AUTOSIZE);
