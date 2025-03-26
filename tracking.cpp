@@ -42,8 +42,7 @@ int main(int argc, char **argv) {
         }
         imshow(WINDOW_NAME, frame);
 
-        if(waitKey(1) == 27){
-            //exit if ESC is pressed
+        if(waitKey(1) == 27){//exit if ESC is pressed
             break;
         }
     }
