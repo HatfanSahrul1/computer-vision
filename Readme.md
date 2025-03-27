@@ -11,3 +11,7 @@ line.cpp {
 ~ makin besar maxGap, maka memingkinkan garis antar objek terdeteksi yang terpisah gap dapat saling terhubung, namun hanya berlaku pada houghline prob
 
 }
+
+
+
+08-02-2025
